@@ -14,9 +14,9 @@ timezone: Europe/Warsaw
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Nowhere Man # the main title
+title: Andrii # the main title
 
-tagline: Sitting in his Nowhere Land # it will display as the subtitle
+tagline: Father, Leader, Optimist # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   blog, notes, diary, andrii, strilchuk
@@ -88,7 +88,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: dark # [light | dark]
+theme_mode: # [light | dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
