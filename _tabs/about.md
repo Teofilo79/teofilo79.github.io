@@ -4,5 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+![Desktop View](/assets/img/images/Ukrainian_flag.jpg){: .normal .shadow}
+<H2>I am Ukrainian</H2><br><br>
+Living family life. Coding, playing, riding a bicycle, reading, drawing. 
