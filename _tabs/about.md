@@ -30,5 +30,5 @@ Bicycle commuting to work, bicycle rides across the city and to suburbs on weeke
 <br>
 
 <H2>Terminator</H2>
-Broke an arm recently. Now I have metal plate in my arm and 10 screws inside it. "Terminator" is one of my favourite movies.
+Broke an arm recently. Now I have metal plate in my arm and 10 screws inside it.
 <br>
