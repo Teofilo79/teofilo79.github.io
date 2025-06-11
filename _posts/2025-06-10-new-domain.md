@@ -5,7 +5,7 @@ categories: [Site]
 tags: [Hello]
 ---
 
-New site address acquired! I managed to use only my surname without any domain name! So lucky to have it ending with "uk". Ho-Ho-Ho!<br><br>
+New site address acquired! I managed to use only my surname without any top-level domain! Well, at least it looks so.  Ho-Ho-Ho!<br><br>
 
 With Regards,<br>
 Andrii Strilch.uk
