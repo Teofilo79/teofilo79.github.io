@@ -10,3 +10,29 @@
 
 /* append your custom style below */
 
+
+/* Dark mode variables available for editing */
+
+html[data-mode=light] {
+  --main-bg: #ece0c1;
+  --sidebar-bg: #ece0c1;
+  --topbar-bg: #ece0c1;
+  --heading-color: rgb(68, 56, 1);
+  --text-muted-color: rgb(78, 78, 78);
+}
+
+html:not([data-mode]) {
+  --main-bg: #ece0c1;
+  --sidebar-bg: #ece0c1;
+  --topbar-bg: #ece0c1;
+  --heading-color: rgb(68, 56, 1);
+  --text-muted-color: rgb(78, 78, 78);
+  }
+
+html[data-mode=dark] {
+  --main-bg: #242019; 
+  --sidebar-bg: #242019; 
+  --topbar-bg: #242019;
+  --heading-color: rgb(255, 208, 0);
+  --text-muted-color: rgb(223, 220, 203);
+}
