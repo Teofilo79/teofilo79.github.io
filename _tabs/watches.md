@@ -15,6 +15,7 @@ order: 5
         display:grid;
         place-content: center;
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
     .container > div {
         padding: 10px 0px;
@@ -36,16 +37,15 @@ order: 5
 
 </style>    
 
-<H1>My watches collection</H1><hr>
-<H2 style="text-align:center">Current collection</H2>
+<H1 style="text-align:center">Current collection</H1>
 <div class="container" style="padding: 20px">
 {% for item in site.data.watches %}
 {% assign leftright = counter | modulo: 2 %}
 
 {% if leftright == 1 %}
-<div style="padding-right:0px; text-align: right">
+<div style="text-align: right">
 <img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 80px 0px 0px 80px;"></div>
-<div style="padding:10px; text-align: left">
+<div style="padding:10px; text-align: left; justify-self: stretch;">
 <span class="item_name">{{ item.name }}</span><br>
 {{ item.type }}<br>
 {{ item.description }}<br>
@@ -64,7 +64,7 @@ order: 5
 {{ item.water_resistance }}<br>
 {{ item.date_acquired }}<br>
 </div>
-<div style="padding-left:0px; text-align: left">
+<div style="text-align: left">
 <img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
 </div>
 {% endif %}
