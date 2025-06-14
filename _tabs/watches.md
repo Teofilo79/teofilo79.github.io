@@ -44,7 +44,7 @@ order: 5
 
 {% if leftright == 1 %}
 <div style="padding-right:0px; text-align: right">
-<img src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 80px 0px 0px 80px;"></div>
+<img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 80px 0px 0px 80px;"></div>
 <div style="padding:10px; text-align: left">
 <span class="item_name">{{ item.name }}</span><br>
 {{ item.type }}<br>
@@ -65,7 +65,7 @@ order: 5
 {{ item.date_acquired }}<br>
 </div>
 <div style="padding-left:0px; text-align: left">
-<img src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
+<img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
 </div>
 {% endif %}
 
