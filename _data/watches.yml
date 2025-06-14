@@ -1,0 +1,46 @@
+  # Data for watches collection page
+
+  # The ones that I have:
+
+- name: "Citizen BN0157-11X Promaster Diver's"
+  type: "diver"
+  description: "description"
+  image: "https://img.watchcrunch.com/832UtgODZaxlkZ6Wd48sjmUPaSbfKKCn8uhf0IR_W7k/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMC9lNzk0ZWVjNi01MThmLTRkYjItOWNiZi1iYmY1ZGY0ZWI5ZjAucG5n.png"
+  movement: "Solar-powered quartz"
+  water_resistance: "200 meters"
+  date_acquired: "tbc"
+
+- name: "WISE Adamascus AD8"
+  type: "diver"
+  description: "description1"
+  image: "https://img.watchcrunch.com/PwM3Ne857CJ6Td2KZMpp4p_P9Srq7sh1N0bQxIPc0UM/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMC81NTc4Y2U4Zi1mOTBmLTQ5MDYtOGM3YS03ZWZkMGFiNjY0NGQucG5n.png"
+  movement: "Automatic Miyota 9015"
+  water_resistance: "200 meters"
+  date_acquired: "2024" 
+
+- name: "Casio Lineage"
+  type: "dress"
+  description: "description1"
+  image: "https://img.watchcrunch.com/6uYYpZKs17PwshLWO7lRQHFqZ-exxa-jRX1h4jMuh34/w:960/h:1440/rt:fit/g:sm/dpr:2/aW1nOi8vMjAyNC8wOS8yNC8yN2IzNzc0Yy0wMTAzLTQ0YTItOGJhNS03YWQyNzk2YWUzMmUucG5n.png"
+  movement: "Solar-powered quartz"
+  water_resistance: "200 meters"
+  date_acquired: "tbc"   
+
+- name: "Casio dbc-611"
+  type: "retro"
+  description: "description1"
+  image: "https://img.watchcrunch.com/XHE2Xj5g7GbJTihL0axegHOtE5rOh6kmxc0UDEh3sgA/w:960/h:1440/rt:fit/g:sm/dpr:2/aW1nOi8vMjAyNS8wMy8wNy9kNGE2MDEzMC02NWM4LTRmOWItYmQyYi01MTVjNWFkMGM4NDguanBn.jpg"
+  movement: "Quartz"
+  water_resistance: "No"
+  date_acquired: "tbc"  
+
+- name: "Casio F-105"
+  type: "retro"
+  description: "description1"
+  image: "https://img.watchcrunch.com/Hi10mr3kABTtIUQSb16IkuonNauQ5NVd_j5Q_SYSepU/w:960/h:1440/rt:fit/g:sm/dpr:2/aW1nOi8vMjAyNC8wOS8yNC9iZDFiOTVhZS0wNDljLTRhZmUtOTk4Ny0xMWRhOTAyMTJlMDUucG5n.png"
+  movement: "Quartz"
+  water_resistance: "30 meters"
+  date_acquired: "tbc" 
+
+  # The ones im my wishlist
+
