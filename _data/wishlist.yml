@@ -2,10 +2,8 @@
 
 
 - name: "Citizen BN0241"
-  type: "diver"
   description: "description"
-  image: "https://img.watchcrunch.com/832UtgODZaxlkZ6Wd48sjmUPaSbfKKCn8uhf0IR_W7k/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMC9lNzk0ZWVjNi01MThmLTRkYjItOWNiZi1iYmY1ZGY0ZWI5ZjAucG5n.png"
-  movement: "Solar-powered quartz"
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXcoBsiWdiNBrfiL8jaWJ7GpcAry-osx3Gw&s"
   price: "500 dollars"
 
 

@@ -65,7 +65,7 @@ There is a non-official division on watch types:<br>
 <li><b>Diver</b> - rotating bezel is what differentiates them from any others. They look as a watch with certain functionality, and bezels give them a big space for unique looks. Most famous - Rolex submarine.</li>
 <li><b>Dress watch</b> - these are for shirts or suits - to look officialy and fancy. Ususally not very readibale hands, no additional features. Their goal is to look fancy and show the time.</li>
 <li><b>Beater</b> - take these when you plan to do any activities. they are waterproof, shock-proof, the ones that you do not regret scratches. So, tough ones! Sometimes not looking fancy - that is not what they are made for.</li>
-<li><b>GADA</b> - Go anywhere, do anything. This category is interesting, as it can include any of the above-mentioed ones. The watch that you pick when you do not have much time to decide - grab and go. They are usually ready for anything. So, divers and beaters here.</li>
+<li><b>GADA</b> - Go anywhere, do anything. This category is interesting, as it can include any of the above-mentioed ones. The watch that you pick when you do not have much time to decide - grab and go. They are usually ready for anything.</li>
 </ul>
 
 
@@ -79,7 +79,7 @@ Do not ask me why and how, but I really wear them all, rotating each few days. I
 
 {% if leftright == 1 %}
 <div class="p_b_0" style="text-align: right">
-<img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 80px 0px 0px 80px;"></div>
+<img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:400px; height:250px; border-radius: 80px 0px 0px 80px;"></div>
 <div class="p_b_30 p_t_0" style="padding:10px; text-align: left; justify-self: stretch;">
 <span class="item_name">{{ item.name }}</span><br>
 {{ item.type }}<br>
@@ -91,7 +91,7 @@ Do not ask me why and how, but I really wear them all, rotating each few days. I
 
 {% else %}
 <div class="p_b_0" class="mobile_show" style="text-align: left; display: none;">
-<img class="mobile_show" alt="{{ item.name }}" src="{{item.image}}" style="display: none; object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
+<img class="mobile_show" alt="{{ item.name }}" src="{{item.image}}" style="display: none; object-fit: cover; width:400px; height:250px; border-radius: 0px 80px 80px 0px;">
 </div>
 <div class="p_b_30 p_t_0" style="padding:10px; text-align: right">
 <span class="item_name">{{ item.name }}</span><br>
@@ -102,7 +102,7 @@ Do not ask me why and how, but I really wear them all, rotating each few days. I
 {{ item.date_acquired }}<br>
 </div>
 <div class="mobile_hide" style="text-align: left">
-<img class="mobile_hide" alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
+<img class="mobile_hide" alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:400px; height:250px; border-radius: 0px 80px 80px 0px;">
 </div>
 {% endif %}
 
@@ -120,18 +120,12 @@ Yes, there are plenty of watches I like, thus if I have an chance - I will buy t
 <div class="container" style="padding: 20px">
 {% for item1 in site.data.wishlist %}
 
-<div class="p_b_0" class="mobile_show" style="text-align: left; display: none;">
-<img class="mobile_show" alt="{{ item1.name }}" src="{{item1.image}}" style="display: none; object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
-</div>
-<div class="p_b_30 p_t_0" style="padding:10px; text-align: right">
+<div class="p_b_0" style="text-align: right">
+<img alt="{{ item1.name }}" src="{{item1.image}}" style="object-fit: cover; width:300px; height:200px; border-radius: 0px 0px 40px 40px;"></div>
+<div class="p_b_30 p_t_0" style="padding:10px; text-align: left; justify-self: stretch;">
 <span class="item_name">{{ item1.name }}</span><br>
-{{ item1.type }}<br>
 {{ item1.description }}<br>
-{{ item1.movement }}<br>
 {{ item1.price }}<br>
-</div>
-<div class="mobile_hide" style="text-align: left">
-<img class="mobile_hide" alt="{{ item1.name }}" src="{{item1.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
 </div>
 
 {% endfor %}
