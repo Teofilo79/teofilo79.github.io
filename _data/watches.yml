@@ -26,6 +26,22 @@
   water_resistance: "200 meters"
   date_acquired: "tbc"   
 
+- name: "Casio Royale"
+  type: "retro"
+  description: "description1"
+  image: "https://img.watchcrunch.com/-Mh8KJFJm1j4qbniV1afUkp0W2GxaIqe6YWFd3cz2rY/w:960/h:1440/rt:fit/g:sm/dpr:2/aW1nOi8vMjAyNS8wMy8wNy9lYTFiOTM4ZS04MmZmLTRmYTYtOTI1NS0xNWUyYTQwYmNhMzguanBn.jpg"
+  movement: "Quartz"
+  water_resistance: "100 meters"
+  date_acquired: "tbc" 
+
+- name: "Casio 5610"
+  type: "beater"
+  description: "description1"
+  image: "https://img.watchcrunch.com/N0bqvqpz5X_5iWNz_kg85i6_2yU5fJoxjUoMlay3lEQ/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wMS8wMy9nUUxaRDVvN1FPRUMycEhLU0VOQ3EzTGtHT1cxaDhCcXo4NUZsb2xELmpwZw.jpg"
+  movement: "Solar-powered quartz"
+  water_resistance: "200 meters"
+  date_acquired: "tbc" 
+
 - name: "Casio dbc-611"
   type: "retro"
   description: "description1"

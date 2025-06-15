@@ -33,6 +33,21 @@ order: 5
     .container > div > a > img {
         border-radius: 20px !important;
     }    
+    .mobile_hide {
+        display: none;
+    }
+    .mobile_show {
+        display: block !important;
+    }
+    .p_b_30 {
+        padding-bottom: 30px !important;
+    }
+    .p_b_0 {
+        padding-bottom: 0px !important;
+    }    
+    .p_t_0 {
+        padding-top: 0px !important;
+    }
 }
 
 </style>    
@@ -43,9 +58,9 @@ order: 5
 {% assign leftright = counter | modulo: 2 %}
 
 {% if leftright == 1 %}
-<div style="text-align: right">
+<div class="p_b_0" style="text-align: right">
 <img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 80px 0px 0px 80px;"></div>
-<div style="padding:10px; text-align: left; justify-self: stretch;">
+<div class="p_b_30 p_t_0" style="padding:10px; text-align: left; justify-self: stretch;">
 <span class="item_name">{{ item.name }}</span><br>
 {{ item.type }}<br>
 {{ item.description }}<br>
@@ -55,8 +70,10 @@ order: 5
 </div>
 
 {% else %}
-
-<div style="padding:10px; text-align: right">
+<div class="p_b_0" class="mobile_show" style="text-align: left; display: none;">
+<img class="mobile_show" alt="{{ item.name }}" src="{{item.image}}" style="display: none; object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
+</div>
+<div class="p_b_30 p_t_0" style="padding:10px; text-align: right">
 <span class="item_name">{{ item.name }}</span><br>
 {{ item.type }}<br>
 {{ item.description }}<br>
@@ -64,8 +81,8 @@ order: 5
 {{ item.water_resistance }}<br>
 {{ item.date_acquired }}<br>
 </div>
-<div style="text-align: left">
-<img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
+<div class="mobile_hide" style="text-align: left">
+<img class="mobile_hide" alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:300px; height:300px; border-radius: 0px 80px 80px 0px;">
 </div>
 {% endif %}
 
