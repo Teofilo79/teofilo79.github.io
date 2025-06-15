@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-icon: fas fa-stream
+icon: fa fa-book
 order: 6
 ---
 
