@@ -6,12 +6,9 @@
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXcoBsiWdiNBrfiL8jaWJ7GpcAry-osx3Gw&s"
   price: "500 dollars"
 
-- name: "Citizen BN0241"
-  description: "description"
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXcoBsiWdiNBrfiL8jaWJ7GpcAry-osx3Gw&s"
-  price: "500 dollars"
+- name: "CASIO A130WE-1AEF"
+  description: "Another classic model, love the look"
+  image: "https://www.notebookcheck.pl/fileadmin/Notebooks/News/_nc4/Casio-A130WE-watch-UK-launch.jpeg"
+  price: "230 zl"
 
-- name: "Citizen BN0241"
-  description: "description"
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXcoBsiWdiNBrfiL8jaWJ7GpcAry-osx3Gw&s"
-  price: "500 dollars"
+
