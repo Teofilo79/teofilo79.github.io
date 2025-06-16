@@ -2,13 +2,16 @@
 
 
 - name: "Citizen BN0241"
-  description: "Next one! Collecting amount"
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXcoBsiWdiNBrfiL8jaWJ7GpcAry-osx3Gw&s"
-  price: "500 dollars"
+  description: "Next one! Collecting amount. Everything in this watch is insanely good."
+  image: "https://i.ytimg.com/vi/gwNN2pg841I/maxresdefault.jpg"
+  price: "1800 zl"
 
 - name: "CASIO A130WE-1AEF"
   description: "Another classic model, love the look"
   image: "https://www.notebookcheck.pl/fileadmin/Notebooks/News/_nc4/Casio-A130WE-watch-UK-launch.jpeg"
   price: "230 zl"
 
-
+- name: "BERNY Compressor Diver Watch V3-AM339M"
+  description: "Something talks to me in this design. I like it."
+  image: "https://m.media-amazon.com/images/I/71CEBUqOEBL._UY900_.jpg"
+  price: "450 zl"
