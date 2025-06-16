@@ -88,10 +88,10 @@ Do not ask me why and how, but I really wear them all, rotating each few days. I
 <img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:400px; height:250px; border-radius: 80px 0px 0px 80px;"></div>
 <div class="p_b_30 p_t_0" style="padding:10px; text-align: left; justify-self: stretch;">
 <span class="item_name">{{ item.name }}</span><br>
-{{ item.type }}<br>
-{{ item.description }}<br>
-{{ item.movement }}<br>
-{{ item.water_resistance }}<br>
+Type: {{ item.type }}<br>
+<i>{{ item.description }}</i><br>
+Movement: {{ item.movement }}<br>
+WR {{ item.water_resistance }}<br>
 {{ item.date_acquired }}<br>
 </div>
 
@@ -101,10 +101,10 @@ Do not ask me why and how, but I really wear them all, rotating each few days. I
 </div>
 <div class="p_b_30 p_t_0" style="padding:10px; text-align: right">
 <span class="item_name">{{ item.name }}</span><br>
-{{ item.type }}<br>
-{{ item.description }}<br>
-{{ item.movement }}<br>
-{{ item.water_resistance }}<br>
+Type: {{ item.type }}<br>
+<i>{{ item.description }}</i><br>
+Movement: {{ item.movement }}<br>
+WR: {{ item.water_resistance }}<br>
 {{ item.date_acquired }}<br>
 </div>
 <div class="mobile_hide" style="text-align: left">
