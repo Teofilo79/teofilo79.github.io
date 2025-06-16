@@ -14,25 +14,40 @@
 /* Dark mode variables available for editing */
 
 html[data-mode=light] {
-  --main-bg: #ece0c1;
-  --sidebar-bg: #ece0c1;
-  --topbar-bg: #ece0c1;
-  --heading-color: rgb(68, 56, 1);
-  --text-muted-color: rgb(78, 78, 78);
+  --main-bg: #bbc7cf;
+  --sidebar-bg: #bbc7cf;
+  --topbar-bg: #bbc7cf;
+  --heading-color: rgb(37, 63, 164);
+  --text-muted-color: rgb(5, 49, 137);
 }
 
 html:not([data-mode]) {
-  --main-bg: #ece0c1;
-  --sidebar-bg: #ece0c1;
-  --topbar-bg: #ece0c1;
-  --heading-color: rgb(68, 56, 1);
-  --text-muted-color: rgb(78, 78, 78);
+  --main-bg: #bbc7cf;
+  --sidebar-bg: #bbc7cf;
+  --topbar-bg: #bbc7cf;
+  --heading-color: rgb(37, 63, 164);
+  --text-muted-color: rgb(5, 49, 137);
   }
 
 html[data-mode=dark] {
-  --main-bg: #242019; 
-  --sidebar-bg: #242019; 
-  --topbar-bg: #242019;
-  --heading-color: rgb(255, 208, 0);
-  --text-muted-color: rgb(223, 220, 203);
+  --main-bg: #2e384e; 
+  --sidebar-bg: #2e384e;
+  --topbar-bg: #2e384e;
+  --heading-color: #bbe3ff;
+  --text-muted-color: #c2cbdf;
+}
+
+#post-list .card , {
+    border-radius:14px;
+    border-width: 12px;
+    border-style: solid;
+    border-image: url("/assets/img/images/png-transparent-frame-border-silver.png") 18 stretch;
+    border-image-outset: 0px;
+    background: var(--card-bg);
+}
+
+#avatar > img {
+    border-radius:100px;
+    border-width: 6px;
+    border-style: solid;
 }

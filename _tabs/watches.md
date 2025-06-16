@@ -27,6 +27,11 @@ order: 5
         padding: 10px 0px;
     }         
 
+    .container > div > a > img {
+    border-width: 12px;
+    border-style: solid;
+    border-image: url("/assets/img/images/png-transparent-frame-border-silver.png") 16 stretch;   }
+
 @media (max-width: 400px) {
     .container {
         display:grid;  
@@ -54,6 +59,17 @@ order: 5
     .p_t_0 {
         padding-top: 0px !important;
     }
+
+#post-list .card , {
+    border-radius:14px;
+    border-width: 12px;
+    border-style: solid;
+    border-image: url("/assets/img/images/png-transparent-frame-border-silver.png") 18 stretch;
+    border-image-outset: 0px;
+    background: var(--card-bg);
+}
+
+
 }
 
 </style>    
@@ -85,7 +101,7 @@ Do not ask me why and how, but I really wear them all, rotating each few days. I
 
 {% if leftright == 1 %}
 <div class="p_b_0" style="text-align: right">
-<img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:400px; height:250px; border-radius: 80px 0px 0px 80px;"></div>
+<img alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:400px; height:250px;"></div>
 <div class="p_b_30 p_t_0" style="padding:10px; text-align: left; justify-self: stretch;">
 <span class="item_name">{{ item.name }}</span><br>
 Type: {{ item.type }}<br>
@@ -97,7 +113,7 @@ WR {{ item.water_resistance }}<br>
 
 {% else %}
 <div class="p_b_0" class="mobile_show" style="text-align: left; display: none;">
-<img class="mobile_show" alt="{{ item.name }}" src="{{item.image}}" style="display: none; object-fit: cover; width:400px; height:250px; border-radius: 0px 80px 80px 0px;">
+<img class="mobile_show" alt="{{ item.name }}" src="{{item.image}}" style="display: none; object-fit: cover; width:400px; height:250px">
 </div>
 <div class="p_b_30 p_t_0" style="padding:10px; text-align: right">
 <span class="item_name">{{ item.name }}</span><br>
@@ -108,7 +124,7 @@ WR: {{ item.water_resistance }}<br>
 {{ item.date_acquired }}<br>
 </div>
 <div class="mobile_hide" style="text-align: left">
-<img class="mobile_hide" alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:400px; height:250px; border-radius: 0px 80px 80px 0px;">
+<img class="mobile_hide" alt="{{ item.name }}" src="{{item.image}}" style="object-fit: cover; width:400px; height:250px">
 </div>
 {% endif %}
 
