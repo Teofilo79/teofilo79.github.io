@@ -11,7 +11,6 @@
 /* append your custom style below */
 
 
-/* Dark mode variables available for editing */
 
 html[data-mode=light] {
   --main-bg: #bbc7cf;
@@ -19,6 +18,10 @@ html[data-mode=light] {
   --topbar-bg: #bbc7cf;
   --heading-color: rgb(37, 63, 164);
   --text-muted-color: rgb(5, 49, 137);
+  --sidebar-active-color: rgb(67, 66, 66);
+  --sidebar-muted-color: rgb(67, 66, 66);  
+  --site-title-color:rgb(67, 66, 66);
+  --site-subtitle-color:rgb(67, 66, 66);  
 }
 
 html:not([data-mode]) {
@@ -27,14 +30,23 @@ html:not([data-mode]) {
   --topbar-bg: #bbc7cf;
   --heading-color: rgb(37, 63, 164);
   --text-muted-color: rgb(5, 49, 137);
+  --sidebar-active-color: rgb(67, 66, 66);
+  --sidebar-muted-color: rgb(67, 66, 66); 
+  --site-title-color:rgb(67, 66, 66);  
+  --site-subtitle-color:rgb(67, 66, 66);  
   }
 
 html[data-mode=dark] {
   --main-bg: #2e384e; 
   --sidebar-bg: #2e384e;
   --topbar-bg: #2e384e;
+  --card-bg: #3e4b66;
   --heading-color: #bbe3ff;
   --text-muted-color: #c2cbdf;
+  --sidebar-active-color: white;
+  --sidebar-muted-color: white;  
+  --site-title-color:white;  
+  --site-subtitle-color:white;     
 }
 
 #post-list .card , {
@@ -46,8 +58,20 @@ html[data-mode=dark] {
     background: var(--card-bg);
 }
 
-#avatar > img {
+#avatar {
     border-radius:100px;
-    border-width: 6px;
+    border-width: 1px;
     border-style: solid;
+    border-color: white;
+    filter: drop-shadow(#616367 5px 5px 5px);
+}
+
+.nav-item > * , .site-title , .site-subtitle , {
+text-shadow:
+  0px 0px 2px rgb(255, 255, 255),
+  2px 2px 4px rgb(80, 80, 80);  
+}
+
+h1 {
+  font-weight:bold;
 }
