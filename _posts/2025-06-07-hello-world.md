@@ -1,8 +1,6 @@
 ---
 title: "It is about having fun"
 date: 2025-06-07 00:00:00 +0100
-categories: [Greeting]
-tags: [Hello]
 image: /assets/img/images/hello_world.png
 pin: true
 ---
