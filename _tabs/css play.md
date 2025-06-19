@@ -1,6 +1,6 @@
 ---
 # the default layout is 'page'
-icon: fa fa-css3
+icon: fa fa-code
 order: 6
 ---
 
