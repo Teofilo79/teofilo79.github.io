@@ -21,7 +21,10 @@ html[data-mode=light] {
   --sidebar-active-color: rgb(67, 66, 66);
   --sidebar-muted-color: rgb(67, 66, 66);  
   --site-title-color:rgb(67, 66, 66);
-  --site-subtitle-color:rgb(67, 66, 66);  
+  --site-subtitle-color:rgb(67, 66, 66); 
+  --card-bg: rgba(0, 0, 0, 0); 
+  --text-muted-color: #34343c;
+  --heading-color: rgb(67, 66, 66);
 }
 
 html:not([data-mode]) {
@@ -34,6 +37,9 @@ html:not([data-mode]) {
   --sidebar-muted-color: rgb(67, 66, 66); 
   --site-title-color:rgb(67, 66, 66);  
   --site-subtitle-color:rgb(67, 66, 66);  
+  --card-bg: rgba(0, 0, 0, 0); 
+  --text-muted-color: #34343c;  
+  --heading-color: rgb(67, 66, 66);  
   }
 
 html[data-mode=dark] {

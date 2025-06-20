@@ -2,7 +2,6 @@
 title: "It is about having fun"
 date: 2025-06-07 00:00:00 +0100
 image: /assets/img/images/hello_world.png
-pin: true
 ---
 
 <h2>Having fun is the ultimate answer to the most of the questions in this life.</h2>
