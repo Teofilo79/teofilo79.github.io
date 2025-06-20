@@ -1,14 +1,9 @@
 ---
 title: "It is about having fun"
 date: 2025-06-07 00:00:00 +0100
-categories: [Greeting]
-tags: [Hello]
-image: /assets/img/images/hello_world.png
-pin: true
 ---
 
 <h2>Having fun is the ultimate answer to the most of the questions in this life.</h2>
-<h3>This site is about things that I enjoy. That bring emotions.</h3><br>
 
 Dear Universe,<br>
 This is very first entry of my personal blog.<br><br>
