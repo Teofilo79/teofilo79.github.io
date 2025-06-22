@@ -11,6 +11,12 @@
   image: "https://i.redd.it/tga2m154hz681.jpg"
   price: "220 usd"
 
+- name: "Signum Cuda Bronze Cathedral"
+  description: "It's bright and beautiful like the world around us! And it is bronze!"
+  image: "https://www.signumwatches.com/cdn/shop/files/6746110E-694E-4C4B-99B5-29D30F789490_720x.jpg?v=1730383843"
+  price: "500 usd"
+
+
 - name: "BERNY Compressor Diver Watch V3-AM339M"
   description: "Something talks to me in this design. I like it."
   image: "https://img.watchcrunch.com/0XEUv0_nN1ctI0tUpgpm72wK1-Jsi_npGMjy9ku4D44/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOS8xOC8wZmQyYTE0Mi03MzgyLTRmYTgtOTcyMy1lNTZiMWIxNDUwODcucG5n.png"
