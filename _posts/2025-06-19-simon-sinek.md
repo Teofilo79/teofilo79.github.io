@@ -1,11 +1,10 @@
 ---
 title: "Simon Sinek"
 date: 2025-06-19 00:00:00 +0100
-image: https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/Author-Photo-2019_404094.jpg
 categories: [Learning]
 tags: [Leadership]
 ---
-
+![Simon](https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/images/panoramic/Author-Photo-2019_404094.jpg){: .normal w="1000" .shadow}
 Let me tell you a bit about this man. Optimist. Motivator. Coach. Ted Lasso of the real world. 
 <br><br>
 I totally share his view on the world and business, he speaks in most clear and understanding words, describing what I always had in mind. Like in the song "Killing me softly with his song, Telling my whole life with his words".
