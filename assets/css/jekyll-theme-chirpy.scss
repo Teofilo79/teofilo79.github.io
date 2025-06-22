@@ -25,6 +25,7 @@ html[data-mode=light] {
   --card-bg: rgba(0, 0, 0, 0); 
   --text-muted-color: #34343c;
   --heading-color: rgb(67, 66, 66);
+
 }
 
 html:not([data-mode]) {
@@ -39,7 +40,9 @@ html:not([data-mode]) {
   --site-subtitle-color:rgb(67, 66, 66);  
   --card-bg: rgba(0, 0, 0, 0); 
   --text-muted-color: #34343c;  
-  --heading-color: rgb(67, 66, 66);  
+  --heading-color: rgb(67, 66, 66); 
+  background-image: url(/assets/img/images/grey_background.png); 
+  background-repeat: repeat;
   }
 
 html[data-mode=dark] {
@@ -52,7 +55,8 @@ html[data-mode=dark] {
   --sidebar-active-color: white;
   --sidebar-muted-color: white;  
   --site-title-color:white;  
-  --site-subtitle-color:white;     
+  --site-subtitle-color:white;  
+
 }
 
 #post-list .card , {
