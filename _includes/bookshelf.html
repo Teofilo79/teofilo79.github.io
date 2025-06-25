@@ -1,0 +1,121 @@
+<style type="text/css">
+
+.bookcase {
+display:grid;
+grid-template-columns: 30px 1fr 20px;
+grid-template-rows: 20px 1 fr 20px;
+}
+
+
+
+.shelves {
+display:flex;
+flex-wrap:wrap;
+align-items:flex-end;
+gap: 55px 0px;
+background-image: url("/assets/img/images/bookshelf_background.png");
+background-size: 100% 178px;
+background-repeat: repeat-y;
+padding:28px;
+justify-self: start;
+align-self: start;
+}
+
+.book {
+width:30px;
+height:100px;
+border:1px solid grey;
+z-index:0;
+color:grey;
+}
+
+.small {
+width:16px;
+height:120px;
+}
+
+.medium {
+width:30px;
+height:100px;
+}
+
+.large {
+width:40px;
+height:90px;
+}
+
+.to_right {
+transform: rotateZ(4deg);
+margin: 0px 4px;
+}
+
+.to_left {
+transform: rotateZ(-4deg);
+margin: 0px 4px;
+}
+
+.book:hover {
+animation: lookcloser ease-out 0.5s forwards;
+}
+
+@keyframes lookcloser {
+from {transform: scale(1)}
+to {transform: scale(2); z-index:2;};
+}
+
+</style>
+
+<div class="bookcase">
+
+	<div style="width:30px; height: 42px;"></div>
+	<div style="width:100%; height: 42px;"></div>
+	<div style="width:28px; height: 42px;"></div>	
+	
+	<div style="width:30px; height: auto;"></div>
+
+	<div class="shelves">
+		<div class="book large">1
+		</div>
+		<div class="book large to_left">2
+		</div>
+		<div class="book medium to_right">3
+		</div>	
+		<div class="book small">4
+		</div>
+		<div class="book medium to_left">5
+		</div>
+		<div class="book medium">6
+		</div>	
+		<div class="book large to_right">7
+		</div>
+		<div class="book small">8
+		</div>
+		<div class="book large to_left">9
+		</div>	
+		<div class="book medium">10
+		</div>
+		<div class="book medium">11
+		</div>
+		<div class="book medium to_left">12
+		</div>	
+		<div class="book large to_right">13
+		</div>
+		<div class="book small">14
+		</div>
+		<div class="book large to_left">15
+		</div>	
+		<div class="book medium to_left">16
+		</div>
+		<div class="book small">17
+		</div>
+		<div class="book small to_left">18	
+		</div>	
+	</div>
+
+	<div  style="width:28px; height: auto;"></div>	
+	
+	<div style="width:30px; height: 42px;"></div>	
+	<div style="width:100%; height: 42px;"></div>	
+	<div style="width:28px; height: 42px;"></div>	
+	
+</div>

@@ -13,9 +13,9 @@
 
 
 html[data-mode=light] {
-  --main-bg: #bbc7cf;
-  --sidebar-bg: #bbc7cf;
-  --topbar-bg: #bbc7cf;
+  --main-bg: rgba(0, 0, 0, 0);
+  --sidebar-bg: rgba(0, 0, 0, 0);
+  --topbar-bg: rgba(0, 0, 0, 0);
   --heading-color: rgb(37, 63, 164);
   --text-muted-color: rgb(5, 49, 137);
   --sidebar-active-color: rgb(67, 66, 66);
@@ -29,9 +29,9 @@ html[data-mode=light] {
 }
 
 html:not([data-mode]) {
-  --main-bg: #bbc7cf;
-  --sidebar-bg: #bbc7cf;
-  --topbar-bg: #bbc7cf;
+  --main-bg: rgba(0, 0, 0, 0);
+  --sidebar-bg: rgba(0, 0, 0, 0);
+  --topbar-bg: rgba(0, 0, 0, 0);
   --heading-color: rgb(37, 63, 164);
   --text-muted-color: rgb(5, 49, 137);
   --sidebar-active-color: rgb(67, 66, 66);
@@ -84,4 +84,14 @@ text-shadow:
 
 h1 {
   font-weight:bold;
+}
+
+body {
+  	background: -webkit-radial-gradient(center, circle farthest-corner, rgba(255,255,255,0) 50%, rgba(200,200,200,1)), -webkit-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+	background: -moz-radial-gradient(center, circle farthest-corner, rgba(255,255,255,0) 50%, rgba(200,200,200,1)), -webkit-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+	background: -ms-radial-gradient(center, circle farthest-corner, rgba(255,255,255,0) 50%, rgba(200,200,200,1)), -webkit-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+	background: -o-radial-gradient(center, circle farthest-corner, rgba(255,255,255,0) 50%, rgba(200,200,200,1)), -webkit-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+	background: radial-gradient(center, circle farthest-corner, rgba(255,255,255,0) 50%, rgba(200,200,200,1)), -webkit-radial-gradient(center, circle, rgba(255,255,255,.35), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 21%), -webkit-radial-gradient(center, circle, rgba(0,0,0,.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+	background-size: 100% 100%, 10px 10px, 10px 10px, 100% 100%;
+	background-position: top center, 1px 1px, 0px 0px, top center;
 }
