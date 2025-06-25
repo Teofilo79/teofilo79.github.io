@@ -32,9 +32,17 @@ width:100%;
 .book {
 width:30px;
 height:100px;
-border:1px solid grey;
 z-index:0;
 color:grey;
+text-align:center;
+background:lightgrey;
+transform: translateY(0);
+transform: scale(1);
+box-shadow: 2px -3px 4px rgba(98, 99, 95, 0.69);
+border-top-style: outset;
+border-right-style: outset;
+border-radius:4px;
+border-width:4px;
 }
 
 .small {
@@ -63,12 +71,12 @@ margin: 0px 4px;
 }
 
 .book:hover {
-animation: lookcloser ease-out 0.5s forwards;
+animation: lookcloser .5s ease-in forwards;
 }
 
 @keyframes lookcloser {
-from {transform: scale(1)}
-to {transform: scale(2); z-index:2;};
+0% {transform: scale(1);z-index:1}	
+100% {transform: scale(3) rotate(90deg); z-index:2}
 }
 
 </style>
