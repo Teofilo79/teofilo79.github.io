@@ -7,3 +7,7 @@ order: 7
 My reading list with some comments and thoughts<br>
 
 {% include bookshelf.html %}
+
+<h2>Work in progress, please come back later</h2>
+
+{% include bookshelf.html %}
