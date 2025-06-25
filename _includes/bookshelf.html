@@ -2,8 +2,15 @@
 
 .bookcase {
 display:grid;
-grid-template-columns: 30px 1fr 20px;
+grid-template-columns: 20px 1fr 20px;
 grid-template-rows: 20px 1 fr 20px;
+    border-radius:14px;
+    border-width: 14px;
+    border-style: solid;
+    border-image: url("/assets/img/images/png-transparent-frame-border-silver.png") 18 stretch;
+    border-image-inset: 10px;
+background-image: url("/assets/img/images/silver_metal_background_1.jpg");
+background-size: cover;
 }
 
 
@@ -13,12 +20,13 @@ display:flex;
 flex-wrap:wrap;
 align-items:flex-end;
 gap: 55px 0px;
-background-image: url("/assets/img/images/bookshelf_background.png");
+background-image: url("/assets/img/images/bookshelf_background1.png");
 background-size: 100% 178px;
 background-repeat: repeat-y;
 padding:28px;
 justify-self: start;
 align-self: start;
+width:100%;
 }
 
 .book {
