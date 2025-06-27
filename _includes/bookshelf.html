@@ -32,9 +32,7 @@ width:100%;
 .book {
 padding-top:auto;
 z-index:0;
-color:grey;
 text-align:center;
-background:lightgrey;
 transform: translateY(0);
 transform: scale(1);
 box-shadow: 2px -3px 4px rgba(98, 99, 95, 0.69);
@@ -42,23 +40,55 @@ border-top-style: outset;
 border-right-style: outset;
 border-radius:4px;
 border-width:4px;
+    writing-mode: sideways-lr;
+    text-orientation: sideways;
+	font-size:13px;
+	line-height:13px;
+	font-family: sans-serif;
+	padding: 4px;	
+	color:rgb(236, 236, 236);
+	text-shadow: 0px 0px 2px rgb(0, 0, 0);
 }
 
 .small {
 width:16px;
 height:120px;
+background-image: linear-gradient(
+	to right,
+rgb(40, 40, 40) 0,
+rgb(192, 192, 192) 12%, 
+
+rgb(197, 197, 197) 88%,
+rgb(33, 46, 33) 100%
+	);
 }
 
 .medium {
 width:30px;
 height:100px;
 margin-top:20px;
+background-image: linear-gradient(
+	to right,
+	#462523 0,
+   #cb9b51 12%, 
+
+	#cb9b51 88%,
+	#462523 100%
+	);
 }
 
 .large {
 width:40px;
 height:90px;
 margin-top:30px;
+background-image: linear-gradient(
+	to right,
+rgb(37, 35, 70) 0,
+rgb(121, 182, 202) 12%, 
+
+rgb(121, 182, 202) 88%,
+rgb(36, 35, 70) 100%
+	);
 }
 
 .to_right {
@@ -77,7 +107,7 @@ animation: lookcloser .5s ease-in forwards;
 
 @keyframes lookcloser {
 0% {transform: scale(1);z-index:1}	
-100% {transform: scale(2) rotate(90deg); z-index:2}
+100% {transform: scale(2) rotate(0deg); z-index:2}
 }
 
 </style>
@@ -91,43 +121,43 @@ animation: lookcloser .5s ease-in forwards;
 	<div style="width:30px; height: auto;"></div>
 
 	<div class="shelves">
-		<div class="book large">1
+		<div class="book large">Book name here large very large
 		</div>
-		<div class="book large to_left">2
+		<div class="book large to_left">Book name here large very large very large
 		</div>
-		<div class="book medium to_right">3
+		<div class="book medium to_right">Book name here large
 		</div>	
-		<div class="book small">4
+		<div class="book small">Book name here
 		</div>
-		<div class="book medium to_left">5
+		<div class="book medium to_left">Book name here large
 		</div>
-		<div class="book medium">6
+		<div class="book medium">Book name here large
 		</div>	
-		<div class="book large to_right">7
+		<div class="book large to_right">Book name here large very large very large
 		</div>
-		<div class="book small">8
+		<div class="book small">Book name here
 		</div>
-		<div class="book large to_left">9
+		<div class="book large to_left">Book name here large very large very large
 		</div>	
-		<div class="book medium">10
+		<div class="book medium">Book name here large
 		</div>
-		<div class="book medium">11
+		<div class="book medium">Book name here large
 		</div>
-		<div class="book medium to_left">12
+		<div class="book medium to_left">Book name here large
 		</div>	
-		<div class="book large to_right">13
+		<div class="book large to_right">Book name here large very large
 		</div>
-		<div class="book small">14
+		<div class="book small">Book name here
 		</div>
-		<div class="book large to_left">15
+		<div class="book large to_left">Book name here large very large
 		</div>	
-		<div class="book medium to_left">16
+		<div class="book medium to_left">Book name here large	
 		</div>
-		<div class="book small">17
+		<div class="book small">Book name here
 		</div>
-		<div class="book large to_left">18	
+		<div class="book large to_left">Book name here large very large very large
 		</div>	
-		<div class="book large">19	
+		<div class="book large">Book name here large very large	very large
 		</div>			
 	</div>
 
