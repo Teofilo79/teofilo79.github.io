@@ -30,8 +30,7 @@ width:100%;
 }
 
 .book {
-width:30px;
-height:100px;
+padding-top:auto;
 z-index:0;
 color:grey;
 text-align:center;
@@ -53,11 +52,13 @@ height:120px;
 .medium {
 width:30px;
 height:100px;
+margin-top:20px;
 }
 
 .large {
 width:40px;
 height:90px;
+margin-top:30px;
 }
 
 .to_right {
@@ -76,7 +77,7 @@ animation: lookcloser .5s ease-in forwards;
 
 @keyframes lookcloser {
 0% {transform: scale(1);z-index:1}	
-100% {transform: scale(3) rotate(90deg); z-index:2}
+100% {transform: scale(2) rotate(90deg); z-index:2}
 }
 
 </style>
@@ -124,8 +125,10 @@ animation: lookcloser .5s ease-in forwards;
 		</div>
 		<div class="book small">17
 		</div>
-		<div class="book small to_left">18	
+		<div class="book large to_left">18	
 		</div>	
+		<div class="book large">19	
+		</div>			
 	</div>
 
 	<div  style="width:28px; height: auto;"></div>	
