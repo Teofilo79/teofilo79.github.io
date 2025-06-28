@@ -13,102 +13,116 @@ background-image: url("/assets/img/images/silver_metal_background_1.jpg");
 background-size: cover;
 }
 
-
-
 .shelves {
 display:flex;
 flex-wrap:wrap;
 align-items:flex-end;
-gap: 55px 0px;
-background-image: url("/assets/img/images/bookshelf_background1.png");
-background-size: 100% 178px;
+gap: 76px 0px;
+background-image: url("/assets/img/images/bookshelf_background2.png");
+background-size: 100% 355px;
 background-repeat: repeat-y;
-padding:28px;
+padding:0px 30px 30px 30px;
 justify-self: start;
 align-self: start;
 width:100%;
 }
 
 .book {
-padding-top:auto;
-z-index:0;
-text-align:center;
-transform: translateY(0);
-transform: scale(1);
-box-shadow: 2px -3px 4px rgba(98, 99, 95, 0.69);
-border-top-style: outset;
-border-right-style: outset;
-border-radius:4px;
-border-width:4px;
+    width: 50px;
+    height: 280px;
+    position: relative;
+    margin-left: 3px;
+    top: 30px;
+    transform-style: preserve-3d;
+    transform: translateZ(0) rotateY(0);
+    transition: transform 1s;
+	background-image:
+	  linear-gradient(to right,
+	  rgba(0, 0, 0, 0.55),
+	  white 20%,
+	  white 80%,
+	  rgba(0, 0, 0, 0.55)
+	  );
+	box-shadow: 4px 0px 4px grey;
+}
+
+.side {
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 3px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    transform-origin: center left;
+  }
+  
+  .spine {
+    position: relative;
+    width: 50px;
+    height: 280px;
+    transform: rotateY(0deg) translateZ(0px);
+  }
+  
+  .spine-title {
+    margin: 8px;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    font-size: 18px;
+    color: black;
     writing-mode: sideways-lr;
     text-orientation: sideways;
-	font-size:13px;
-	line-height:13px;
-	font-family: sans-serif;
-	padding: 4px;	
-	color:rgb(236, 236, 236);
-	text-shadow: 0px 0px 2px rgb(0, 0, 0);
-}
+  }
 
-.small {
-width:16px;
-height:120px;
-background-image: linear-gradient(
-	to right,
-rgb(40, 40, 40) 0,
-rgb(192, 192, 192) 12%, 
-
-rgb(197, 197, 197) 88%,
-rgb(33, 46, 33) 100%
-	);
-}
-
-.medium {
-width:30px;
-height:100px;
-margin-top:20px;
-background-image: linear-gradient(
-	to right,
-	#462523 0,
-   #cb9b51 12%, 
-
-	#cb9b51 88%,
-	#462523 100%
-	);
-}
-
-.large {
-width:40px;
-height:90px;
-margin-top:30px;
-background-image: linear-gradient(
-	to right,
-rgb(37, 35, 70) 0,
-rgb(121, 182, 202) 12%, 
-
-rgb(121, 182, 202) 88%,
-rgb(36, 35, 70) 100%
-	);
-}
-
-.to_right {
-transform: rotateZ(4deg);
-margin: 0px 4px;
-}
-
-.to_left {
-transform: rotateZ(-4deg);
-margin: 0px 4px;
-}
-
-.book:hover {
-animation: lookcloser .5s ease-in forwards;
-}
-
-@keyframes lookcloser {
-0% {transform: scale(1);z-index:1}	
-100% {transform: scale(2) rotate(0deg); z-index:2}
-}
+    .long-title {
+    margin: 6px;
+    font-size: 16px;
+	line-height: 18px;
+	padding-bottom: 30px;
+  }
+  
+  .spine-author {
+    position: absolute;
+	display:block;
+    color: black;
+    bottom: 0px;
+    left: 0%;
+    font-size: 10px; 
+	line-height:12px;
+	padding-bottom:10px;
+	width:46px;
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: clip;  
+  }
+  
+  .top {
+    width: 50px;
+    height: 190px;
+    top: -2px;
+    background-image: linear-gradient(90deg, white 90%, gray 10%);
+    background-size: 5px 5px;
+    transform: rotateX(90deg) translateZ(91px) translateY(-91px);
+  }
+  
+  .cover {
+    width: 190px;
+    height: 280px;
+    top: 0px;
+    background-image: url("https://picsum.photos/190/280");
+    background-size: contain;
+    background-repeat: round;
+    left: 50px;
+    transform: rotateY(90deg) translateZ(0);
+    transition: transform 1s;
+  }
+  
+  .book:hover {
+    z-index: 1;
+    transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
+      translateX(-30px);
+	margin-right:50px;
+  }
 
 </style>
 
@@ -121,44 +135,143 @@ animation: lookcloser .5s ease-in forwards;
 	<div style="width:30px; height: auto;"></div>
 
 	<div class="shelves">
-		<div class="book large">Book name here large very large
-		</div>
-		<div class="book large to_left">Book name here large very large very large
-		</div>
-		<div class="book medium to_right">Book name here large
-		</div>	
-		<div class="book small">Book name here
-		</div>
-		<div class="book medium to_left">Book name here large
-		</div>
-		<div class="book medium">Book name here large
-		</div>	
-		<div class="book large to_right">Book name here large very large very large
-		</div>
-		<div class="book small">Book name here
-		</div>
-		<div class="book large to_left">Book name here large very large very large
-		</div>	
-		<div class="book medium">Book name here large
-		</div>
-		<div class="book medium">Book name here large
-		</div>
-		<div class="book medium to_left">Book name here large
-		</div>	
-		<div class="book large to_right">Book name here large very large
-		</div>
-		<div class="book small">Book name here
-		</div>
-		<div class="book large to_left">Book name here large very large
-		</div>	
-		<div class="book medium to_left">Book name here large	
-		</div>
-		<div class="book small">Book name here
-		</div>
-		<div class="book large to_left">Book name here large very large very large
-		</div>	
-		<div class="book large">Book name here large very large	very large
-		</div>			
+	
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title long-title">Old Man and the Sea fishing and singing</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div> 
+
+
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+     <div class="book">
+        <div class="side spine ">
+          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-author">Ernest<br>Hemingway</span>
+        </div>
+        <div class="side top"></div>
+        <div class="side cover" 
+             style="background-image: url(https://m.media-amazon.com/images/M/MV5BNGQ0OWNlYTQtZjBlYy00NDJlLTk2ZDEtYzdkMzYxZmU3OWM2XkEyXkFqcGc@._V1_.jpg);cursor:pointer;"> 
+        </div>
+      </div>
+      
+
+
+		
 	</div>
 
 	<div  style="width:28px; height: auto;"></div>	
