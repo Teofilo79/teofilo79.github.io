@@ -17,9 +17,9 @@ background-size: cover;
 display:flex;
 flex-wrap:wrap;
 align-items:flex-end;
-gap: 66px 0px;
+gap: 58px 0px;
 background-image: url("/assets/img/images/bookshelf_background2.png");
-background-size: 100% 285px;
+background-size: 100% 218px;
 background-repeat: repeat-y;
 padding:0px 30px 30px 30px;
 justify-self: start;
@@ -28,8 +28,8 @@ width:100%;
 }
 
 .book {
-    width: 50px;
-    height: 220px;
+    width: 40px;
+    height: 160px;
     position: relative;
     margin-left: 3px;
     top: 30px;
@@ -58,17 +58,18 @@ width:100%;
   
   .spine {
     position: relative;
-    width: 50px;
-    height: 220px;
+    width: 40px;
+    height: 160px;
     transform: rotateY(0deg) translateZ(0px);
   }
   
   .spine-title {
-    margin: 8px;
+    margin: 6px;
     position: absolute;
-    top: 5px;
+    top: 0px;
     left: 0px;
-    font-size: 18px;
+    font-size: 14px;
+    padding-bottom: 10px;
     color:rgb(72, 78, 81);
     writing-mode: sideways-lr;
     text-orientation: sideways;
@@ -76,10 +77,10 @@ width:100%;
   }
 
     .long-title {
-    margin: 6px;
-    font-size: 16px;
-	line-height: 18px;
-	padding-bottom: 30px;
+    margin: 2px;
+    font-size: 14px;
+	line-height: 16px;
+	padding-bottom: 20px;
 	text-overflow: clip; 
   }
   
@@ -90,31 +91,31 @@ width:100%;
     bottom: 0px;
     left: 0%;
     font-size: 10px; 
-	line-height:12px;
-	padding-bottom:10px;
-	width:46px;
+	line-height:10px;
+	padding-bottom:2px;
+	width:36px;
 	white-space: nowrap;
 	overflow:hidden;
 	text-overflow: clip;  
   }
   
   .top {
-    width: 50px;
-    height: 190px;
+    width: 40px;
+    height: 120px;
     top: -2px;
     background-image: linear-gradient(90deg, white 90%, gray 10%);
     background-size: 5px 5px;
-    transform: rotateX(90deg) translateZ(91px) translateY(-91px);
+    transform: rotateX(90deg) translateZ(59px) translateY(-59px);
   }
   
   .cover {
-    width: 190px;
-    height: 220px;
+    width: 120px;
+    height: 160px;
     top: 0px;
     background-image: url("https://picsum.photos/190/280");
     background-size: contain;
     background-repeat: round;
-    left: 50px;
+    left: 36px;
     transform: rotateY(90deg) translateZ(0);
     transition: transform 1s;
   }
@@ -139,7 +140,7 @@ width:100%;
 	
      <div class="book">
         <div class="side spine ">
-          <span class="spine-title">Old Man and the Sea</span>
+          <span class="spine-title">Old Man and</span>
           <span class="spine-author">Ernest<br>Hemingway</span>
         </div>
         <div class="side top"></div>
