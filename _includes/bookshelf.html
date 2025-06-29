@@ -17,9 +17,9 @@ background-size: cover;
 display:flex;
 flex-wrap:wrap;
 align-items:flex-end;
-gap: 76px 0px;
+gap: 66px 0px;
 background-image: url("/assets/img/images/bookshelf_background2.png");
-background-size: 100% 355px;
+background-size: 100% 285px;
 background-repeat: repeat-y;
 padding:0px 30px 30px 30px;
 justify-self: start;
@@ -29,7 +29,7 @@ width:100%;
 
 .book {
     width: 50px;
-    height: 280px;
+    height: 220px;
     position: relative;
     margin-left: 3px;
     top: 30px;
@@ -59,7 +59,7 @@ width:100%;
   .spine {
     position: relative;
     width: 50px;
-    height: 280px;
+    height: 220px;
     transform: rotateY(0deg) translateZ(0px);
   }
   
@@ -69,9 +69,10 @@ width:100%;
     top: 5px;
     left: 0px;
     font-size: 18px;
-    color: black;
+    color:rgb(72, 78, 81);
     writing-mode: sideways-lr;
     text-orientation: sideways;
+    text-shadow: 1px 1px 2px grey;
   }
 
     .long-title {
@@ -79,12 +80,13 @@ width:100%;
     font-size: 16px;
 	line-height: 18px;
 	padding-bottom: 30px;
+	text-overflow: clip; 
   }
   
   .spine-author {
     position: absolute;
 	display:block;
-    color: black;
+    color: grey;
     bottom: 0px;
     left: 0%;
     font-size: 10px; 
@@ -107,7 +109,7 @@ width:100%;
   
   .cover {
     width: 190px;
-    height: 280px;
+    height: 220px;
     top: 0px;
     background-image: url("https://picsum.photos/190/280");
     background-size: contain;
