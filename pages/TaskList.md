@@ -1,8 +1,8 @@
 ---
 layout: compress
+permalink: /pages/tasklist
 ---
 
-<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -17,7 +17,6 @@ layout: compress
     margin:0;
     border:0;
     box-sizing: border-box;
-/*outline: 1px dotted red;     */
 }
 
 :root {
@@ -292,7 +291,7 @@ animation: blinking 3s infinite;
 
 </style>
 
-<script>
+<script defer>
 
 // This is main type of object. It will be used to create UrgentImportantTasks, they will be added to one of 4 arrays basing on urgency-importance values
 class TheTask {
@@ -363,7 +362,6 @@ pageRefresh ("Normal_Mode");
 }
 
 function saveNotes() {
-//	localStorage.clear();
     localStorage.setItem('UrgentImportantTasks', JSON.stringify(UrgentImportantTasks));
     localStorage.setItem('NotUrgentImportantTasks', JSON.stringify(NotUrgentImportantTasks));
     localStorage.setItem('UrgentNotImportantTasks', JSON.stringify(UrgentNotImportantTasks));
