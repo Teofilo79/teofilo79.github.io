@@ -1,16 +1,451 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>TaskList</title-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
-<link href="https://vscode.dev/github/Teofilo79/teofilo79.github.io/blob/master/_includes/coding_exercises/JS/TaskList.css" rel="stylesheet" type="text/css">
-<script src="https://vscode.dev/github/Teofilo79/teofilo79.github.io/blob/master/_includes/coding_exercises/JS/TaskList.js" defer></script>
-</head>
+<style>
+*,
+::before,
+::after {
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+/*outline: 1px dotted red;     */
+}
 
-<body>
+:root {
+    --backgrnd-color: #bbc7cf;
+	--btn-color: #b0b3c0;
+    --lcd-color:rgb(170, 232, 238);
+    --text-highlight: firebrick;
+}
+
+.hide {
+    display:none;
+}
+.show {
+    display:block;
+}
+
+body {
+    background: var(--backgrnd-color);
+    font-family:Electrolize, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+/*    height: 100vh;*/
+    margin-top:20px;
+}
+
+.main_tool {
+    /* background-image: linear-gradient(#80786D 0%, #BBB5AA 5%, #BBB5AA 95%, #80786D 100%);     */
+    padding-bottom: 20px;
+    width: 80vw;
+    height: auto;
+    display: grid;
+    gap:20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto; 
+    border: 15px double transparent;
+    /*border-image: url("png-transparent-frame-border-silver.png") 18 stretch;
+     box-shadow: 15px 15px 40px black; */
+    grid-template-areas: 
+    "headr headr"
+    "statusRow statusRow"
+    "inputForm inputForm"
+    "UrgentImportant NotUrgentImportant"
+    "UrgentNotImportant NotUrgentNotImportant";
+}
+.blockForTasks {
+    min-height:150px;
+    border-radius:8px;
+    border-width: 15px;
+    border: 4px groove grey;
+/*		border-image: url("png-transparent-frame-border-silver.png") 18 stretch;
+		border-image-outset: 4px;
+		border-color: #f1f1f1;
+		box-shadow: 0px 5px 10px inset hsla(0,0%,37%,1.00); */
+    margin: 0px 20px;
+    position: relative;
+}
+
+.headr {
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    border:none;
+    box-shadow:none;
+    padding: 0px 20px;
+}
+.headr > h1 {
+    font-family: Electrolize, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+    color:var(--lcd-color);
+    text-shadow: 0px 2px 4px black;
+}
+.headr > h2 {
+    font-size: 1.2rem;
+    color:hsla(0,0%,34%,1.00);
+    text-shadow: 2px 1px 4px white;
+    padding-left: 20px;
+/*    margin-left: auto;*/
+}
+.statusRow {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: stretch;	
+    justify-content:space-around;
+	gap:10px;
+	margin:0px 20px;
+}
+
+
+li {
+    list-style: none;
+    margin:0;
+    padding:0;
+    font-size: 1.2rem;
+    font-weight: bold;
+} 
+
+li > button {
+background-color: transparent;
+font-weight: bold;
+}
+
+.blockForTasks {
+    background-color: var(--lcd-color);
+    padding: 5px 5px;
+    z-index: 2;  
+    box-shadow: 5px 5px 10px hsla(0,0%,37%,1.00); 
+}
+
+.blockForTasks ul {
+    margin:0;
+    padding:0;
+    z-index:2;
+}
+
+.blockForTasks li {
+    margin:0;
+    padding:0;    
+    display: flex;
+    flex-wrap: wrap;
+    z-index:2;	
+}
+.blockForTasks div:first-child {
+  margin-right:auto;
+  padding-left:10px;
+  z-index:2;
+}
+.blockForTasks div:nth-child(2) {
+    padding:0px 10px;
+    z-index:2;
+  }
+.blockForTasks > h3 {
+    padding: 5px 0px 5px 10px;
+    font-size: 1rem;
+    color:dimgrey;
+    z-index:3;
+}
+/* .blockForTasks::before {
+    position: absolute;
+    left:0;
+    top:20;
+    content:'';
+    width:100%;
+    height: 50%;
+    background-image: radial-gradient(ellipse at 50% 0%, #ffffff 10%, #fbee66 14%, transparent 60%); 
+    z-index:-2;
+}
+
+.blockForTasks::after {
+    position: absolute;
+    left:0;
+    bottom:0;
+    content:'';
+    width:100%;
+    height: 100%;
+    border: 5px double grey;
+    box-shadow: 0px 5px 10px inset hsla(0,0%,37%,1.00);
+    z-index:-1;
+} */
+.inputForm {
+    border: 1px dashed black;
+    border-radius: 10px;
+    padding: 10px 10px 0px 10px ;
+    margin: 0px 20px;
+}
+.inputForm div {
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    margin-bottom:10px;
+}
+#add_button, #delete_button, .statusRow button {
+    background: var(--btn-color);    
+    border-radius:6px;
+    border: 4px groove grey;
+
+/*    border-image: url("png-transparent-frame-border-silver.png") 18 stretch; */
+/*    border-image-outset: 4px; */
+    font-family: Electrolize, Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+    font-size: 1.1rem;
+	flex-grow:1;
+}
+#task_text {
+    border: 1px dashed black;
+    border-radius: 10px;    
+    font-family:Electrolize, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:1rem;    
+    /* flex-grow: 1; */
+    color: grey;
+    flex-basis: 300px;
+}
+
+li button {
+animation: blinking 3s infinite;
+}
+
+#task_due_date {
+    width: 140px;
+    color: grey;  
+    border: 1px dashed black;
+    border-radius: 10px;    
+    font-family:Electrolize, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:1rem;    
+}
+
+.headr {   
+  grid-area: headr;
+}
+.statusRow {
+  grid-area: statusRow;
+}
+.inputForm {
+  grid-area: inputForm;
+
+#UrgentImportant {
+  grid-area: UrgentImportant;
+}
+#NotUrgentImportant {    
+  grid-area: NotUrgentImportant;
+}
+#UrgentNotImportant {     
+  grid-area: UrgentNotImportant;
+}
+#NotUrgentNotImportant {     
+  grid-area: NotUrgentNotImportant;
+}
+
+}
+
+@media (max-width:600px) {
+   .main_tool {
+    gap:10px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "headr "
+      "statusRow "
+      "inputForm "
+      "UrgentImportant"
+      "NotUrgentImportant"
+      "UrgentNotImportant"
+      "NotUrgentNotImportant";
+}
+.wrapper {
+    height: 100%;
+}    
+
+   
+.headr > h1 {
+    font-size: 2rem;
+}    
+.headr > h2 {
+    font-size: 1rem;
+}    
+}
+
+@keyframes blinking {
+    0%,100% {color: firebrick}
+    50% {color: transparent}
+}
+
+</style>
+
+<script>
+
+// This is main type of object. It will be used to create UrgentImportantTasks, they will be added to one of 4 arrays basing on urgency-importance values
+class TheTask {
+  constructor(text, dueDate, urgent, importnt) {
+    this.text = text;
+    this.dueDate = new Date(dueDate);
+    this.urgent = urgent;
+    this.importnt = importnt;  
+  } 
+}
+
+// Change the date format for task due date, so that it can be used in the code for comparing with current date
+document.querySelector("#task_due_date").value = new Date().toISOString().substring(0, 10);
+
+// This function just calculates the value to be shown next to the task
+function daysTillEnd (dueDate) {
+  var Today = new Date().getTime();
+  var DueDateSubstr = new Date(dueDate).getTime();
+  daysleft = DueDateSubstr-Today;
+  let Difference_In_Days =
+    Math.ceil
+        (daysleft / (1000 * 3600 * 24));
+  let DueDaysStatus = "";        
+  (Difference_In_Days == 0) ? DueDaysStatus = "for today" 
+  : (Difference_In_Days == 1) ? DueDaysStatus = "for tomorrow"
+  : (Difference_In_Days < 0) ? DueDaysStatus = Difference_In_Days*(-1) + " days ago"    
+  : DueDaysStatus = "do in "+ Difference_In_Days + " days"; 
+  return DueDaysStatus;
+}
+
+// Here is initial declaration of 4 arrays for Tasks
+var UrgentImportantTasks = [];
+var NotUrgentImportantTasks = [];
+var UrgentNotImportantTasks = [];
+var NotUrgentNotImportantTasks = [];
+
+// These lists will be used later for loops through 4 arrays declared above
+var OverallArray = [UrgentImportantTasks, NotUrgentImportantTasks, UrgentNotImportantTasks, NotUrgentNotImportantTasks];
+var OverallListofIDs = ["UrgentImportant", "NotUrgentImportant", "UrgentNotImportant", "NotUrgentNotImportant"];
+
+document.addEventListener('DOMContentLoaded', function() {
+loadNotes();
+pageRefresh ("Normal_Mode");
+})
+
+// This function adds new task object to the corresponding array and refreshes the page
+function addContent () {
+//	event.preventDefault();
+    var text_element = document.querySelector("#task_text");
+    var text = text_element.value;
+    var due_date_element = document.querySelector("#task_due_date");
+    var due_date = new Date(due_date_element.value);
+    var urgent_element = document.querySelector("#checkbox_Urgent");
+    var important_element = document.querySelector("#checkbox_Important");
+    var urgent = urgent_element.checked;
+    var importnt = important_element.checked;
+    var incomingData = new TheTask(text, due_date, urgent, importnt); 
+let variant = urgent +"+"+ importnt;
+switch (variant) {
+  case "true+true" : UrgentImportantTasks.push(incomingData); break;
+  case "false+true" : NotUrgentImportantTasks.push(incomingData); break;
+  case "true+false" : UrgentNotImportantTasks.push(incomingData); break;
+  case "false+false" : NotUrgentNotImportantTasks.push(incomingData); break;
+}
+saveNotes();
+pageRefresh ("Normal_Mode");
+
+}
+
+function saveNotes() {
+//	localStorage.clear();
+    localStorage.setItem('UrgentImportantTasks', JSON.stringify(UrgentImportantTasks));
+    localStorage.setItem('NotUrgentImportantTasks', JSON.stringify(NotUrgentImportantTasks));
+    localStorage.setItem('UrgentNotImportantTasks', JSON.stringify(UrgentNotImportantTasks));
+    localStorage.setItem('NotUrgentNotImportantTasks', JSON.stringify(NotUrgentNotImportantTasks));
+}
+
+function loadNotes() {
+    const UI_Tasks = localStorage.getItem('UrgentImportantTasks');
+    const NUI_Tasks = localStorage.getItem('NotUrgentImportantTasks');
+    const UNI_Tasks = localStorage.getItem('UrgentNotImportantTasks');
+    const NUNI_Tasks = localStorage.getItem('NotUrgentNotImportantTasks');
+    UrgentImportantTasks = UI_Tasks ? JSON.parse(UI_Tasks) : []
+    NotUrgentImportantTasks = NUI_Tasks ? JSON.parse(NUI_Tasks) : []
+    UrgentNotImportantTasks = UNI_Tasks ? JSON.parse(UNI_Tasks) : []
+    NotUrgentNotImportantTasks = NUNI_Tasks ? JSON.parse(NUNI_Tasks) : []
+    OverallArray = [UrgentImportantTasks, NotUrgentImportantTasks, UrgentNotImportantTasks, NotUrgentNotImportantTasks];
+}
+
+// Page refresh with the actual data from arrays. Also adds "delete" button which is not visible by default
+function pageRefresh (Mode) {
+
+if(OverallArray.length !== 0) {
+
+	for (var i=0; i < 4; i++) {                                          // loop through 4 arrays of tasks
+	document.querySelector(`#${OverallListofIDs[i]} ul`).innerHTML="";  // delete the content of the box
+	var numInList = -1;
+	for (const item of OverallArray[i]) {                               // fill box with tasks from corresponding array
+	numInList++;
+	  let HightlightColor = "black";
+	  if (Mode !== "Normal_Mode" ) {daysTillEnd(item["dueDate"]) == "for today" ? HightlightColor = "firebrick" : HightlightColor = "black"; }
+	  let added_content = document.createElement("li");
+	  added_content.innerHTML = `<div>${item["text"]}</div><div>
+	  <span style="font-weight:normal">${daysTillEnd(item["dueDate"])}</span></div><button class="hide" id="${OverallListofIDs[i]}${numInList}">[X]</button>`;
+	  added_content.style.color = HightlightColor;
+	  document.querySelector(`#${OverallListofIDs[i]} ul`).append(added_content);
+	  }
+	}
+	
+const Items = document.querySelectorAll('li button')
+
+	Items.forEach((item) => {
+	  item.addEventListener("click", () => { 
+		const LiItem = item.getAttribute("id");
+		const NeededArrayId = LiItem.slice(0,(LiItem.length - 1));   
+		const NeededArrayName = NeededArrayId + "Tasks";
+		const NeededItemPosition = LiItem.slice(-1);
+		const arr = window[NeededArrayName];
+		window[NeededArrayName].splice(NeededItemPosition,1);
+    saveNotes();
+		pageRefresh ("Normal_Mode");
+			});
+		}
+	);
+
+}
+};
+
+// Shows and hides fields for new task
+function showInputForm () {
+  var toggleBlock = document.querySelector(".inputForm");
+  toggleBlock.classList.toggle("hide");
+}  
+
+// Highlights tasks due today when hovering over the corresponding button
+function hightlightTodayTasks () {
+  document.querySelector("button[onmouseenter]").style.color = "firebrick";
+  document.querySelector("button[onmouseenter]").style.fontWeight="bold";
+  pageRefresh ("Highlight_Mode");
+  }
+
+// Resets formatting after today's tasks were highlighted
+function dehightlightTodayTasks () {
+  document.querySelector("button[onmouseenter]").style.color = "black";
+  document.querySelector("button[onmouseenter]").style.fontWeight="normal";  
+  pageRefresh ("Normal_Mode");
+    }  
+
+// Sorts task objects within each of 4 arrays and refreshes the page    
+function Sort(ArrayName) {
+OverallArray.forEach ((array) => array.sort((a, b) => a.dueDate - b.dueDate));
+pageRefresh ("Normal_Mode");
+}
+
+// Shows delete buttons for each Task
+function DeleteTask() {
+  const Items = document.querySelectorAll('li button');
+Items.forEach((item) => {
+  item.classList.toggle("hide");
+})
+}
+</script>
+
+
+
 <div class="wrapper">
     <div class="main_tool">
 
@@ -88,5 +523,4 @@
         
     </div>
 </div>
-</body>
-<!--/html-->
+
