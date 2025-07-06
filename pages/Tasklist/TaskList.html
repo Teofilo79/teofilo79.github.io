@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TaskList</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +25,8 @@
 <!-- BUTTONS --> 
 
         <div class="statusRow">
-            <button onclick="showInputForm()">Add new task</button>
-            <button onclick="DeleteTask()">Delete Task </button>
+            <button onclick="showInputForm()">+ Add new task</button>
+            <button onclick="DeleteTask()">- Delete Task </button>
             <button onmouseenter="hightlightTodayTasks ()" onmouseleave="dehightlightTodayTasks ()">Today's List</button>
             <button onclick="Sort()">Sort by Due Date</button>
         </div>
