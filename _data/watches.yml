@@ -2,6 +2,17 @@
 
   # The ones that I have:
 
+
+- name: "Citizen BN0241 Promaster Tough"
+  type: "Field"
+  description: "Beautiful, tough, reliable. Titanium - 4 times stronger than steel and 40% lighter. Solar power and highest visibility. Becomes my everyday watch."
+  image: "https://img.watchcrunch.com/iULvM6598H_x610_cXQjijWxUosoJMW1ucGQ7KqLvrY/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNS8wNy8yNy9jN2JhZmM4ZS0yOTlmLTRhYzAtYmIxYS0yNzI0NTc0MDA4NTEuanBn.jpg"
+  movement: "Solar-powered quartz"
+  water_resistance: "200 meters"
+  date_acquired: "July 2025"
+
+
+
 - name: "Citizen BN0157-11X Promaster Diver's"
   type: "Diver"
   description: "My 'go-anywhere-do-anything'. Default variant for everyday. Love the dial color, humble look and the luminous highly readable hands."

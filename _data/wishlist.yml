@@ -1,11 +1,5 @@
   # Data for watches wishlist of watches
 
-
-- name: "Citizen BN0241"
-  description: "Next one! Collecting amount. Everything in this watch is insanely good."
-  image: "https://i.ytimg.com/vi/gwNN2pg841I/maxresdefault.jpg"
-  price: "1800 zl"
-
 - name: "Orient Bambino FAC00009N0"
   description: "Another old style dressy and classic-looking masterpiece"
   image: "https://i.redd.it/tga2m154hz681.jpg"
@@ -16,6 +10,10 @@
   image: "https://www.signumwatches.com/cdn/shop/files/6746110E-694E-4C4B-99B5-29D30F789490_720x.jpg?v=1730383843"
   price: "500 usd"
 
+- name: "Vario 1918 Trench Brass Cream Dial"
+  description: "Feel the spirit of adventure and courage. Very distinctive and beautiful. Old style on a max level."
+  image: "https://vario.sg/cdn/shop/products/Trench_brass_cream.jpg?v=1659359788&width=1200"
+  price: "388 usd"
 
 - name: "BERNY Compressor Diver Watch V3-AM339M"
   description: "Something talks to me in this design. I like it."
@@ -26,3 +24,6 @@
   description: "If you see me with these, I have either robbed a bank or won a lottery."
   image: "https://img.watchcrunch.com/qSqiJ4QUjzJUPO-SCz4ZMBjDEKJeOcMh1M-t6Pavs-Y/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMS9iYzAzMDQ2Zi1jZTFiLTRkM2QtYmFlOC05YTY3ZjMwY2ZkODAuanBn.jpg"
   price: "50 000 zl"
+
+
+

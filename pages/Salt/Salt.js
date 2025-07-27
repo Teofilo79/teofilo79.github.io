@@ -4,7 +4,12 @@ let isCSVReady = false;
 let listCat = [];
 let listOfCategories = [];
 let listOfProductOptions = [];
-
+let salt_in_selected_product = "";
+let salt_result = 0;
+let own_product_flag = 0;
+let data_for_LocalStorage = [];
+let data_for_LocalStorage_array = [];
+var table_of_products;
 
 main(); // Start the async load
 
@@ -30,6 +35,7 @@ function initApp() {
     parseCSV();
     prepare_Categories();
     fill_categories_data();
+    load_data();
 }
 
 function parseCSV() {
@@ -60,8 +66,8 @@ listOfCategories.forEach (Element => {
             var newButton = document.createElement('button');
             newButton.id = Element;
             newButton.setAttribute("onclick","create_list_of_products(this.id)");
+            newButton.className = "btn3d btn3d-select";
             newButton.textContent = Element;
-            console.log(Element);
             container.append(newButton);
 })
 
@@ -86,7 +92,7 @@ listOfProductOptions.forEach (Element => {
             container.append(newOption);
 
 })
-
+document.getElementById('layer_adding_product').style.display = "block";
 update_Salt_text ();
 
 }
@@ -104,3 +110,106 @@ const result = document.getElementById('salt_in_product');
   result.textContent = salt_in_selected_product;
 };
 
+function add_product_to_the_table() {
+var added_product = document.getElementById('product-select').value;
+var added_product_quantity = document.getElementById('quantity_consumed').value;
+
+if (own_product_flag == 1) {
+added_product = document.getElementById('own-product-select').value;
+salt_in_selected_product = document.getElementById('own_salt_in_product').value;
+};
+
+var quantity_validation=isNumber(added_product_quantity);
+var salt_validation=isNumber(salt_in_selected_product);
+if (!quantity_validation || !salt_validation)
+    {alert("Цифрами, плиз!");}
+else {
+var added_product_salt = added_product_quantity * salt_in_selected_product;
+table_of_products = document.getElementById('table_of_products');
+
+var newrow = document.createElement('tr');
+newrow.innerHTML = `<tr><td>${added_product}</td><td>${added_product_quantity}</td><td>${added_product_salt}</td></tr>`;
+table_of_products.append(newrow);
+
+salt_result = salt_result + added_product_salt;
+document.getElementById('salt_result').innerText = salt_result;
+document.getElementById('layer_summary_table').style.display = "block";
+
+let new_element_for_array = {added_product,added_product_quantity,added_product_salt};
+data_for_LocalStorage_array.push(new_element_for_array);
+save_data();
+
+};
+}
+
+function clean_the_dishes() {
+    localStorage.clear();
+    window.location.reload(true);
+}
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function save_data() {
+localStorage.setItem('Salt_products', JSON.stringify(data_for_LocalStorage_array));
+}
+
+function load_data() {
+    const data_for_LocalStorage_json = localStorage.getItem('Salt_products');
+    data_for_LocalStorage_array = data_for_LocalStorage_json ? JSON.parse(data_for_LocalStorage_json) : []
+    table_of_products = document.getElementById('table_of_products');
+    table_of_products.innerHTML = `
+                <tr>
+                <td>Что</td>
+                <td>Грамм</td>
+                <td>Соль</td>
+            </tr>`
+if (data_for_LocalStorage_array.length !== 0) {
+salt_result = 0;
+for (let a of data_for_LocalStorage_array) {
+var newrow = document.createElement('tr');
+newrow.innerHTML = `<tr><td>${a.added_product}</td><td>${a.added_product_quantity}</td><td>${a.added_product_salt}</td></tr>`;
+table_of_products.append(newrow);
+salt_result = salt_result + a.added_product_salt;
+}
+document.getElementById('layer_summary_table').style.display = "block";   
+document.getElementById('salt_result').innerText = salt_result;     
+}
+    }
+
+function add_own_product_to_the_table () {
+    own_product_flag = 1;
+    var Parent = document.getElementById('layer_adding_product');
+    var Child = Parent.getElementsByTagName("label"); 
+    Child[0].style.display = "none";
+
+    document.getElementById('product-select').style.display = "none";
+    document.getElementById('own-product-select').style.display = "flex";
+
+    var Child1 = Parent.getElementsByTagName("div"); 
+    Child1[1].style.display = "none";
+    Child1[5].style.display = "none";
+    Child1[4].style.display = "flex";
+
+    document.getElementById('own_product_switcher').innerHTML = "назад в меню";
+    document.getElementById('own_product_switcher').onclick = back_to_menu;
+}   
+
+function back_to_menu () {
+    own_product_flag = 0;
+    var Parent = document.getElementById('layer_adding_product');
+    var Child = Parent.getElementsByTagName("label"); 
+    Child[0].style.display = "block";
+
+    document.getElementById('product-select').style.display = "flex";
+    document.getElementById('own-product-select').style.display = "none";
+
+    var Child1 = Parent.getElementsByTagName("div"); 
+    Child1[1].style.display = "flex";
+    Child1[5].style.display = "flex";
+    Child1[4].style.display = "none";
+
+    document.getElementById('own_product_switcher').innerHTML = "+ свой продукт";
+    document.getElementById('own_product_switcher').onclick = add_own_product_to_the_table;
+}  

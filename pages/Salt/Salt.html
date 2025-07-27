@@ -3,22 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch CSV File</title>
+    <title>Salt Calculator</title>
 <link href="Salt.css" rel="stylesheet" type="text/css">
 <script src="Salt.js" defer></script>    
 </head>
 <body>
+<div class="wrapper"><div class="main_tool">
 
-    <p>Salt is dangerous!</p>
-    <p>Beware of overdoze.</p>
+    <div class="heading"><div>Salt</div><img height="80" width="auto" src="Minnie face.png"/><div>Calculator</div></div>
+    <div class="subheading">
+
+        <div> Норма - до 5 грамм соли в день</div>
+        <!-- <img height="80" width="auto" src="[CITYPNG.COM]Mickey Mouse Minnie Mouse Glove Hands PNG - 1000x1000.png"/> -->
+
+    </div>
     
     <div id="list_of_categories"></div>
-<hr>
-    <label for="product-select">Choose a product:</label>
-        <select name="products" id="product-select" onchange="update_Salt_text()"></select>
-    <p>Содержит <span id="salt_in_product"></span> грамма соли на 100 гр</p>
-<hr>
 
 
+<div class="two_blocks_wrapper">
+
+
+<div class="main_tool_layer" id="layer_adding_product" style="display:none">
+
+    <label class="subheading" for="product-select">Сегодня в меню:</label>
+    <div class="subheading">
+        <select width="100" class="btn3d" name="products" id="product-select" onchange="update_Salt_text()"></select>
+        <input type="text" width="100" class="btn3d" id="own-product-select" style="display:none;" value="Название"></input>
+    </div>  
+
+    <div class="subheading text_block"><div id="salt_in_product"></div><div> грамм соли на 100 гр</div></div>
+
+    <div class="subheading text_block" style="display:none;">
+        <input class="btn3d" type="text" id="own_salt_in_product" value="грамм соли на 100 гр"></input>
+        <div> грамм соли на 100 гр</div>
+    </div>
+
+
+<div class="two_blocks_wrapper"><button id="own_product_switcher" class="btn3d btn3d-select" onclick="add_own_product_to_the_table()">+ свой продукт</button></div>
+
+    <div class="subheading">
+        <input style="width:120px;" type="number" class="btn3d" name="quantity_consumed" id="quantity_consumed" onchange=""></select>
+        <div style="padding-top: 20px;">сколько там грамм на весах<br><br></div>
+    </div> 
+
+    <div class="subheading">
+        <button class="btn3d btn3d-select" onclick="add_product_to_the_table()">Добавить</button>
+    </div>
+    
+</div>    
+
+
+
+
+<div class="main_tool_layer" id="layer_summary_table" style="display:none">
+
+    <div class="table_wrapper">
+        <table id="table_of_products">
+            <tr>
+                <td>Что</td>
+                <td>Грамм</td>
+                <td>Соль</td>
+            </tr>
+        </table>
+    </div>    
+
+    <div class="subheading text_block" style="padding-top:20px;">Итого:</div>
+    <div id="salt_result"></div>
+    <div class="subheading text_block"> грамм соли</div>
+
+    <div class="subheading">
+        <button class="btn3d btn3d-select" onclick="clean_the_dishes()">Ой все</button>
+    </div>  
+    
+</div>
+
+</div>
+
+
+</div></div>
 </body> 
 </html>
+
+
