@@ -143,15 +143,15 @@ const unit_of_measure_of_product = document.getElementById('unit_of_measure');
 
 function add_product_to_the_table() {
 var added_product = document.getElementById('product-select').value;
-var added_product_quantity = document.getElementById('quantity_consumed').value;
+var added_product_quantity = document.getElementById('quantity_consumed').value / 100;
 
 if (own_product_flag == 1) {
 added_product = document.getElementById('own-product-select').value;
-calories_in_selected_product = document.getElementById('own_calories_in_product').value;
-protein_in_selected_product = document.getElementById('own_protein_in_product').value;
-fat_in_selected_product = document.getElementById('own_fat_in_product').value;
-carbo_in_selected_product = document.getElementById('own_carbo_in_product').value;
-salt_in_selected_product = document.getElementById('own_salt_in_product').value;
+calories_in_selected_product = Math.round(document.getElementById('own_calories_in_product').value *100)/100;
+protein_in_selected_product = Math.round(document.getElementById('own_protein_in_product').value *100)/100;
+fat_in_selected_product = Math.round(document.getElementById('own_fat_in_product').value *100)/100;
+carbo_in_selected_product = Math.round(document.getElementById('own_carbo_in_product').value *100)/100;
+salt_in_selected_product = Math.round(document.getElementById('own_salt_in_product').value *100)/100;
 };
 
 var quantity_validation=isNumber(added_product_quantity);
