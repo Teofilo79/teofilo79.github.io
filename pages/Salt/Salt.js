@@ -4,12 +4,24 @@ let isCSVReady = false;
 let listCat = [];
 let listOfCategories = [];
 let listOfProductOptions = [];
+
+let protein_in_selected_product = "";
+let protein_result = 0;
+
+let fat_in_selected_product = "";
+let fat_result = 0;
+
+let carbo_in_selected_product = "";
+let carbo_result = 0;
+
 let salt_in_selected_product = "";
 let salt_result = 0;
+
 let own_product_flag = 0;
 let data_for_LocalStorage = [];
 let data_for_LocalStorage_array = [];
 var table_of_products;
+var summary_table_of_products;
 
 main(); // Start the async load
 
@@ -104,10 +116,13 @@ const result = document.getElementById('salt_in_product');
 
     for (let a of rows) {
         if (a[0] == selectElement.value) {
-        salt_in_selected_product = a[2];
+    protein_in_selected_product = a[2];
+    fat_in_selected_product = a[3];
+    carbo_in_selected_product = a[4];
+    salt_in_selected_product = a[5];
         }
     }
-  result.textContent = salt_in_selected_product;
+  result.textContent = `Б:${protein_in_selected_product} - Ж:${fat_in_selected_product} - У:${carbo_in_selected_product} - C:${salt_in_selected_product}`;
 };
 
 function add_product_to_the_table() {
@@ -116,26 +131,47 @@ var added_product_quantity = document.getElementById('quantity_consumed').value;
 
 if (own_product_flag == 1) {
 added_product = document.getElementById('own-product-select').value;
+protein_in_selected_product = document.getElementById('own_protein_in_product').value;
+fat_in_selected_product = document.getElementById('own_fat_in_product').value;
+carbo_in_selected_product = document.getElementById('own_carbo_in_product').value;
 salt_in_selected_product = document.getElementById('own_salt_in_product').value;
 };
 
 var quantity_validation=isNumber(added_product_quantity);
+var protein_validation=isNumber(protein_in_selected_product);
+var fat_validation=isNumber(fat_in_selected_product);
+var carbo_validation=isNumber(carbo_in_selected_product);
 var salt_validation=isNumber(salt_in_selected_product);
-if (!quantity_validation || !salt_validation)
+
+if (!quantity_validation || !salt_validation || !protein_validation || !fat_validation || !carbo_validation )
     {alert("Цифрами, плиз!");}
 else {
+var added_product_protein = added_product_quantity * protein_in_selected_product;
+var added_product_fat = added_product_quantity * fat_in_selected_product;
+var added_product_carbo = added_product_quantity * carbo_in_selected_product;
 var added_product_salt = added_product_quantity * salt_in_selected_product;
+
 table_of_products = document.getElementById('table_of_products');
 
 var newrow = document.createElement('tr');
-newrow.innerHTML = `<tr><td>${added_product}</td><td>${added_product_quantity}</td><td>${added_product_salt}</td></tr>`;
+newrow.innerHTML = `<tr><td>${added_product}</td><td>${added_product_quantity}</td><td>${added_product_protein}</td><td>${added_product_fat}</td><td>${added_product_carbo}</td><td>${added_product_salt}</td></tr>`;
 table_of_products.append(newrow);
 
 salt_result = salt_result + added_product_salt;
-document.getElementById('salt_result').innerText = salt_result;
+protein_result = protein_result + added_product_protein;
+fat_result = fat_result + added_product_fat;
+carbo_result = carbo_result + added_product_carbo;
+
+summary_table_of_products = document.getElementById('summary_table_of_products');
+
+var newsummaryrow = document.createElement('table');
+newsummaryrow.innerHTML = `<tr><td>Б - ${protein_result}</td></tr><tr><td>Ж - ${fat_result}</td></tr><tr><td>У - ${carbo_result}</td></tr><tr><td>Соль - ${salt_result}</td></tr>`;
+summary_table_of_products.innerHTML = ``;
+summary_table_of_products.append(newsummaryrow);
+
 document.getElementById('layer_summary_table').style.display = "block";
 
-let new_element_for_array = {added_product,added_product_quantity,added_product_salt};
+let new_element_for_array = {added_product,added_product_quantity,added_product_protein, added_product_fat, added_product_carbo, added_product_salt};
 data_for_LocalStorage_array.push(new_element_for_array);
 save_data();
 
@@ -163,13 +199,16 @@ function load_data() {
                 <tr>
                 <td>Что</td>
                 <td>Грамм</td>
+                <td>Б</td>
+                <td>Ж</td>
+                <td>У</td>                                                
                 <td>Соль</td>
             </tr>`
 if (data_for_LocalStorage_array.length !== 0) {
 salt_result = 0;
 for (let a of data_for_LocalStorage_array) {
 var newrow = document.createElement('tr');
-newrow.innerHTML = `<tr><td>${a.added_product}</td><td>${a.added_product_quantity}</td><td>${a.added_product_salt}</td></tr>`;
+newrow.innerHTML = `<tr><td>${a.added_product}</td><td>${a.added_product_quantity}</td><td>${a.added_product_protein}</td><td>${a.added_product_fat}</td><td>${a.added_product_carbo}</td><td>${a.added_product_salt}</td></tr>`;
 table_of_products.append(newrow);
 salt_result = salt_result + a.added_product_salt;
 }

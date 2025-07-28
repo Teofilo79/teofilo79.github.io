@@ -32,11 +32,14 @@
         <input type="text" width="100" class="btn3d" id="own-product-select" style="display:none;" value="Название"></input>
     </div>  
 
-    <div class="subheading text_block"><div id="salt_in_product"></div><div> грамм соли на 100 гр</div></div>
+    <div class="subheading text_block"><div id="salt_in_product"></div><div>&nbsp;</div></div>
 
     <div class="subheading text_block" style="display:none;">
-        <input class="btn3d" type="text" id="own_salt_in_product" value="грамм соли на 100 гр"></input>
-        <div> грамм соли на 100 гр</div>
+        <input width="50" class="btn3d" type="text" id="own_protein_in_product" value="белок на 100 гр"></input>
+        <input width="50" class="btn3d" type="text" id="own_fat_in_product" value="жиров на 100 гр"></input>
+        <input width="50" class="btn3d" type="text" id="own_carbo_in_product" value="углей на 100 гр"></input>
+        <input width="50" class="btn3d" type="text" id="own_salt_in_product" value="соли на 100 гр"></input>
+        <div></div>
     </div>
 
 
@@ -63,14 +66,20 @@
             <tr>
                 <td>Что</td>
                 <td>Грамм</td>
-                <td>Соль</td>
+                <td>Б</td>
+                <td>Ж</td>
+                <td>У</td>
+                <td>Соль</td>                                                
             </tr>
         </table>
     </div>    
 
-    <div class="subheading text_block" style="padding-top:20px;">Итого:</div>
-    <div id="salt_result"></div>
-    <div class="subheading text_block"> грамм соли</div>
+
+    <div class="table_wrapper">
+        <table id="summary_table_of_products">
+        </table>
+    </div> 
+
 
     <div class="subheading">
         <button class="btn3d btn3d-select" onclick="clean_the_dishes()">Ой все</button>

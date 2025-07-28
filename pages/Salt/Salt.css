@@ -41,7 +41,7 @@ body {
 
 .main_tool {
     padding: 20px;
-    width: min(90vw, 900px);
+    width: min(94vw, 1200px);
     height: auto;
 	box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #D79A34, 0 8px 4px 1px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
@@ -55,7 +55,7 @@ body {
 	box-shadow: 0 0 0 1px #FECB4E inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #FECB4E, 0 8px 4px 1px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
     background-color: #D7BA76;
-    margin:20px;
+    margin:10px;
 }
 
 .two_blocks_wrapper {
@@ -66,9 +66,9 @@ body {
 }
 
 .two_blocks_wrapper > div {
-min-width: 220px;
+min-width: 360px;
 flex-grow: 1;
-flex-basis:220px;
+flex-basis:360px;
 }
 
 .heading {
@@ -242,5 +242,21 @@ color:var(--text-color);
 }
 
 #salt_in_product {
-    color:red;
+    color:rgb(255, 255, 255);
+}
+
+#summary_table_of_products {
+    margin:0;
+    border:0;
+}
+
+#summary_table_of_products tr > td {
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color:black;
+    text-shadow: 1px 1px hsl(0, 27%, 79%),
+               2px 2px hsl(0, 30%, 73%);
+    text-align: center;
+    padding: 2px;                 
 }
