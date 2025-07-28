@@ -32,9 +32,10 @@
         <input type="text" width="100" class="btn3d" id="own-product-select" style="display:none;" value="Название"></input>
     </div>  
 
-    <div class="subheading text_block"><div id="salt_in_product"></div><div>&nbsp;</div></div>
+    <div class="subheading text_block"><div id="salt_in_product"></div><div id="product_comment">&nbsp;</div></div>
 
     <div class="subheading text_block" style="display:none;">
+        <input width="50" class="btn3d" type="text" id="own_calories_in_product" value="калорий на 100 гр"></input>
         <input width="50" class="btn3d" type="text" id="own_protein_in_product" value="белок на 100 гр"></input>
         <input width="50" class="btn3d" type="text" id="own_fat_in_product" value="жиров на 100 гр"></input>
         <input width="50" class="btn3d" type="text" id="own_carbo_in_product" value="углей на 100 гр"></input>
@@ -47,7 +48,7 @@
 
     <div class="subheading">
         <input style="width:120px;" type="number" class="btn3d" name="quantity_consumed" id="quantity_consumed" onchange=""></select>
-        <div style="padding-top: 20px;">сколько там грамм на весах<br><br></div>
+        <div style="padding-top: 20px;" id="unit_of_measure"><br><br></div>
     </div> 
 
     <div class="subheading">
@@ -66,6 +67,7 @@
             <tr>
                 <td>Что</td>
                 <td>Грамм</td>
+                <td>K</td>
                 <td>Б</td>
                 <td>Ж</td>
                 <td>У</td>

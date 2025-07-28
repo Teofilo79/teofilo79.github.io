@@ -260,3 +260,13 @@ color:var(--text-color);
     text-align: center;
     padding: 2px;                 
 }
+
+#product_comment {
+    color:black;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight:normal;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: none;
+    padding: 10px;
+}
