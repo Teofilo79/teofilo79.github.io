@@ -147,11 +147,11 @@ var added_product_quantity = document.getElementById('quantity_consumed').value 
 
 if (own_product_flag == 1) {
 added_product = document.getElementById('own-product-select').value;
-calories_in_selected_product = Math.round(document.getElementById('own_calories_in_product').value *100)/100;
-protein_in_selected_product = Math.round(document.getElementById('own_protein_in_product').value *100)/100;
-fat_in_selected_product = Math.round(document.getElementById('own_fat_in_product').value *100)/100;
-carbo_in_selected_product = Math.round(document.getElementById('own_carbo_in_product').value *100)/100;
-salt_in_selected_product = Math.round(document.getElementById('own_salt_in_product').value *100)/100;
+calories_in_selected_product = document.getElementById('own_calories_in_product');
+protein_in_selected_product = document.getElementById('own_protein_in_product');
+fat_in_selected_product = document.getElementById('own_fat_in_product');
+carbo_in_selected_product = document.getElementById('own_carbo_in_product');
+salt_in_selected_product = document.getElementById('own_salt_in_product');
 };
 
 var quantity_validation=isNumber(added_product_quantity);
@@ -173,7 +173,7 @@ var added_product_salt = added_product_quantity * salt_in_selected_product;
 table_of_products = document.getElementById('table_of_products');
 
 var newrow = document.createElement('tr');
-newrow.innerHTML = `<tr><td>${added_product}</td><td>${added_product_quantity}</td><td>${added_product_calories}</td><td>${added_product_protein}</td><td>${added_product_fat}</td><td>${added_product_carbo}</td><td>${added_product_salt}</td></tr>`;
+newrow.innerHTML = `<tr><td>${added_product}</td><td>${(added_product_quantity*100).toFixed(0)}</td><td>${added_product_calories.toFixed(0)}</td><td>${added_product_protein.toFixed(0)}</td><td>${added_product_fat.toFixed(0)}</td><td>${added_product_carbo.toFixed(0)}</td><td>${added_product_salt.toFixed(2)}</td></tr>`;
 table_of_products.append(newrow);
 
 salt_result = salt_result + added_product_salt;
@@ -185,7 +185,7 @@ carbo_result = carbo_result + added_product_carbo;
 summary_table_of_products = document.getElementById('summary_table_of_products');
 
 var newsummaryrow = document.createElement('table');
-newsummaryrow.innerHTML = `<tr><td>K - ${calories_result}</td></tr><tr><td>Б - ${protein_result}</td></tr><tr><td>Ж - ${fat_result}</td></tr><tr><td>У - ${carbo_result}</td></tr><tr><td>Соль - ${salt_result}</td></tr>`;
+newsummaryrow.innerHTML = `<tr><td>K - ${calories_result.toFixed(0)}</td></tr><tr><td>Б - ${protein_result.toFixed(0)}</td></tr><tr><td>Ж - ${fat_result.toFixed(0)}</td></tr><tr><td>У - ${carbo_result.toFixed(0)}</td></tr><tr><td>Соль - ${salt_result.toFixed(2)}</td></tr>`;
 summary_table_of_products.innerHTML = ``;
 summary_table_of_products.append(newsummaryrow);
 
@@ -229,7 +229,7 @@ if (data_for_LocalStorage_array.length !== 0) {
 salt_result = 0;
 for (let a of data_for_LocalStorage_array) {
 var newrow = document.createElement('tr');
-newrow.innerHTML = `<tr><td>${a.added_product}</td><td>${a.added_product_quantity}</td><td>${a.added_product_calories}</td><td>${a.added_product_protein}</td><td>${a.added_product_fat}</td><td>${a.added_product_carbo}</td><td>${a.added_product_salt}</td></tr>`;
+newrow.innerHTML = `<tr><td>${a.added_product}</td><td>${a.added_product_quantity.toFixed(0)}</td><td>${a.added_product_calories.toFixed(0)}</td><td>${a.added_product_protein.toFixed(0)}</td><td>${a.added_product_fat.toFixed(0)}</td><td>${a.added_product_carbo.toFixed(0)}</td><td>${a.added_product_salt.toFixed(2)}</td></tr>`;
 table_of_products.append(newrow);
 
 salt_result = salt_result + a.added_product_salt;
@@ -243,7 +243,7 @@ document.getElementById('layer_summary_table').style.display = "block";
 summary_table_of_products = document.getElementById('summary_table_of_products');
 
 var newsummaryrow = document.createElement('table');
-newsummaryrow.innerHTML = `<tr><td>K - ${calories_result}</td></tr><tr><td>Б - ${protein_result}</td></tr><tr><td>Ж - ${fat_result}</td></tr><tr><td>У - ${carbo_result}</td></tr><tr><td>Соль - ${salt_result}</td></tr>`;
+newsummaryrow.innerHTML = `<tr><td>K - ${calories_result.toFixed(0)}</td></tr><tr><td>Б - ${protein_result.toFixed(0)}</td></tr><tr><td>Ж - ${fat_result.toFixed(0)}</td></tr><tr><td>У - ${carbo_result.toFixed(0)}</td></tr><tr><td>Соль - ${salt_result.toFixed(2)}</td></tr>`;
 summary_table_of_products.innerHTML = ``;
 summary_table_of_products.append(newsummaryrow);  
 }

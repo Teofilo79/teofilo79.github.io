@@ -89,7 +89,7 @@ flex-basis:360px;
     justify-content: center;
     font-weight:bold;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     color:rgb(255, 255, 255);
     text-shadow: 0px 0px 2px hsl(0, 0%, 36%),
                0px 3px hsl(0, 0%, 46%);
@@ -136,7 +136,7 @@ color:var(--text-color);
 	box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.238) inset, 0 4px 0 0 #D79A34, 0 4px 4px 1px rgba(99, 99, 99, 0.5);
 	background-color: white;
     color: #9d6e15;
-    font-size: 18px;
+    font-size: 0.7rem;
     font-weight:bold;
     padding: 4px 10px;
     border-radius: 6px;
@@ -147,7 +147,7 @@ color:var(--text-color);
 .btn3d-select {
 	background-color: #FEAF20;
     color: white;
-    font-size: 20px;
+    font-size: 1rem;
     text-shadow: 0px 0px 2px hsl(0, 0%, 36%),
                0px 3px hsl(0, 0%, 46%);   
 }
@@ -219,7 +219,7 @@ color:var(--text-color);
     box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.238) inset, 0 4px 0 0 #D79A34, 0 4px 4px 1px rgba(99, 99, 99, 0.5);
 	background-color: white;
     color: #9d6e15;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight:bold;
     padding: 4px 10px;
     border-radius: 6px;
