@@ -218,12 +218,12 @@ function load_data() {
     table_of_products.innerHTML = `
                 <tr>
                 <td>Что</td>
-                <td>Грамм</td>
+                <td>Гр.</td>
                 <td>K</td> 
                 <td>Б</td>
                 <td>Ж</td>
                 <td>У</td>                                                
-                <td>Соль</td>
+                <td>Salt</td>
             </tr>`
 if (data_for_LocalStorage_array.length !== 0) {
 salt_result = 0;
@@ -243,7 +243,7 @@ document.getElementById('layer_summary_table').style.display = "block";
 summary_table_of_products = document.getElementById('summary_table_of_products');
 
 var newsummaryrow = document.createElement('table');
-newsummaryrow.innerHTML = `<tr><td>K - ${calories_result.toFixed(0)}</td></tr><tr><td>Б - ${protein_result.toFixed(0)}</td></tr><tr><td>Ж - ${fat_result.toFixed(0)}</td></tr><tr><td>У - ${carbo_result.toFixed(0)}</td></tr><tr><td>Соль - ${salt_result.toFixed(2)}</td></tr>`;
+newsummaryrow.innerHTML = `<tr><td>Kалорий - ${calories_result.toFixed(0)}</td></tr><tr><td>Белок - ${protein_result.toFixed(0)}</td></tr><tr><td>Жиров - ${fat_result.toFixed(0)}</td></tr><tr><td>Углеводов - ${carbo_result.toFixed(0)}</td></tr><tr><td>Соли - ${salt_result.toFixed(2)}</td></tr>`;
 summary_table_of_products.innerHTML = ``;
 summary_table_of_products.append(newsummaryrow);  
 }
