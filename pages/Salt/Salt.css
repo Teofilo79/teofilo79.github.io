@@ -15,7 +15,7 @@
 :root {
     --backgrnd-color: #FDE3CC;
 	--btn-color: #a46d19;
-    --text-color: firebrick;
+    --text-color: #fedd4c;
 }
 
 .hide {
@@ -23,6 +23,11 @@
 }
 .show {
     display:block;
+}
+
+.delete_text {
+    color:red;
+    font-weight: bold;
 }
 
 body {
@@ -111,11 +116,11 @@ flex-basis:360px;
 
 .heading > div {
 color:var(--text-color);
-    text-shadow: 1px 1px hsl(0, 27%, 79%),
-               2px 2px hsl(0, 30%, 73%),
-               3px 3px hsl(0, 34%, 64%),
-               4px 4px hsl(0, 33%, 63%),
-               5px 5px hsl(0, 31%, 60%);  
+    text-shadow: 1px 1px hsl(37, 46%, 26%),
+               2px 2px hsl(39, 17%, 40%),
+               3px 3px hsl(37, 25%, 41%),
+               4px 4px hsl(37, 27%, 46%),
+               5px 5px hsl(37, 35%, 54%);  
 }
 
 .heading > img {
@@ -123,6 +128,24 @@ color:var(--text-color);
 }
 
 /* styling buttons */
+
+.category {
+    color: white;
+    font-size: 1.3rem;
+    font-weight:normal;
+    font-family: 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;
+    background-color: transparent;
+    padding: 10px;
+    text-shadow: 0px 0px 2px hsl(0, 0%, 36%),
+               0px 3px hsl(0, 0%, 46%); 
+}
+
+.category::first-letter {
+    font-family:  Arial, sans-serif, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #fedd4c;
+    font-weight: bold;
+}
 
 .btn3d {
 	position: relative;
@@ -167,8 +190,8 @@ color:var(--text-color);
 }
 
 #list_of_categories {
-    display:flex;
-    flex-wrap: wrap;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     align-items: center;
     justify-content: center;
     font-weight:bold;
@@ -176,6 +199,10 @@ color:var(--text-color);
     font-size: 2em;
     gap:10px;
     margin: 20px;
+}
+
+#list_of_categories > *{
+    text-align:left;
 }
 
 .table_wrapper {
@@ -191,50 +218,46 @@ color:var(--text-color);
     border:0;
 }
 
-#table_of_products > tr > td {
-    border: 1px solid white;
+#table_of_products > tr > td{
+    border: none;
     text-align: center; 
     font-size: 0.8em;
-    box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.238) inset, 0 4px 0 0 #D79A34, 0 4px 4px 1px rgba(99, 99, 99, 0.5);
 	background-color: #9d6e15;
     color: white;
     font-weight:bold;
     padding: 4px 10px;
-    border-radius: 6px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#table_of_products tr:first-child td {
+#table_of_products tr:first-child td{
     font-weight:bold;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8em;
-    color:black;
-    text-shadow: 1px 1px hsl(0, 27%, 79%),
-               2px 2px hsl(0, 30%, 73%);
+    color:#725210;
+    text-shadow: 1px 1px hsl(44, 53%, 71%),
+               2px 2px hsl(44, 53%, 75%);
     text-align: center;
     padding: 10px;                 
 }
 
 #table_of_products > tr > td:first-child {
-    box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.238) inset, 0 4px 0 0 #D79A34, 0 4px 4px 1px rgba(99, 99, 99, 0.5);
 	background-color: white;
     color: #9d6e15;
     font-size: 0.7em;
     font-weight:bold;
     padding: 4px 10px;
-    border-radius: 6px;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
-#salt_result {
+#table_of_products tr:last-child td{
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color:#5e521c;
     text-align: center;
-    font-weight: bold;
-    font-size: 26px;
-    font-family: Arial Black, Helvetica, sans-serif;
-color:var(--text-color);
-    text-shadow: 1px 1px 4px white,
-               0px 0px 2px hsl(0, 0%, 89%); 
+    padding: 10px;     
+    background:none;            
 }
 
 #own_product_switcher {
@@ -248,17 +271,6 @@ color:var(--text-color);
 #summary_table_of_products {
     margin:0;
     border:0;
-}
-
-#summary_table_of_products tr > td {
-    font-weight:bold;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.8em;
-    color:black;
-    text-shadow: 1px 1px hsl(0, 27%, 79%),
-               2px 2px hsl(0, 30%, 73%);
-    text-align: center;
-    padding: 2px;                 
 }
 
 #product_comment {

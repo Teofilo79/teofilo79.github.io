@@ -27,6 +27,7 @@ var table_of_products;
 var summary_table_of_products;
 var comment_of_selected_product;
 var serving_for_product;
+var counter = 0;
 
 main(); // Start the async load
 
@@ -74,6 +75,7 @@ function prepare_Categories() {
        let s = new Set(listCat);
        listOfCategories = [...s]
        listOfCategories.shift();
+       listOfCategories.sort();
 }
 
 function fill_categories_data() {
@@ -83,7 +85,7 @@ listOfCategories.forEach (Element => {
             var newButton = document.createElement('button');
             newButton.id = Element;
             newButton.setAttribute("onclick","create_list_of_products(this.id)");
-            newButton.className = "btn3d btn3d-select";
+            newButton.className = "category";
             newButton.textContent = Element;
             container.append(newButton);
 })
@@ -172,22 +174,41 @@ var added_product_salt = added_product_quantity * salt_in_selected_product;
 
 table_of_products = document.getElementById('table_of_products');
 
-var newrow = document.createElement('tr');
-newrow.innerHTML = `<tr><td>${added_product}</td><td>${(added_product_quantity*100).toFixed(0)}</td><td>${added_product_calories.toFixed(0)}</td><td>${added_product_protein.toFixed(0)}</td><td>${added_product_fat.toFixed(0)}</td><td>${added_product_carbo.toFixed(0)}</td><td>${added_product_salt.toFixed(2)}</td></tr>`;
-table_of_products.append(newrow);
+if (table_of_products.rows.length > 0) {
+var rowCount = table_of_products.rows.length;
+table_of_products.deleteRow(rowCount -1);
+}
 
+
+var newrow = document.createElement('tr');
+newrow.innerHTML = `<tr>
+<td>${added_product}<span class="delete_text hide" onclick="Delete_this_product(${(counter+1)})">&nbsp;DELETE</span></td>
+<td>${(added_product_quantity*100).toFixed(0)}</td>
+<td>${added_product_calories.toFixed(0)}</td>
+<td>${added_product_protein.toFixed(0)}</td>
+<td>${added_product_fat.toFixed(0)}</td>
+<td>${added_product_carbo.toFixed(0)}</td>
+<td>${added_product_salt.toFixed(2)}</td>
+</tr>`;
+table_of_products.append(newrow);
+counter++;
 salt_result = salt_result + added_product_salt;
 calories_result = calories_result + added_product_calories;
 protein_result = protein_result + added_product_protein;
 fat_result = fat_result + added_product_fat;
 carbo_result = carbo_result + added_product_carbo;
 
-summary_table_of_products = document.getElementById('summary_table_of_products');
+var newsummaryrow = document.createElement('tr');
+newsummaryrow.innerHTML = `<tr>
+<td>Итогого:</td>
+<td>&nbsp;</td>
+<td>${calories_result.toFixed(0)}</td>
+<td>${protein_result.toFixed(0)}</td>
+<td>${fat_result.toFixed(0)}</td>
+<td>${carbo_result.toFixed(0)}</td>
+<td>${salt_result.toFixed(2)}</td></tr>`;
 
-var newsummaryrow = document.createElement('table');
-newsummaryrow.innerHTML = `<tr><td>K - ${calories_result.toFixed(0)}</td></tr><tr><td>Б - ${protein_result.toFixed(0)}</td></tr><tr><td>Ж - ${fat_result.toFixed(0)}</td></tr><tr><td>У - ${carbo_result.toFixed(0)}</td></tr><tr><td>Соль - ${salt_result.toFixed(2)}</td></tr>`;
-summary_table_of_products.innerHTML = ``;
-summary_table_of_products.append(newsummaryrow);
+table_of_products.append(newsummaryrow);
 
 document.getElementById('layer_summary_table').style.display = "block";
 
@@ -227,9 +248,23 @@ function load_data() {
             </tr>`
 if (data_for_LocalStorage_array.length !== 0) {
 salt_result = 0;
+protein_result = 0;
+calories_result = 0;
+fat_result = 0;
+carbo_result = 0;
+counter = 0;
 for (let a of data_for_LocalStorage_array) {
 var newrow = document.createElement('tr');
-newrow.innerHTML = `<tr><td>${a.added_product}</td><td>${a.added_product_quantity.toFixed(0)}</td><td>${a.added_product_calories.toFixed(0)}</td><td>${a.added_product_protein.toFixed(0)}</td><td>${a.added_product_fat.toFixed(0)}</td><td>${a.added_product_carbo.toFixed(0)}</td><td>${a.added_product_salt.toFixed(2)}</td></tr>`;
+counter++;
+newrow.innerHTML = `<tr>
+<td>${a.added_product}<span class="delete_text hide" onclick="Delete_this_product(${counter})">&nbsp;DELETE</span></td>
+<td>${(a.added_product_quantity.toFixed(0)*100)}</td>
+<td>${a.added_product_calories.toFixed(0)}</td>
+<td>${a.added_product_protein.toFixed(0)}</td>
+<td>${a.added_product_fat.toFixed(0)}</td>
+<td>${a.added_product_carbo.toFixed(0)}</td>
+<td>${a.added_product_salt.toFixed(2)}</td>
+</tr>`;
 table_of_products.append(newrow);
 
 salt_result = salt_result + a.added_product_salt;
@@ -239,13 +274,20 @@ fat_result = fat_result + a.added_product_fat;
 carbo_result = carbo_result + a.added_product_carbo;
 }
 
-document.getElementById('layer_summary_table').style.display = "block";   
-summary_table_of_products = document.getElementById('summary_table_of_products');
+document.getElementById('layer_summary_table').style.display = "block";
 
-var newsummaryrow = document.createElement('table');
-newsummaryrow.innerHTML = `<tr><td>Kалорий - ${calories_result.toFixed(0)}</td></tr><tr><td>Белок - ${protein_result.toFixed(0)}</td></tr><tr><td>Жиров - ${fat_result.toFixed(0)}</td></tr><tr><td>Углеводов - ${carbo_result.toFixed(0)}</td></tr><tr><td>Соли - ${salt_result.toFixed(2)}</td></tr>`;
-summary_table_of_products.innerHTML = ``;
-summary_table_of_products.append(newsummaryrow);  
+var newsummaryrow = document.createElement('tr');
+
+newsummaryrow.innerHTML = `<tr>
+<td>Итогого:</td>
+<td>&nbsp;</td>
+<td>${calories_result.toFixed(0)}</td>
+<td>${protein_result.toFixed(0)}</td>
+<td>${fat_result.toFixed(0)}</td>
+<td>${carbo_result.toFixed(0)}</td>
+<td>${salt_result.toFixed(2)}</td></tr>`
+
+table_of_products.append(newsummaryrow);  
 }
     }
 
@@ -284,3 +326,16 @@ function back_to_menu () {
     document.getElementById('own_product_switcher').innerHTML = "+ свой продукт";
     document.getElementById('own_product_switcher').onclick = add_own_product_to_the_table;
 }  
+
+function Delete_product() {
+var delete_icons = document.getElementsByClassName('delete_text')
+for (let b of delete_icons) {
+    b.classList.toggle("hide");
+}
+}
+
+function Delete_this_product(Item_number) {
+data_for_LocalStorage_array.splice((Item_number-1),1);
+save_data();
+load_data();
+}
