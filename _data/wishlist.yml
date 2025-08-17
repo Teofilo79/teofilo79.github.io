@@ -1,5 +1,10 @@
   # Data for watches wishlist of watches
 
+- name: "Kleynod Men's watch K 21-506"
+  description: "Навіть не треба пояснювати навіщо вони тут. Дивно що досі не в мене."
+  image: "https://us.kleynodwatches.com/wp-content/uploads/3/2018/04/2137.png"
+  price: "350 usd"
+
 - name: "Orient Bambino FAC00009N0"
   description: "Another old style dressy and classic-looking masterpiece"
   image: "https://i.redd.it/tga2m154hz681.jpg"
