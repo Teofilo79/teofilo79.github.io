@@ -76,6 +76,14 @@ order: 5
 
 <H1 style="text-align:center">"If watches were not fun, we would need only one"</H1><br>
 <div width="100%" style="text-align:right">This is quote of one youtuber, pretty smart said.</div><br>
+
+![Exit](https://static.vecteezy.com/system/resources/previews/002/301/058/non_2x/fire-exit-emergency-green-sign-free-vector.jpg){: .right w="100" .shadow}
+<H2>Update from 16.09.2025</H2><br>
+There is one interesting term in watch collecting - the "Exit Watch". It has a magic inside - makes you resign from collecting and wear only one. This is like dating a lot of girls and finally marrying the one and only - to be your partner forever. For life and after it if this is possible. So, my latest acquisition made me resign from collecting. I look at the watchbox. I like the watches I've collected - but I do not want to wear them. They are like paintings on the wall. This makes me sad. Then I look at my wrist and smile. Happy again. I have decided to wait for one year. In one year I will probably sell what I can, leaving only the items that were presents from family and friends.
+
+
+<hr>
+<H1 style="text-align:center">Confession</H1><br>
 <div width="100%" style="text-align:left">
 Confession here! I am watch addict. It lasts my whole life, I was buying watches each few years or so. I always had a watch on the wrist. But last few years I started falling into the rabbit hole of watch collecting. Revealed a lot of watch enthusiasts, communities, youtube bloggers that share the same passion to watches and admire them with no logical - sometimes purely aesthetic reasons.<br><br>
 
