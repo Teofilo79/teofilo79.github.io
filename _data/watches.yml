@@ -53,14 +53,6 @@
   water_resistance: "200 meters"
   date_acquired: "Jan 2024" 
 
-- name: "Casio DBC-611"
-  type: "Retro"
-  description: "I just need to have this. So many vibes from 80's."
-  image: "https://img.watchcrunch.com/XHE2Xj5g7GbJTihL0axegHOtE5rOh6kmxc0UDEh3sgA/w:960/h:1440/rt:fit/g:sm/dpr:2/aW1nOi8vMjAyNS8wMy8wNy9kNGE2MDEzMC02NWM4LTRmOWItYmQyYi01MTVjNWFkMGM4NDguanBn.jpg"
-  movement: "Quartz"
-  water_resistance: "30 meters"
-  date_acquired: "Mar 2025"  
-
 - name: "Casio F-105"
   type: "Retro"
   description: "Present from a friend, classic watch that is almost unfeelable on the wrist. And highly legible."
