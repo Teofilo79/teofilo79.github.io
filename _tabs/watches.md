@@ -77,6 +77,11 @@ order: 5
 <H1 style="text-align:center">"If watches were not fun, we would need only one"</H1><br>
 <div width="100%" style="text-align:right">This is quote of one youtuber, pretty smart said.</div><br>
 
+<H2>Update from 20.12.2025</H2><br>
+One watch sold, one was given to father :) and... I am back! Exiting watches collecting lasted 4 months, and I am again enjoying it. Wishlist updated, looking forward to enlarge the collection. Changing watches almost every day and enjoying it.
+
+<hr>
+
 
 <H2>Update from 25.09.2025</H2><br>
 Most of watches are on sale :) When I see even a small chance of changes - I use it. Is it strange? Yes it is. But who am I to fight with myself.

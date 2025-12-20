@@ -11,15 +11,13 @@
   water_resistance: "200 meters"
   date_acquired: "July 2025"
 
-
-
-- name: "Citizen BN0157-11X Promaster Diver's"
-  type: "Diver"
-  description: "My 'go-anywhere-do-anything'. Another default variant for everyday. Love the dial color, humble look and the luminous highly readable hands."
-  image: "https://img.watchcrunch.com/832UtgODZaxlkZ6Wd48sjmUPaSbfKKCn8uhf0IR_W7k/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMC9lNzk0ZWVjNi01MThmLTRkYjItOWNiZi1iYmY1ZGY0ZWI5ZjAucG5n.png"
-  movement: "Solar-powered quartz"
-  water_resistance: "200 meters"
-  date_acquired: "Nov 2024"
+# - name: "Citizen BN0157-11X Promaster Diver's"
+#   type: "Diver"
+#   description: "My 'go-anywhere-do-anything'. Another default variant for everyday. Love the dial color, humble look and the luminous highly readable hands."
+#   image: "https://img.watchcrunch.com/832UtgODZaxlkZ6Wd48sjmUPaSbfKKCn8uhf0IR_W7k/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMC9lNzk0ZWVjNi01MThmLTRkYjItOWNiZi1iYmY1ZGY0ZWI5ZjAucG5n.png"
+#   movement: "Solar-powered quartz"
+#   water_resistance: "200 meters"
+#   date_acquired: "Nov 2024"
 
 - name: "WISE Adamascus AD8"
   type: "Diver"
@@ -29,13 +27,13 @@
   water_resistance: "200 meters"
   date_acquired: "July 2024" 
 
-- name: "Casio Lineage LCW-M170D-2AER"
-  type: "Dress"
-  description: "Actually not only dress watch, but looks nice with office shirts. A lot of functionality and nice dial."
-  image: "https://img.watchcrunch.com/6uYYpZKs17PwshLWO7lRQHFqZ-exxa-jRX1h4jMuh34/w:960/h:1440/rt:fit/g:sm/dpr:2/aW1nOi8vMjAyNC8wOS8yNC8yN2IzNzc0Yy0wMTAzLTQ0YTItOGJhNS03YWQyNzk2YWUzMmUucG5n.png"
-  movement: "Solar-powered quartz"
-  water_resistance: "50 meters"
-  date_acquired: "May 2024"   
+# - name: "Casio Lineage LCW-M170D-2AER"
+#   type: "Dress"
+#   description: "Actually not only dress watch, but looks nice with office shirts. A lot of functionality and nice dial."
+#   image: "https://img.watchcrunch.com/6uYYpZKs17PwshLWO7lRQHFqZ-exxa-jRX1h4jMuh34/w:960/h:1440/rt:fit/g:sm/dpr:2/aW1nOi8vMjAyNC8wOS8yNC8yN2IzNzc0Yy0wMTAzLTQ0YTItOGJhNS03YWQyNzk2YWUzMmUucG5n.png"
+#   movement: "Solar-powered quartz"
+#   water_resistance: "50 meters"
+#   date_acquired: "May 2024"   
 
 - name: "Casio Royale AE1200WH-1A"
   type: "Retro"
