@@ -5,5 +5,5 @@ categories: [Life]
 tags: [Life]
 image: assets/img/images/opel_1.jpg
 ---
-![Opel1](/assets/img/images/opel_2.jpg){: .normal w="1000" .shadow}
+(/assets/img/images/opel_2.jpg){: .normal w="1000" .shadow}
 We have a new car! Opel Grandland X, 2019 year, turbo diesel 2.0. Fully packed! Beautiful. Wonderful.
