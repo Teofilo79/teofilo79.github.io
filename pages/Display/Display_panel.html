@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Display panel</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Display_panel.css">
+        <script src="https://kit.fontawesome.com/84722c354c.js" crossorigin="anonymous"></script>
+        <script src="Display_panel.js" defer></script>        
+    </head>
+    <body>
+
+<div class="wrapper">
+
+<header> </header>
+
+<aside>
+    <div>
+        <!-- <img src="images/4680.jpg"/> -->
+        <!-- <img src="images/Screenshot 2025-11-23 150420.png"/> -->
+        <img id="smoke" src="images/pngfind.com-smoke-transparent-png-134784.png"/> 
+        <img src="images/compressed_f5811166a12374692addd17bcd5f60a4_v2.png"/>                                 
+    </div>           
+</aside>
+
+
+<main>
+
+<div class="main_wrapper">
+
+<div class="buttons_row">
+    <button class="metal_button start-button"><i class="fa-solid fa-plus"></i></button>
+    <a class="metal_button" onclick="pageRefresh (1)"><i class="fa-solid fa-box-archive"></i></a>    
+    <a class="metal_button" onclick="pageRefresh (0)"><i class="fa-solid fa-repeat"></i></a> 
+    <a class="metal_button" target="_blank" href="https://panel.home.pl/">HOME.PL</a>
+    <a class="metal_button" target="_blank" href="https://login.eloqua.com/?CheckFrame=false">Retail</a>
+    <a class="metal_button" href="microsoft-edge:https://login.eloqua.com/?CheckFrame=false">Non Retail</a>
+    <a class="metal_button" target="_blank" href="https://jira.oraclecorp.com/jira/secure/RapidBoard.jspa?rapidView=257741">Jira</a>
+    <a class="metal_button" target="_blank" href="https://litmus.com/home">Litmus</a>
+    <a class="metal_button" target="_blank" href="https://confluence.oraclecorp.com/confluence/pages/viewpage.action?pageId=2657680617">Retail</a>
+    <a class="metal_button" target="_blank" href="https://confluence.oraclecorp.com/confluence/pages/viewpage.action?pageId=2793928343">Non-Retail</a>
+       
+</div>
+
+
+<dialog class="modal">
+    <!-- <h2>Campaign's data</h2> -->
+    <form class="vertical_flex" method="dialog">
+
+        <div class="cassette_front vertical_flex">
+            <textarea id="campaign_name" style="overflow:hidden; resize:none;" spellcheck="false"></textarea>
+            <input type="text" id="campaign_id">
+            <fieldset class="retail_radiobuttons">            
+                <input type="radio" id="campaign_retail" name="campaign_retail" value="Retail">Retail
+                <!-- <label for="campaign_retail">Retail</label> --><br>
+                <input type="radio" id="campaign_nonretail" name="campaign_retail" value="Non-Retail">Non-Retail
+                <!-- <label for="campaign_nonretail">Non-Retail</label> -->
+            </fieldset>        
+        </div>
+
+        <div class="cassette_side vertical_flex">
+            <label>CDO<input type="text" id="campaign_cdo"></label>
+            <label>Proof email<input type="text" id="campaign_proofs"></label>
+        </div>    
+        <div class="cassette_side vertical_flex">          
+            <label>One Drive<input type="text" id="campaign_test_canvas"></label>   
+            <label>Jira link<input type="text" id="campaign_jira_link"></label>   
+        </div>
+
+        <div class="cassette_back">
+            <div>
+                <h2>Planned</h2>
+                <label>Kick-off call<input type="date" id="kick_off_plan" name="kick_off_plan"></label>
+                <label>OCM start<input type="date" id="ocm_plan_start" name="ocm_plan_start"></label>
+                <label>OCM end<input type="date" id="ocm_plan_end" name="ocm_plan_end"></label>
+                <label>Build start<input type="date" id="build_plan_start" name="build_plan_start"></label>
+                <label>Build end<input type="date" id="build_plan_end" name="build_plan_end"></label>                                
+                <label>QA start<input type="date" id="qa_plan_start" name="qa_plan_start"></label>
+                <label>QA end<input type="date" id="qa_plan_end" name="qa_plan_end"></label> 
+                <label>Approvals start<input type="date" id="approvals_plan_start" name="approvals_plan_start"></label>
+                <label>Approvals end<input type="date" id="approvals_plan_end" name="approvals_plan_end"></label>         
+                <label>Launch<input type="date" id="launch_plan" name="launch_plan"></label>
+            </div>
+            <div>
+                <h2>Actual</h2>
+                <label>Kick-off call<input type="date" id="kick_off_fact" name="kick_off_fact" value=""></label>
+                <label>OCM start<input type="date" id="ocm_fact_start" name="ocm_fact_start"></label>
+                <label>OCM end<input type="date" id="ocm_fact_end" name="ocm_fact_end"></label>
+                <label>Build start<input type="date" id="build_fact_start" name="build_fact_start"></label>
+                <label>Build end<input type="date" id="build_fact_end" name="build_fact_end"></label>                                
+                <label>QA start<input type="date" id="qa_fact_start" name="qa_fact_start"></label>
+                <label>QA end<input type="date" id="qa_fact_end" name="qa_fact_end"></label> 
+                <label>Approvals start<input type="date" id="approvals_fact_start" name="approvals_fact_start"></label>
+                <label>Approvals end<input type="date" id="approvals_fact_end" name="approvals_fact_end"></label>         
+                <label>Launch<input type="date" id="launch_fact" name="launch_fact"></label>
+            </div>            
+        </div>
+        
+        <button class="metal_button" type="submit" id="modalSubmitButton" onclick="addCampaign()">Submit</button>
+    </form>
+</dialog>
+
+<div id="campaigns_block"></div>
+
+<div class="stand">
+    <div></div>
+    <div class="leg"></div>
+    <div></div>  
+    <div class="leg"></div>
+    <div></div>
+</div>   
+
+</div>
+
+</main>
+
+<footer><h2>All rights, lefts and middles reserved. (c) Andrii Strilchuk Incorporated, 2025</h2></footer>
+
+
+    </body>
+</html>
