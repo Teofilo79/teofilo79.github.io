@@ -2,7 +2,7 @@
 title: "Watch Stands"
 date: 2026-01-30 00:00:00 +0100
 categories: [Life]
-tags: [Hobby]
+tags: [Watches]
 image: assets/img/images/wATCH_STANDS_1.jpg
 ---
 
