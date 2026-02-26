@@ -1,5 +1,15 @@
   # Data for watches wishlist of watches
 
+- name: "Timex Weekender"
+  description: "Elegant and humble. Just like me"
+  image: "https://m.media-amazon.com/images/I/71n1kR9d9HL._AC_SX679_.jpg"
+  price: "270 pln"
+
+- name: "Timex Digital classic"
+  description: "Shiny and simple. Old style. And the bracelet is stretchable! Need to have it."
+  image: "https://www.zegarek.net/imageslib/produkty/duze/timex-tw2w68100-221100-1.jpg"
+  price: "350 usd"  
+
 - name: "Kleynod Men's watch K 21-506"
   description: "Навіть не треба пояснювати навіщо вони тут. Дивно що досі не в мене."
   image: "https://us.kleynodwatches.com/wp-content/uploads/3/2018/04/2137.png"
