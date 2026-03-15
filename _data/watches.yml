@@ -5,7 +5,7 @@
 - name: "Seiko Arnie SNJ025P1"
   type: "Diver"
   description: "Seiko Arnie! Tough like I like it. Not for a shy person. For strong men. Solar powered, super-protected tuna-style case."
-  image: "https://zegarownia.pl/media/catalog/product/resized/1/1667/fr/z/e/zegarek-meski-seiko-prospex-arnie-diver-solar-snj025p1_1.webp"
+  image: "assets/img/images/Seiko_Arnie.jpg"
   movement: "Solar-powered quartz"
   water_resistance: "200 meters"
   date_acquired: "January 2026"

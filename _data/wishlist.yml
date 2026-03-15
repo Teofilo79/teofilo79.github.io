@@ -1,8 +1,14 @@
   # Data for watches wishlist of watches
 
+- name: "Casio Royale full metal"
+  description: "I have already one. Bronze, steampunk style. Put it in a metal case - and it will be perfect retro unusual classic."
+  image: "https://img-va.myshopline.com/image/store/1646381574639/46A_1800x.jpeg?w=1000&h=1000"
+  price: "250 usd"
+
+
 - name: "Timex Weekender"
   description: "Elegant and humble. Just like me"
-  image: "https://m.media-amazon.com/images/I/71n1kR9d9HL._AC_SX679_.jpg"
+  image: "https://www.zegarki-pro.pl/35746-large_default/ceas-barbatesc-timex-weekender-t2n654.jpg"
   price: "270 pln"
 
 - name: "Timex Digital classic"
@@ -29,11 +35,6 @@
   description: "Feel the spirit of adventure and courage. Very distinctive and beautiful. Old style on a max level."
   image: "https://vario.sg/cdn/shop/products/Trench_brass_cream.jpg?v=1659359788&width=1200"
   price: "388 usd"
-
-- name: "BERNY Compressor Diver Watch V3-AM339M"
-  description: "Something talks to me in this design. I like it."
-  image: "https://img.watchcrunch.com/0XEUv0_nN1ctI0tUpgpm72wK1-Jsi_npGMjy9ku4D44/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOS8xOC8wZmQyYTE0Mi03MzgyLTRmYTgtOTcyMy1lNTZiMWIxNDUwODcucG5n.png"
-  price: "450 zl"
 
 - name: "Panerai Luminor Submersible"
   description: "If you see me with these, I have either robbed a bank or won a lottery."
