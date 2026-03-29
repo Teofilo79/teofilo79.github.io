@@ -1,5 +1,25 @@
   # Data for watches wishlist of watches
 
+- name: "Baltany Classic 1926s Tribute Quartz Version"
+  description: "Retro dress watch, original design - good for office"
+  image: "https://img.watchcrunch.com/b3ttuZ_Z2JPPu-FWfpNZLoDA8dXxcCCCf2Tb61YEUC8/w:2560/h:2560/rt:fit/g:ce:0:0/dpr:1/aW1nOi8vMjAyNi8wMy8yOS8wYzllYmM2YS1kZDA4LTQzNjgtODE5Zi0zZmI0ODU2ODA3N2IuanBn.jpg"
+  price: "112 usd"
+
+- name: "Casio A100WEF"
+  description: "Timeless design, please for eyes. Why not!"
+  image: "https://img.watchcrunch.com/GCS4z5zprhc3cHLtIcxxzm8cXaFmNorhwxLn-ICAs5Y/w:1440/h:960/rt:fit/g:ce:0:0/dpr:2/aW1nOi8vMjAyNi8wMy8yOS9iZmY0ZDNlZC1hYjgyLTRjNTItYjUzYy0yODc2OGM5OGU5MWEuanBn.jpg"
+  price: "250 zl"
+
+- name: "Farr&Swift Aquamarine Retro Digital - Mix Tape Vol. 2"
+  description: "Retro tape! I had a hige collection of these. Good memories. Nice watch!"
+  image: "https://i0.wp.com/www.thetimebum.com/wp-content/uploads/2024/12/IMG_7794.jpeg?w=1800&ssl=1"
+  price: "35 usd"
+
+- name: "Citizen Leather Eco-Drive"
+  description: "Eyeing it for a long time. Shows day of the week and looks nice. Eco-drive. Worth it."
+  image: "https://zegarownia.pl/media/catalog/product/resized/1/1667/fr/z/e/zegarek-meski-citizen-elegance-eco-drive-aw0102-13ae_1.webp"
+  price: "700 zl"
+
 - name: "Casio Royale full metal"
   description: "I have already one. Bronze, steampunk style. Put it in a metal case - and it will be perfect retro unusual classic."
   image: "https://plugin-img.myshopline.com/image/comment/1646381574639/f9b56e022f3f454cbd8c4792ad46bca9.jpeg"
@@ -8,7 +28,7 @@
 
 - name: "Timex Weekender"
   description: "Elegant and humble. Just like me"
-  image: "https://www.zegarki-pro.pl/35746-large_default/ceas-barbatesc-timex-weekender-t2n654.jpg"
+  image: "https://cdn.mos.cms.futurecdn.net/XnwszjTqKqdWmPGVsYkfpY-1024-80.jpg.webp"
   price: "270 pln"
 
 - name: "Kleynod Men's watch K 21-506"
