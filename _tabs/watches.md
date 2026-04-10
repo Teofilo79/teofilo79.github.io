@@ -82,7 +82,7 @@ order: 5
 <div width="100%" style="text-align:left">
 Confession here! I am watch addict. It lasts my whole life, I was buying watches each few years or so. I always had a watch on the wrist. But last few years I started falling into the rabbit hole of watch collecting. Revealed a lot of watch enthusiasts, communities, youtube bloggers that share the same passion to watches and admire them with no logical - sometimes purely aesthetic reasons.<br><br>
 
-This page has my <a href="#current_collection">current collection</a> and my <a href="#wishlist_collection">wishlist</a> that can be used when I finally win a lottery :)<br><br>
+This page has my current <a href="#current_collection">COLLECTION</a> and my <a href="#wishlist_collection">WISHLIST</a> that can be used when I finally win a lottery :)<br><br>
 
 So, let me give you small introduction to this wonderful world.<br><br>
 There is a non-official division on watch types:<br>

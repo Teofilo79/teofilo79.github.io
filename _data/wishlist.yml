@@ -1,4 +1,10 @@
   # Data for watches wishlist of watches
+
+- name: "Seiko Digital SMGG21P1"
+  description: "This is digital watch with a rotating besel! Just imagine. It is unusual, it looks solid, something that catches eye. Again, good-looking."
+  image: "https://cdn.awsli.com.br/2500x2500/568/568258/produto/375755184/relojoaria_impala-seiko-seiko_quartz-seiko_rotocall-smgg19b1-smgg17b1-smgg21p1-2-45hn64xgnq.jpg"
+  price: "350-500 usd"
+
 - name: "Casio A168"
   description: "This one. Silver case. Very close to Montana and old Elekktronica watches from 80s"
   image: "https://www.zegarki.pl/images/thumbs/0429304_a168wa-1yes5.jpeg"
@@ -35,30 +41,15 @@
   image: "https://cdn.mos.cms.futurecdn.net/XnwszjTqKqdWmPGVsYkfpY-1024-80.jpg.webp"
   price: "270 pln"
 
-- name: "Kleynod Men's watch K 21-506"
-  description: "Навіть не треба пояснювати навіщо вони тут. Дивно що досі не в мене."
-  image: "https://us.kleynodwatches.com/wp-content/uploads/3/2018/04/2137.png"
-  price: "350 usd"
-
 - name: "Orient Bambino FAC00009N0"
   description: "Another old style dressy and classic-looking masterpiece"
   image: "https://i.redd.it/tga2m154hz681.jpg"
   price: "220 usd"
 
-- name: "Casio Protrek PRJB001"
-  description: "Very good designed, pleasure to the eyes"
-  image: "https://watchdirect.com.au/cdn/shop/files/PRJ-B001-7_1.png"
-  price: "670 pln"
-
-- name: "Vario 1918 Trench Brass Cream Dial"
-  description: "Feel the spirit of adventure and courage. Very distinctive and beautiful. Old style on a max level."
-  image: "https://vario.sg/cdn/shop/products/Trench_brass_cream.jpg?v=1659359788&width=1200"
-  price: "388 usd"
-
-- name: "Panerai Luminor Submersible"
+- name: "Rolex Submariner 126610"
   description: "If you see me with these, I have either robbed a bank or won a lottery."
-  image: "https://img.watchcrunch.com/qSqiJ4QUjzJUPO-SCz4ZMBjDEKJeOcMh1M-t6Pavs-Y/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMS9iYzAzMDQ2Zi1jZTFiLTRkM2QtYmFlOC05YTY3ZjMwY2ZkODAuanBn.jpg"
-  price: "50 000 zl"
+  image: "https://windupmerchantwatches.co.uk/wp-content/uploads/2024/12/img_3246-scaled.jpeg"
+  price: "14 000 eur"
 
 
 
