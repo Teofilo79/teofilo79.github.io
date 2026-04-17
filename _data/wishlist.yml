@@ -2,7 +2,7 @@
 - name: "Casio AQ-240E-3AER"
   description: "Vintage and elegant at its peak! Love the look of this masterpiece."
   image: "https://newworld.co.za/cdn/shop/files/AQ-240E-3.2.webp?v=1765635980"
-  price: "330 pln"
+  price: "330 pln"  
 
 - name: "Seiko Digital SMGG21P1"
   description: "This is digital watch with a rotating besel! Just imagine. It is unusual, it looks solid, something that catches eye. Again, good-looking."
@@ -19,10 +19,10 @@
   image: "https://img.watchcrunch.com/b3ttuZ_Z2JPPu-FWfpNZLoDA8dXxcCCCf2Tb61YEUC8/w:2560/h:2560/rt:fit/g:ce:0:0/dpr:1/aW1nOi8vMjAyNi8wMy8yOS8wYzllYmM2YS1kZDA4LTQzNjgtODE5Zi0zZmI0ODU2ODA3N2IuanBn.jpg"
   price: "112 usd"
 
-- name: "Casio A100WEF"
-  description: "Timeless design, please for eyes. Why not!"
-  image: "https://img.watchcrunch.com/GCS4z5zprhc3cHLtIcxxzm8cXaFmNorhwxLn-ICAs5Y/w:1440/h:960/rt:fit/g:ce:0:0/dpr:2/aW1nOi8vMjAyNi8wMy8yOS9iZmY0ZDNlZC1hYjgyLTRjNTItYjUzYy0yODc2OGM5OGU5MWEuanBn.jpg"
-  price: "250 zl"
+- name: "Timex T80"
+  description: "I need at least one gold watch! This one touches my heart. Why not!"
+  image: "https://www.zegarek.net/imageslib/produkty/duze/zegarek-timex-tw2w68100-221110-6.jpg"
+  price: "360 zl"
 
 - name: "Farr&Swift Aquamarine Retro Digital - Mix Tape Vol. 2"
   description: "Retro tape! I had a hige collection of these. Good memories. Nice watch!"
