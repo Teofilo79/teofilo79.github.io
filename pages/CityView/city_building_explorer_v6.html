@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e8f4f8, #d4e5ed, #c9dde6);
+            color: #1a1a2e;
+            min-height: 100vh;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: #1a1a2e;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .city-input-wrapper {
+            position: relative;
+        }
+
+        .city-input {
+            display: flex;
+            gap: 8px;
+        }
+
+        .city-input input {
+            padding: 8px 16px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            background: #fff;
+            color: #1a1a2e;
+            font-size: 0.9rem;
+            outline: none;
+            width: 280px;
+        }
+
+        .city-input input::placeholder {
+            color: #888;
+        }
+
+        .city-input button {
+            padding: 8px 20px;
+            border-radius: 25px;
+            border: none;
+            background: #2563eb;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .city-input button:hover {
+            opacity: 0.85;
+        }
+
+        /* Autocomplete Dropdown */
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            margin-top: 5px;
+        }
+
+        .autocomplete-dropdown.active {
+            display: block;
+        }
+
+        .autocomplete-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover,
+        .autocomplete-item.selected {
+            background: #e8f4f8;
+        }
+
+        .autocomplete-item .city-name {
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+
+        .autocomplete-item .city-details {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .autocomplete-item .country-flag {
+            font-size: 1.2rem;
+        }
+
+        .autocomplete-loading {
+            padding: 15px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .card-header h2 {
+            font-size: 1.1rem;
+            color: #1a1a2e;
+        }
+
+        .remove-btn {
+            background: rgba(220, 38, 38, 0.2);
+            border: none;
+            color: #dc2626;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .remove-btn:hover {
+            background: rgba(220, 38, 38, 0.4);
+        }
+
+        .card p,
+        .card a {
+            color: #334155;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .card a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Weather Section with Background Image */
+        .weather-section {
+            position: relative;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .weather-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        /* Top part - clear, no overlay (70%) */
+        .weather-top {
+            position: relative;
+            z-index: 1;
+            height: 70%;
+        }
+
+        /* Bottom part - semi-transparent overlay with weather data (30%) */
+        .weather-bottom {
+            position: relative;
+            z-index: 2;
+            height: 30%;
+            background: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+        }
+
+        .weather-current {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .weather-main-icon {
+            font-size: 2.5rem;
+            filter: brightness(0) saturate(100%) invert(16%) sepia(96%) saturate(2286%) hue-rotate(217deg) brightness(94%) contrast(96%);
+        }
+
+        .weather-temp {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .weather-location {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-top: 2px;
+        }
+
+        /* Forecast */
+        .forecast-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .forecast-day {
+            text-align: center;
+        }
+
+        .forecast-day .day-name {
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin-bottom: 3px;
+        }
+
+        .forecast-day .day-icon {
+            font-size: 1.3rem;
+            margin-bottom: 3px;
+            filter: brightness(0) saturate(100%) invert(16%) sepia(96%) saturate(2286%) hue-rotate(217deg) brightness(94%) contrast(96%);
+        }
+
+        .forecast-day .day-temp {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        /* News Section */
+        .news-section {
+            margin-top: 15px;
+        }
+
+        .news-section h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+
+        .news-item {
+            padding: 6px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .news-item a {
+            display: inline;
+        }
+
+        .news-date {
+            color: #64748b;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+
+        /* Holidays Section */
+        .holidays-section {
+            margin-top: 15px;
+        }
+
+        .holidays-section h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+
+        .holiday-item {
+            padding: 6px 0;
+        }
+
+        .holiday-name {
+            display: inline;
+        }
+
+        .holiday-name a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .holiday-name a:hover {
+            text-decoration: underline;
+        }
+
+        .holiday-date {
+            color: #64748b;
+            font-size: 0.75rem;
+            margin-left: 8px;
+        }
+
+        .holiday-today {
+            font-weight: bold;
+        }
+
+        .holiday-today .holiday-name a {
+            color: #2563eb;
+        }
+
+        .days-left {
+            background: rgba(37, 99, 235, 0.15);
+            color: #2563eb;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-left: 8px;
+        }
+
+        .loading {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 0.85rem;
+        }
+
+        .refresh-btn {
+            display: block;
+            margin: 25px auto 0;
+            padding: 10px 30px;
+            background: #2563eb;
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .refresh-btn:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌍 City Dashboard</h1>
+
+    <div class="controls">
+        <div class="city-input-wrapper">
+            <div class="city-input">
+                <input type="text" id="cityInput" placeholder="Type city name..." autocomplete="off">
+                <button onclick="addCityCard()">Search</button>
+            </div>
+            <div class="autocomplete-dropdown" id="autocompleteDropdown"></div>
+        </div>
+    </div>
+
+    <div class="dashboard" id="dashboard">
+        <!-- City cards will be added here -->
+    </div>
+
+    <button class="refresh-btn" onclick="refreshAll()">🔄 Refresh All</button>
+
+    <script>
+        // ==========================================
+        // FREE APIs — NO API KEYS REQUIRED
+        // Geocoding: Open-Meteo (free, no key)
+        // Weather:   wttr.in
+        // News:      Google News RSS via rss2json
+        // Holidays:  Nager.Date (country-based)
+        // Images:    Wikipedia (free, no key)
+        // Storage:   Local Storage
+        // ==========================================
+
+        var cardCounter = 0;
+        var selectedCity = null;
+        var autocompleteResults = [];
+        var selectedIndex = -1;
+        var debounceTimer = null;
+        var STORAGE_KEY = 'cityDashboard_cities';
+
+        // Country code to flag emoji mapping
+        var countryFlags = {
+            "US": "🇺🇸", "GB": "🇬🇧", "FR": "🇫🇷", "DE": "🇩🇪", "JP": "🇯🇵",
+            "CN": "🇨🇳", "IN": "🇮🇳", "AU": "🇦🇺", "CA": "🇨🇦", "RU": "🇷🇺",
+            "IT": "🇮🇹", "ES": "🇪🇸", "NL": "🇳🇱", "BE": "🇧🇪", "CH": "🇨🇭",
+            "AT": "🇦🇹", "SE": "🇸🇪", "NO": "🇳🇴", "DK": "🇩🇰", "FI": "🇫🇮",
+            "IE": "🇮🇪", "PT": "🇵🇹", "GR": "🇬🇷", "PL": "🇵🇱", "CZ": "🇨🇿",
+            "HU": "🇭🇺", "RO": "🇷🇴", "BG": "🇧🇬", "HR": "🇭🇷", "RS": "🇷🇸",
+            "UA": "🇺🇦", "TR": "🇹🇷", "AE": "🇦🇪", "SA": "🇸🇦", "EG": "🇪🇬",
+            "ZA": "🇿🇦", "KE": "🇰🇪", "NG": "🇳🇬", "MA": "🇲🇦", "TN": "🇹🇳",
+            "DZ": "🇩🇿", "TH": "🇹🇭", "SG": "🇸🇬", "MY": "🇲🇾", "ID": "🇮🇩",
+            "PH": "🇵🇭", "VN": "🇻🇳", "KR": "🇰🇷", "TW": "🇹🇼", "HK": "🇭🇰",
+            "MX": "🇲🇽", "AR": "🇦🇷", "CL": "🇨🇱", "CO": "🇨🇴", "PE": "🇵🇪",
+            "VE": "🇻🇪", "EC": "🇪🇨", "BO": "🇧🇴", "PY": "🇵🇾", "UY": "🇺🇾",
+            "CU": "🇨🇺", "CR": "🇨🇷", "PA": "🇵🇦", "JM": "🇯🇲", "HT": "🇭🇹",
+            "NZ": "🇳🇿", "BR": "🇧🇷"
+        };
+
+        function getCountryFlag(countryCode) {
+            return countryFlags[countryCode] || "🌍";
+        }
+
+        // Weather description to emoji mapping
+        var weatherIcons = {
+            "sunny": "☀️", "clear": "☀️", "partly cloudy": "⛅", "cloudy": "☁️",
+            "overcast": "☁️", "mist": "🌫️", "fog": "🌫️", "haze": "🌫️",
+            "light rain": "🌦️", "rain": "🌧️", "heavy rain": "🌧️", "thunderstorm": "⛈️",
+            "snow": "❄️", "light snow": "🌨️", "heavy snow": "❄️", "sleet": "🌨️",
+            "windy": "💨", "blizzard": "🌨️", "drizzle": "🌦️", "shower": "🌦️",
+            "patchy rain": "🌦️", "patchy snow": "🌨️", "ice": "🧊", "hot": "🥵", "cold": "🥶"
+        };
+
+        function getWeatherIcon(desc) {
+            var descLower = desc.toLowerCase();
+            for (var key in weatherIcons) {
+                if (descLower.indexOf(key) !== -1) {
+                    return weatherIcons[key];
+                }
+            }
+            return "🌡️";
+        }
+
+        // -------- IMAGE SOURCE - WIKIPEDIA --------
+        function fetchCityImage(city, callback) {
+            // Search Wikipedia for the city page
+            var searchUrl = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + encodeURIComponent(city) + "&format=json&origin=*";
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", searchUrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        var data = JSON.parse(xhr.responseText);
+                        if (data.query && data.query.search && data.query.search.length > 0) {
+                            // Get the page image using the exact city name
+                            var pageTitle = data.query.search[0].title;
+                            getPageImage(pageTitle, city, callback);
+                        } else {
+                            callback(null);
+                        }
+                    } catch (e) {
+                        callback(null);
+                    }
+                }
+            };
+            xhr.onerror = function () { callback(null); };
+            xhr.send();
+        }
+
+        function getPageImage(pageTitle, cityName, callback) {
+            // Try to get the main image from the Wikipedia page
+            var imageUrl = "https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(pageTitle) + "&prop=pageimages&piprop=original&format=json&origin=*";
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", imageUrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        var data = JSON.parse(xhr.responseText);
+                        var pages = data.query.pages;
+                        for (var pageId in pages) {
+                            if (pages[pageId].original && pages[pageId].original.source) {
+                                callback(pages[pageId].original.source);
+                                return;
+                            }
+                        }
+                        // If no image found, try alternative search
+                        tryAlternativeImage(cityName, callback);
+                    } catch (e) {
+                        tryAlternativeImage(cityName, callback);
+                    }
+                } else {
+                    tryAlternativeImage(cityName, callback);
+                }
+            };
+            xhr.onerror = function () { tryAlternativeImage(cityName, callback); };
+            xhr.send();
+        }
+
+        function tryAlternativeImage(cityName, callback) {
+            // Try searching for "CityName" directly (not "CityName city")
+            var searchUrl = "https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(cityName) + "&prop=pageimages&piprop=original&format=json&origin=*";
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", searchUrl, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        var data = JSON.parse(xhr.responseText);
+                        var pages = data.query.pages;
+                        for (var pageId in pages) {
+                            if (pages[pageId].original && pages[pageId].original.source) {
+                                callback(pages[pageId].original.source);
+                                return;
+                            }
+                        }
+                        callback(null);
+                    } catch (e) {
+                        callback(null);
+                    }
+                } else {
+                    callback(null);
+                }
+            };
+            xhr.onerror = function () { callback(null); };
+            xhr.send();
+        }
+
+        // -------- LOCAL STORAGE FUNCTIONS --------
+        function saveCitiesToStorage() {
+            var cities = [];
+            var cards = document.querySelectorAll(".card");
+            cards.forEach(function (card) {
+                cities.push({
+                    city: card.dataset.city,
+                    country: card.dataset.country
+                });
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cities));
+        }
+
+        function loadCitiesFromStorage() {
+            var stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                try {
+                    var cities = JSON.parse(stored);
+                    return cities;
+                } catch (e) {
+                    return null;
+                }
+            }
+            return null;
+        }
+
+        // -------- AUTOCOMPLETE --------
+        var cityInput = document.getElementById("cityInput");
+        var dropdown = document.getElementById("autocompleteDropdown");
+
+        cityInput.addEventListener("input", function () {
+            var query = this.value.trim();
+            
+            clearTimeout(debounceTimer);
+            
+            if (query.length < 2) {
+                hideDropdown();
+                return;
+            }
+            
+            debounceTimer = setTimeout(function () {
+                searchCities(query);
+            }, 300);
+        });
+
+        cityInput.addEventListener("keydown", function (e) {
+            if (!dropdown.classList.contains("active")) return;
+            
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                selectedIndex = Math.min(selectedIndex + 1, autocompleteResults.length - 1);
+                updateSelection();
+            } else if (e.key === "ArrowUp") {
+                e.preventDefault();
+                selectedIndex = Math.max(selectedIndex - 1, -1);
+                updateSelection();
+            } else if (e.key === "Enter") {
+                e.preventDefault();
+                if (selectedIndex >= 0 && selectedIndex < autocompleteResults.length) {
+                    selectCity(autocompleteResults[selectedIndex]);
+                } else {
+                    addCityCard();
+                }
+            } else if (e.key === "Escape") {
+                hideDropdown();
+            }
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!e.target.closest(".city-input-wrapper")) {
+                hideDropdown();
+            }
+        });
+
+        function searchCities(query) {
+            dropdown.innerHTML = '<div class="autocomplete-loading">🔍 Searching...</div>';
+            dropdown.classList.add("active");
+            
+            var url = "https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(query) + "&count=8&language=en&format=json";
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        try {
+                            var data = JSON.parse(xhr.responseText);
+                            if (data.results && data.results.length > 0) {
+                                autocompleteResults = data.results;
+                                selectedIndex = -1;
+                                renderDropdown(data.results);
+                            } else {
+                                dropdown.innerHTML = '<div class="autocomplete-loading">No cities found</div>';
+                            }
+                        } catch (e) {
+                            dropdown.innerHTML = '<div class="autocomplete-loading">Error searching</div>';
+                        }
+                    } else {
+                        dropdown.innerHTML = '<div class="autocomplete-loading">Error searching</div>';
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function renderDropdown(results) {
+            var html = "";
+            for (var i = 0; i < results.length; i++) {
+                var city = results[i];
+                var flag = getCountryFlag(city.country_code);
+                var admin1 = city.admin1 ? city.admin1 + ", " : "";
+                var country = city.country || city.country_code;
+                
+                html += '<div class="autocomplete-item" data-index="' + i + '" onclick="selectCity(autocompleteResults[' + i + '])">';
+                html += '<div>';
+                html += '<div class="city-name">' + city.name + '</div>';
+                html += '<div class="city-details">' + admin1 + country + ' • Pop: ' + (city.population ? city.population.toLocaleString() : 'N/A') + '</div>';
+                html += '</div>';
+                html += '<div class="country-flag">' + flag + '</div>';
+                html += '</div>';
+            }
+            dropdown.innerHTML = html;
+        }
+
+        function updateSelection() {
+            var items = dropdown.querySelectorAll(".autocomplete-item");
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.remove("selected");
+                if (i === selectedIndex) {
+                    items[i].classList.add("selected");
+                    items[i].scrollIntoView({ block: "nearest" });
+                }
+            }
+        }
+
+        function selectCity(city) {
+            selectedCity = city;
+            cityInput.value = city.name + ", " + (city.country || city.country_code);
+            hideDropdown();
+        }
+
+        function hideDropdown() {
+            dropdown.classList.remove("active");
+            selectedIndex = -1;
+        }
+
+        // -------- COUNTRY NAMES --------
+        var countryNames = {
+            "US": "United States", "GB": "United Kingdom", "FR": "France", "DE": "Germany",
+            "JP": "Japan", "CN": "China", "IN": "India", "AU": "Australia", "CA": "Canada",
+            "RU": "Russia", "IT": "Italy", "ES": "Spain", "NL": "Netherlands", "BE": "Belgium",
+            "CH": "Switzerland", "AT": "Austria", "SE": "Sweden", "NO": "Norway", "DK": "Denmark",
+            "FI": "Finland", "IE": "Ireland", "PT": "Portugal", "GR": "Greece", "PL": "Poland",
+            "CZ": "Czech Republic", "HU": "Hungary", "RO": "Romania", "BG": "Bulgaria",
+            "HR": "Croatia", "RS": "Serbia", "UA": "Ukraine", "TR": "Turkey", "AE": "UAE",
+            "SA": "Saudi Arabia", "EG": "Egypt", "ZA": "South Africa", "KE": "Kenya",
+            "NG": "Nigeria", "MA": "Morocco", "TN": "Tunisia", "DZ": "Algeria",
+            "TH": "Thailand", "SG": "Singapore", "MY": "Malaysia", "ID": "Indonesia",
+            "PH": "Philippines", "VN": "Vietnam", "KR": "South Korea", "TW": "Taiwan",
+            "HK": "Hong Kong", "MX": "Mexico", "AR": "Argentina", "CL": "Chile",
+            "CO": "Colombia", "PE": "Peru", "VE": "Venezuela", "EC": "Ecuador",
+            "BO": "Bolivia", "PY": "Paraguay", "UY": "Uruguay", "CU": "Cuba",
+            "CR": "Costa Rica", "PA": "Panama", "JM": "Jamaica", "HT": "Haiti",
+            "NZ": "New Zealand", "BR": "Brazil"
+        };
+
+        function getCountryName(code) {
+            return countryNames[code] || code;
+        }
+
+        function getDaysLeft(targetDate) {
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+            var target = new Date(targetDate);
+            target.setHours(0, 0, 0, 0);
+            var diff = Math.ceil((target - today) / (1000 * 60 * 60 * 24));
+            return diff;
+        }
+
+        function formatDate(dateStr) {
+            var d = new Date(dateStr);
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            return days[d.getDay()];
+        }
+
+        // -------- WIKIPEDIA LINK FOR HOLIDAYS --------
+        function getHolidayWikipediaUrl(holidayName, countryCode) {
+            var searchTerm = encodeURIComponent(holidayName + " holiday");
+            return "https://en.wikipedia.org/wiki/Special:Search?search=" + searchTerm;
+        }
+
+        // -------- ADD CITY CARD --------
+        function addCityCard() {
+            var cityName, countryCode;
+            
+            if (selectedCity) {
+                cityName = selectedCity.name;
+                countryCode = selectedCity.country_code;
+            } else {
+                cityName = cityInput.value.trim() || "London";
+                var parts = cityName.split(",");
+                if (parts.length > 1) {
+                    cityName = parts[0].trim();
+                }
+                countryCode = "GB";
+            }
+            
+            cardCounter++;
+            var cardId = "card-" + cardCounter;
+
+            var dashboard = document.getElementById("dashboard");
+            var card = document.createElement("div");
+            card.className = "card";
+            card.id = cardId;
+            card.dataset.city = cityName;
+            card.dataset.country = countryCode;
+
+            card.innerHTML =
+                '<div class="card-header">' +
+                    '<h2>' + getCountryFlag(countryCode) + ' ' + cityName + '</h2>' +
+                    '<button class="remove-btn" onclick="removeCard(\'' + cardId + '\')" title="Remove">×</button>' +
+                '</div>' +
+                '<div class="card-content">' +
+                    '<p class="loading">Loading data...</p>' +
+                '</div>';
+
+            dashboard.appendChild(card);
+            fetchCityData(cityName, countryCode, cardId);
+            
+            cityInput.value = "";
+            selectedCity = null;
+            
+            saveCitiesToStorage();
+        }
+
+        // -------- REMOVE CARD --------
+        function removeCard(cardId) {
+            var card = document.getElementById(cardId);
+            if (card) {
+                card.remove();
+                saveCitiesToStorage();
+            }
+        }
+
+        // -------- FETCH CITY DATA --------
+        function fetchCityData(city, countryCode, cardId) {
+            var card = document.getElementById(cardId);
+            var content = card.querySelector(".card-content");
+
+            var weatherData = null;
+            var newsData = null;
+            var holidayData = null;
+            var cityImage = null;
+            var completed = 0;
+            var totalRequests = 4;
+
+            function checkComplete() {
+                completed++;
+                if (completed === totalRequests) {
+                    renderCard(weatherData, newsData, holidayData, cityImage, city, countryCode, content);
+                }
+            }
+
+            // 1. Weather
+            var xhr1 = new XMLHttpRequest();
+            xhr1.open("GET", "https://wttr.in/" + encodeURIComponent(city) + "?format=j1", true);
+            xhr1.onreadystatechange = function () {
+                if (xhr1.readyState === 4) {
+                    if (xhr1.status === 200) {
+                        try { weatherData = JSON.parse(xhr1.responseText); } catch (e) {}
+                    }
+                    checkComplete();
+                }
+            };
+            xhr1.send();
+
+            // 2. News
+            var xhr2 = new XMLHttpRequest();
+            var newsRssUrl = "https://news.google.com/rss/search?q=" + encodeURIComponent(city) + "&hl=en-US&gl=US&ceid=US:en";
+            var proxyUrl = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(newsRssUrl);
+            xhr2.open("GET", proxyUrl, true);
+            xhr2.onreadystatechange = function () {
+                if (xhr2.readyState === 4) {
+                    if (xhr2.status === 200) {
+                        try { newsData = JSON.parse(xhr2.responseText); } catch (e) {}
+                    }
+                    checkComplete();
+                }
+            };
+            xhr2.send();
+
+            // 3. Holidays
+            var xhr3 = new XMLHttpRequest();
+            var year = new Date().getFullYear();
+            xhr3.open("GET", "https://date.nager.at/api/v3/PublicHolidays/" + year + "/" + countryCode, true);
+            xhr3.onreadystatechange = function () {
+                if (xhr3.readyState === 4) {
+                    if (xhr3.status === 200) {
+                        try { holidayData = JSON.parse(xhr3.responseText); } catch (e) {}
+                    }
+                    checkComplete();
+                }
+            };
+            xhr3.send();
+
+            // 4. City Image from Wikipedia
+            fetchCityImage(city, function(imageUrl) {
+                cityImage = imageUrl;
+                checkComplete();
+            });
+        }
+
+        // -------- RENDER CARD --------
+        function renderCard(weatherData, newsData, holidayData, cityImage, city, countryCode, content) {
+            var html = "";
+
+            // Weather section with background image
+            html += '<div class="weather-section">';
+            
+            // Background image from Wikipedia
+            if (cityImage) {
+                html += '<img class="weather-bg-image" src="' + cityImage + '" alt="' + city + '" onerror="this.style.display=\'none\'">';
+            }
+            
+            // Top part - clear, just shows the city image (70%)
+            html += '<div class="weather-top"></div>';
+            
+            // Bottom part - semi-transparent overlay with weather data (30%)
+            html += '<div class="weather-bottom">';
+            
+            // Current weather (left side)
+            html += '<div class="weather-current">';
+            
+            if (weatherData) {
+                try {
+                    var c = weatherData.current_condition[0];
+                    var a = weatherData.nearest_area[0];
+                    var currentDesc = c.weatherDesc[0].value;
+                    var currentIcon = getWeatherIcon(currentDesc);
+
+                    html += '<div class="weather-main-icon">' + currentIcon + '</div>';
+                    html += '<div>';
+                    html += '<div class="weather-temp">' + c.temp_C + '°C</div>';
+                    html += '<div class="weather-location">' + a.areaName[0].value + ', ' + a.country[0].value + '</div>';
+                    html += '</div>';
+                } catch (e) {
+                    html += '<p class="error">Weather unavailable</p>';
+                }
+            } else {
+                html += '<p class="error">Weather unavailable</p>';
+            }
+            
+            html += '</div>'; // end weather-current
+            
+            // Forecast (right side)
+            html += '<div class="forecast-row">';
+            
+            if (weatherData && weatherData.weather && weatherData.weather.length > 1) {
+                for (var f = 1; f <= 3 && f < weatherData.weather.length; f++) {
+                    var forecast = weatherData.weather[f];
+                    var dayIcon = getWeatherIcon(forecast.hourly[4].weatherDesc[0].value);
+                    var maxTemp = forecast.maxtempC;
+                    var minTemp = forecast.mintempC;
+                    html += '<div class="forecast-day">';
+                    html += '<div class="day-name">' + formatDate(forecast.date) + '</div>';
+                    html += '<div class="day-icon">' + dayIcon + '</div>';
+                    html += '<div class="day-temp">' + maxTemp + '° / ' + minTemp + '°</div>';
+                    html += '</div>';
+                }
+            }
+            
+            html += '</div>'; // end forecast-row
+            html += '</div>'; // end weather-bottom
+            html += '</div>'; // end weather-section
+
+            // News
+            html += '<div class="news-section">';
+            html += '<h3>📰 News</h3>';
+            if (newsData && newsData.items && newsData.items.length > 0) {
+                var maxNews = Math.min(5, newsData.items.length);
+                for (var i = 0; i < maxNews; i++) {
+                    var item = newsData.items[i];
+                    var dateStr = item.pubDate ? new Date(item.pubDate).toLocaleDateString() : "";
+                    html += '<div class="news-item">';
+                    html += '<a href="' + item.link + '" target="_blank">' + item.title + '</a>';
+                    html += '<span class="news-date">' + dateStr + '</span>';
+                    html += '</div>';
+                }
+            } else {
+                html += '<p class="error">No news available</p>';
+            }
+            html += '</div>';
+
+            // Holidays
+            html += '<div class="holidays-section">';
+            html += '<h3>🎉 Holidays in ' + getCountryName(countryCode) + '</h3>';
+            if (holidayData && holidayData.length > 0) {
+                var today = new Date().toISOString().split("T")[0];
+                var todayHolidays = [];
+                var upcoming = [];
+
+                for (var j = 0; j < holidayData.length; j++) {
+                    if (holidayData[j].date === today) {
+                        todayHolidays.push(holidayData[j]);
+                    } else if (holidayData[j].date > today) {
+                        upcoming.push(holidayData[j]);
+                    }
+                }
+
+                if (todayHolidays.length > 0) {
+                    for (var k = 0; k < todayHolidays.length; k++) {
+                        var wikiUrl = getHolidayWikipediaUrl(todayHolidays[k].name, countryCode);
+                        html += '<div class="holiday-item holiday-today">';
+                        html += '<span class="holiday-name">🎊 <a href="' + wikiUrl + '" target="_blank">' + todayHolidays[k].name + '</a></span>';
+                        html += '<span class="holiday-date">TODAY!</span>';
+                        html += '</div>';
+                    }
+                }
+
+                var showUpcoming = upcoming.slice(0, 4);
+                for (var m = 0; m < showUpcoming.length; m++) {
+                    var daysLeft = getDaysLeft(showUpcoming[m].date);
+                    var wikiUrl = getHolidayWikipediaUrl(showUpcoming[m].name, countryCode);
+                    html += '<div class="holiday-item">';
+                    html += '<span class="holiday-name">🎊 <a href="' + wikiUrl + '" target="_blank">' + showUpcoming[m].name + '</a></span>';
+                    html += '<span class="holiday-date">' + showUpcoming[m].date + '</span>';
+                    html += '<span class="days-left">' + daysLeft + ' days</span>';
+                    html += '</div>';
+                }
+
+                if (todayHolidays.length === 0 && upcoming.length === 0) {
+                    html += '<p class="error">No upcoming holidays</p>';
+                }
+            } else {
+                html += '<p class="error">No holidays data</p>';
+            }
+            html += '</div>';
+
+            content.innerHTML = html;
+        }
+
+        // -------- REFRESH ALL --------
+        function refreshAll() {
+            var cards = document.querySelectorAll(".card");
+            cards.forEach(function (card) {
+                var city = card.dataset.city;
+                var country = card.dataset.country;
+                var content = card.querySelector(".card-content");
+                content.innerHTML = '<p class="loading">Refreshing...</p>';
+                fetchCityData(city, country, card.id);
+            });
+        }
+
+        // -------- INITIALIZE - LOAD FROM STORAGE --------
+        function initializeFromStorage() {
+            var cities = loadCitiesFromStorage();
+            if (cities && cities.length > 0) {
+                cities.forEach(function (cityData) {
+                    cardCounter++;
+                    var cardId = "card-" + cardCounter;
+
+                    var dashboard = document.getElementById("dashboard");
+                    var card = document.createElement("div");
+                    card.className = "card";
+                    card.id = cardId;
+                    card.dataset.city = cityData.city;
+                    card.dataset.country = cityData.country;
+
+                    card.innerHTML =
+                        '<div class="card-header">' +
+                            '<h2>' + getCountryFlag(cityData.country) + ' ' + cityData.city + '</h2>' +
+                            '<button class="remove-btn" onclick="removeCard(\'' + cardId + '\')" title="Remove">×</button>' +
+                        '</div>' +
+                        '<div class="card-content">' +
+                            '<p class="loading">Loading data...</p>' +
+                        '</div>';
+
+                    dashboard.appendChild(card);
+                    fetchCityData(cityData.city, cityData.country, cardId);
+                });
+            } else {
+                addCityCard();
+            }
+        }
+
+        // Initialize on page load
+        initializeFromStorage();
+    </script>
+</body>
+</html>
