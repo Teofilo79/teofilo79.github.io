@@ -241,20 +241,20 @@
         }
 
         .weather-main-icon {
-            font-size: 2.5rem;
-            filter: brightness(0) saturate(100%) invert(16%) sepia(96%) saturate(2286%) hue-rotate(217deg) brightness(94%) contrast(96%);
+            font-size: 1.6rem;
+            filter: brightness(0) invert(1) drop-shadow(0px 0px 1px #000) drop-shadow(0px 0px 1px #000);
         }
 
         .weather-temp {
-            font-size: 2rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: #2563eb;
+            color: #000;
         }
 
         .weather-location {
             font-size: 0.75rem;
             font-weight: bold;
-            color: #1a1a2e;
+            color: #000;
             margin-top: 2px;
         }
 
@@ -271,20 +271,20 @@
         .forecast-day .day-name {
             font-size: 0.65rem;
             font-weight: bold;
-            color: #1a1a2e;
+            color: #000;
             margin-bottom: 3px;
         }
 
         .forecast-day .day-icon {
-            font-size: 1.3rem;
+            font-size: 1rem;
             margin-bottom: 3px;
-            filter: brightness(0) saturate(100%) invert(16%) sepia(96%) saturate(2286%) hue-rotate(217deg) brightness(94%) contrast(96%);
+            filter: brightness(0) invert(1) drop-shadow(0px 0px 1px #000) drop-shadow(0px 0px 1px #000);
         }
 
         .forecast-day .day-temp {
             font-size: 0.7rem;
             font-weight: bold;
-            color: #2563eb;
+            color: #000;
         }
 
         /* News Section */
@@ -903,7 +903,6 @@
                     html += '<div class="weather-main-icon">' + currentIcon + '</div>';
                     html += '<div>';
                     html += '<div class="weather-temp">' + c.temp_C + '°C</div>';
-                    html += '<div class="weather-location">' + a.areaName[0].value + ', ' + a.country[0].value + '</div>';
                     html += '</div>';
                 } catch (e) {
                     html += '<p class="error">Weather unavailable</p>';
@@ -958,13 +957,16 @@
             html += '<h3>🎉 Holidays in ' + getCountryName(countryCode) + '</h3>';
             if (holidayData && holidayData.length > 0) {
                 var today = new Date().toISOString().split("T")[0];
+                var nextMonth = new Date();
+                nextMonth.setDate(nextMonth.getDate() + 30);
+                var nextMonthStr = nextMonth.toISOString().split("T")[0];
                 var todayHolidays = [];
                 var upcoming = [];
 
                 for (var j = 0; j < holidayData.length; j++) {
                     if (holidayData[j].date === today) {
                         todayHolidays.push(holidayData[j]);
-                    } else if (holidayData[j].date > today) {
+                    } else if (holidayData[j].date > today && holidayData[j].date <= nextMonthStr) {
                         upcoming.push(holidayData[j]);
                     }
                 }
@@ -979,7 +981,7 @@
                     }
                 }
 
-                var showUpcoming = upcoming.slice(0, 4);
+                var showUpcoming = upcoming;
                 for (var m = 0; m < showUpcoming.length; m++) {
                     var daysLeft = getDaysLeft(showUpcoming[m].date);
                     var wikiUrl = getHolidayWikipediaUrl(showUpcoming[m].name, countryCode);
@@ -991,7 +993,7 @@
                 }
 
                 if (todayHolidays.length === 0 && upcoming.length === 0) {
-                    html += '<p class="error">No upcoming holidays</p>';
+                    html += '<p class="error">No holidays in the next 30 days</p>';
                 }
             } else {
                 html += '<p class="error">No holidays data</p>';
