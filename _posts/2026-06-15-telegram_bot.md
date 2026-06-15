@@ -7,6 +7,6 @@ image: assets/img/images/Telegram_bot_screenshot.jpg
 ---
 Here's my second experiment with vibe coding. 
 <hr>
-The simple telegram bot. Python runs script with api to get the latest World Cup scores and links to match overviews, and sends me to telegram daily :)
+The simple telegram bot. Python runs script with api to get the latest World Cup scores and links to match overviews, and sends me to telegram daily!
 <hr>
 Impressive, took an hour including python installation. Nice!
