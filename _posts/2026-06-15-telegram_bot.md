@@ -3,7 +3,7 @@ title: "Vibe coding - telegram bot"
 date: 2026-06-15 00:00:00 +0100
 categories: [Learning]
 tags: [Coding]
-
+image: assets/img/images/Telegram_bot_screenshot.jpg
 ---
 Here's my second experiment with vibe coding. 
 <hr>
