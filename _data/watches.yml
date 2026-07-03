@@ -2,6 +2,14 @@
 
   # The ones that I have:
 
+- name: "Casio GST-B1000D"
+  type: "Daily"
+  description: "Everyday hard to kill watch, with all functions and beautiful display."
+  image: "assets/img/images/Gshock_2026.jpg"
+  movement: "Solar-powered quartz"
+  water_resistance: "200 meters"
+  date_acquired: "June 2026"  
+
 - name: "Seiko Arnie SNJ025P1"
   type: "Diver"
   description: "Seiko Arnie! Tough like I like it. Not for a shy person. For strong men. Solar powered, super-protected tuna-style case."
