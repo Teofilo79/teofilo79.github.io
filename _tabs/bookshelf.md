@@ -5,9 +5,14 @@ order: 7
 ---
 
 
-<H3>Bookshelf</H3>
-My reading list with some comments and thoughts<br>
 
-{% include gallery.html %}
+{% include bookshelf.html %}
 
-<h2>Work in progress, please come back later</h2>
+<br><br><i>Next to read:</i><br><br>
+Секрет щастя «для смертних» (Олівер Беркмен)
+Я, Богдан (це про Хмельницького)<br>
+Сергій Жадан<br>
+Гарпер Лі, "Убити пересмішника"<br>
+A Man Called Ove - Fredrik Backman<br>
+The Cider House Rules - John Irving<br>
+Борис Віан "Шумовиння днів"<br>

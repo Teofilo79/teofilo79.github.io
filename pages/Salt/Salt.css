@@ -1,0 +1,284 @@
+@font-face {
+    font-family: MickeyMouse;
+    src: url("MickeyMousePersonalUseRegular-mLRAG.otf") format("opentype");
+}
+
+*,
+::before,
+::after {
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+    /* border:1px solid blue; */
+}
+
+:root {
+    --backgrnd-color: #FDE3CC;
+	--btn-color: #a46d19;
+    --text-color: #fedd4c;
+}
+
+.hide {
+    display:none;
+}
+.show {
+    display:block;
+}
+
+.delete_text {
+    color:red;
+    font-weight: bold;
+}
+
+body {
+    background: var(--backgrnd-color);
+    font-family:Electrolize, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    width:100%;
+}
+
+.main_tool {
+    padding: 20px;
+    width: min(94vw, 1200px);
+    height: auto;
+	box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #D79A34, 0 8px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    background-color: #d5a345;
+    margin:20px;
+}
+
+.main_tool_layer {
+    padding: 20px;
+    height: auto;
+	box-shadow: 0 0 0 1px #FECB4E inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 4px 0 0 #FECB4E, 0 8px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    background-color: #D7BA76;
+    margin:10px;
+}
+
+.two_blocks_wrapper {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.two_blocks_wrapper > div {
+min-width: 360px;
+flex-grow: 1;
+flex-basis:360px;
+}
+
+.heading {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-weight:bold;
+    font-family: 'MickeyMouse', Arial, Helvetica, sans-serif;
+    font-size: 4em;
+    line-height: 40px;
+}
+
+.subheading {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color:rgb(255, 255, 255);
+    text-shadow: 0px 0px 2px hsl(0, 0%, 36%),
+               0px 3px hsl(0, 0%, 46%);
+    margin:20px 20px 0px 20px;   
+    padding: 0px 20px 0px 20px; 
+    text-align: center;             
+}
+
+.text_block {
+    margin-top:0px; 
+    flex-wrap: nowrap;
+    line-height:2em;
+}
+
+
+.subheading > img {
+    filter: drop-shadow(5px 5px 4px hsl(0, 21%, 43%)) brightness(90%);
+}
+
+.heading > div {
+color:var(--text-color);
+    text-shadow: 1px 1px hsl(37, 46%, 26%),
+               2px 2px hsl(39, 17%, 40%),
+               3px 3px hsl(37, 25%, 41%),
+               4px 4px hsl(37, 27%, 46%),
+               5px 5px hsl(37, 35%, 54%);  
+}
+
+.heading > img {
+    filter: drop-shadow(5px 5px 4px hsl(0, 21%, 43%));
+}
+
+/* styling buttons */
+
+.category {
+    color: white;
+    font-size: 1.3rem;
+    font-weight:normal;
+    font-family: 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;
+    background-color: transparent;
+    padding: 10px;
+    text-shadow: 0px 0px 2px hsl(0, 0%, 36%),
+               0px 3px hsl(0, 0%, 46%); 
+}
+
+.category::first-letter {
+    font-family:  Arial, sans-serif, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: #fedd4c;
+    font-weight: bold;
+}
+
+.btn3d {
+	position: relative;
+	top: -2px;
+	border: 0;
+	transition: all 40ms linear;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(255, 255, 255, 0.238) inset, 0 4px 0 0 #D79A34, 0 4px 4px 1px rgba(99, 99, 99, 0.5);
+	background-color: white;
+    color: #9d6e15;
+    font-size: 0.8rem;
+    font-weight:bold;
+    padding: 10px 6px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.btn3d-select {
+	background-color: #FEAF20;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0px 0px 2px hsl(0, 0%, 36%),
+               0px 3px hsl(0, 0%, 46%);   
+}
+
+.btn3d-select:active:focus,
+.btn3d-select:focus:hover,
+.btn3d-select:focus {
+	-moz-outline-style: none;
+	outline: medium none;
+}
+
+.btn3d-select:active,
+.btn3d-select.active {
+	top: 2px;
+	box-shadow: 0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+	background-color: #FEAF20;
+}
+
+#list_of_categories {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    align-items: center;
+    justify-content: center;
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    gap:10px;
+    margin: 20px;
+}
+
+#list_of_categories > *{
+    text-align:left;
+}
+
+.table_wrapper {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:30px;
+    width:auto;
+}
+
+#table_of_products {
+    margin:0;
+    border:0;
+}
+
+#table_of_products > tr > td{
+    border: none;
+    text-align: center; 
+    font-size: 0.8em;
+	background-color: #9d6e15;
+    color: white;
+    font-weight:bold;
+    padding: 4px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#table_of_products tr:first-child td{
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color:#725210;
+    text-shadow: 1px 1px hsl(44, 53%, 71%),
+               2px 2px hsl(44, 53%, 75%);
+    text-align: center;
+    padding: 10px;                 
+}
+
+#table_of_products > tr > td:first-child {
+	background-color: white;
+    color: #9d6e15;
+    font-size: 0.7em;
+    font-weight:bold;
+    padding: 4px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+#table_of_products tr:last-child td{
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color:#5e521c;
+    text-align: center;
+    padding: 10px;     
+    background:none;            
+}
+
+#own_product_switcher {
+    color:lightgrey;
+}
+
+#salt_in_product {
+    color:rgb(255, 255, 255);
+}
+
+#summary_table_of_products {
+    margin:0;
+    border:0;
+}
+
+#product_comment {
+    color:black;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight:normal;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: none;
+    padding: 10px;
+}

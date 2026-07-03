@@ -76,10 +76,13 @@ order: 5
 
 <H1 style="text-align:center">"If watches were not fun, we would need only one"</H1><br>
 <div width="100%" style="text-align:right">This is quote of one youtuber, pretty smart said.</div><br>
+
+
+<H1 style="text-align:center">Confession</H1><br>
 <div width="100%" style="text-align:left">
 Confession here! I am watch addict. It lasts my whole life, I was buying watches each few years or so. I always had a watch on the wrist. But last few years I started falling into the rabbit hole of watch collecting. Revealed a lot of watch enthusiasts, communities, youtube bloggers that share the same passion to watches and admire them with no logical - sometimes purely aesthetic reasons.<br><br>
 
-This page has my <a href="#current_collection">current collection</a> and my <a href="#wishlist_collection">wishlist</a> that can be used when I finally win a lottery :)<br><br>
+This page has my current <a href="#current_collection">COLLECTION</a> and my <a href="#wishlist_collection">WISHLIST</a> that can be used when I finally win a lottery :)<br><br>
 
 So, let me give you small introduction to this wonderful world.<br><br>
 There is a non-official division on watch types:<br>
@@ -91,6 +94,23 @@ There is a non-official division on watch types:<br>
 </ul>
 </div>
 
+<H2>Update from 20.12.2025</H2><br>
+One watch sold, one was given to father :) and... I am back! Exiting watches collecting lasted 4 months, and I am again enjoying it. Wishlist updated, looking forward to enlarge the collection. Changing watches almost every day and enjoying it.
+
+<hr>
+
+
+<H2>Update from 25.09.2025</H2><br>
+Most of watches are on sale :) When I see even a small chance of changes - I use it. Is it strange? Yes it is. But who am I to fight with myself.
+
+
+<hr>
+![Exit](https://static.vecteezy.com/system/resources/previews/002/301/058/non_2x/fire-exit-emergency-green-sign-free-vector.jpg){: .right w="100" .shadow}
+<H2>Update from 16.09.2025</H2><br>
+There is one interesting term in watch collecting - the "Exit Watch". It has a magic inside - makes you resign from collecting and wear only one. This is like dating a lot of girls and finally marrying the one and only - to be your partner forever. For life and after it if this is possible. So, my latest acquisition made me resign from collecting. I look at the watchbox. I like the watches I've collected - but I do not want to wear them. They are like paintings on the wall. This makes me sad. Then I look at my wrist and smile. Happy again. I have decided to wait for one year. In one year I will probably sell what I can, leaving only the items that were presents from family and friends.
+
+
+<hr>
 
 <H1 id="current_collection" style="text-align:center">Current collection</H1><br>
 Do not ask me why and how, but I really wear them all, rotating each few days. I like how they look, feel and what they can do! Initially I wanted to target on solar watches, they are precise, reliable and need no maintenance. But life is life, some models are just so tempting - can not resist adding them to collection.<br>

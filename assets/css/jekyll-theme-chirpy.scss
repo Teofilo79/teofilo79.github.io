@@ -5,36 +5,42 @@
 @use 'main
 {%- if jekyll.environment == 'production' -%}
   .bundle
-{%- endif -%}';
+{%- endif -%}
+';
 
 /* append your custom style below */
 
 
 
 html[data-mode=light] {
-  --main-bg: #bbc7cf;
-  --sidebar-bg: #bbc7cf;
-  --topbar-bg: #bbc7cf;
+  --main-bg: rgba(0, 0, 0, 0);
+  --sidebar-bg: rgba(0, 0, 0, 0);
+  --topbar-bg: rgba(0, 0, 0, 0);
   --heading-color: rgb(37, 63, 164);
   --text-muted-color: rgb(5, 49, 137);
   --sidebar-active-color: rgb(67, 66, 66);
   --sidebar-muted-color: rgb(67, 66, 66);  
   --site-title-color:rgb(67, 66, 66);
-  --site-subtitle-color:rgb(67, 66, 66);  
-  --card-bg: #3e4b66;  
+  --site-subtitle-color:rgb(67, 66, 66); 
+  --card-bg: rgba(0, 0, 0, 0.05); 
+  --text-muted-color: #34343c;
+  --heading-color: rgb(67, 66, 66);
+
 }
 
 html:not([data-mode]) {
-  --main-bg: #bbc7cf;
-  --sidebar-bg: #bbc7cf;
-  --topbar-bg: #bbc7cf;
+  --main-bg: rgba(0, 0, 0, 0);
+  --sidebar-bg: rgba(0, 0, 0, 0);
+  --topbar-bg: rgba(0, 0, 0, 0);
   --heading-color: rgb(37, 63, 164);
   --text-muted-color: rgb(5, 49, 137);
   --sidebar-active-color: rgb(67, 66, 66);
   --sidebar-muted-color: rgb(67, 66, 66); 
   --site-title-color:rgb(67, 66, 66);  
-  --site-subtitle-color:rgb(67, 66, 66); 
-  --card-bg: #3e4b66;   
+  --site-subtitle-color:rgb(67, 66, 66);  
+  --card-bg: rgba(0, 0, 0, 0.05); 
+  --text-muted-color: #34343c;  
+  --heading-color: rgb(67, 66, 66);
   }
 
 html[data-mode=dark] {
@@ -47,12 +53,13 @@ html[data-mode=dark] {
   --sidebar-active-color: white;
   --sidebar-muted-color: white;  
   --site-title-color:white;  
-  --site-subtitle-color:white;     
+  --site-subtitle-color:white;  
+
 }
 
-#post-list .card {
+#post-list .card , {
     border-radius:14px;
-    border-width: 12px;
+    border-width: 10px;
     border-style: solid;
     border-image: url("/assets/img/images/png-transparent-frame-border-silver.png") 18 stretch;
     border-image-outset: 0px;
@@ -67,7 +74,7 @@ html[data-mode=dark] {
     filter: drop-shadow(#616367 5px 5px 5px);
 }
 
-.nav-item > * , .site-title , .site-subtitle {
+.nav-item > * , .site-title , .site-subtitle , {
 text-shadow:
   0px 0px 2px rgb(255, 255, 255),
   2px 2px 4px rgb(80, 80, 80);  
@@ -75,4 +82,14 @@ text-shadow:
 
 h1 {
   font-weight:bold;
+}
+
+body {
+background-color: rgb(208, 208, 208);
+background-image:
+linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px);
+background-size: 20px 20px, 20px 20px;
+background-position: -1px -1px, -1px -1px;
+background-attachment: fixed;
 }

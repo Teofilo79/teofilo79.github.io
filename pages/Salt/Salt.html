@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salt Calculator</title>
+<link href="Salt.css" rel="stylesheet" type="text/css">
+<script src="Salt.js" defer></script>    
+</head>
+<body>
+<div class="wrapper"><div class="main_tool">
+
+    <div class="heading"><div>Salt</div><img height="80" width="auto" src="Minnie face.png" alt="minnie"/><div>Calculator</div></div>
+    <div class="subheading">
+
+        <!-- <div> Норма - до 5 грамм соли в день</div> -->
+        <!-- <img height="80" width="auto" src="[CITYPNG.COM]Mickey Mouse Minnie Mouse Glove Hands PNG - 1000x1000.png"/> -->
+
+    </div>
+    
+    <div id="list_of_categories"></div>
+
+
+<div class="two_blocks_wrapper">
+
+
+<div class="main_tool_layer" id="layer_adding_product" style="display:none">
+
+    <label class="subheading" for="product-select">Сегодня в меню:</label>
+    <div class="subheading">
+        <select width="100" class="btn3d" name="products" id="product-select" onchange="update_Salt_text()"></select>
+        <input type="text" width="100" class="btn3d" id="own-product-select" style="display:none;" value="Название"></input>
+    </div>  
+
+    <div class="subheading text_block"><div id="salt_in_product"></div><div id="product_comment">&nbsp;</div></div>
+
+    <div class="subheading text_block" style="display:none;">
+        <input width="50" class="btn3d" type="text" id="own_calories_in_product" value="калорий на 100 гр"></input>
+        <input width="50" class="btn3d" type="text" id="own_protein_in_product" value="белок на 100 гр"></input>
+        <input width="50" class="btn3d" type="text" id="own_fat_in_product" value="жиров на 100 гр"></input>
+        <input width="50" class="btn3d" type="text" id="own_carbo_in_product" value="углей на 100 гр"></input>
+        <input width="50" class="btn3d" type="text" id="own_salt_in_product" value="соли на 100 гр"></input>
+        <div></div>
+    </div>
+
+
+<div class="two_blocks_wrapper"><button id="own_product_switcher" class="btn3d btn3d-select" onclick="add_own_product_to_the_table()">+ свой продукт</button></div>
+
+    <div class="subheading">
+        <input style="width:120px;" type="number" class="btn3d" name="quantity_consumed" id="quantity_consumed" onchange=""></select>
+        <div style="padding-top: 20px;" id="unit_of_measure"><br><br></div>
+    </div> 
+
+    <div class="subheading">
+        <button class="btn3d btn3d-select" onclick="add_product_to_the_table()">Добавить</button>
+    </div>
+    
+</div>    
+
+
+
+
+<div class="main_tool_layer" id="layer_summary_table" style="display:none">
+
+    <div class="table_wrapper">
+        <table id="table_of_products">
+            <tr>
+                <td>Что</td>
+                <td>Гр.</td>
+                <td>K</td>
+                <td>Б</td>
+                <td>Ж</td>
+                <td>У</td>
+                <td>Salt</td>                                                
+            </tr>
+        </table>
+    </div>
+<div class="table_wrapper">
+    <div class="subheading">
+        <button class="btn3d btn3d-select" onclick="clean_the_dishes()">Ой все</button>
+    </div>  
+    <div class="subheading">
+        <button class="btn3d btn3d-select" onclick="Delete_product()">Шото не то</button>
+    </div>  
+    </div>
+</div>
+
+</div>
+
+
+</div></div>
+</body> 
+</html>
+
+

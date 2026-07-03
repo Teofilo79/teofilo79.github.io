@@ -1,22 +1,59 @@
   # Data for watches wishlist of watches
+- name: "Casio AQ-240E-3AER"
+  description: "Vintage and elegant at its peak! Love the look of this masterpiece."
+  image: "https://newworld.co.za/cdn/shop/files/AQ-240E-3.2.webp?v=1765635980"
+  price: "330 pln"  
+
+- name: "Seiko Digital SMGG21P1"
+  description: "This is digital watch with a rotating besel! Just imagine. It is unusual, it looks solid, something that catches eye. Again, good-looking."
+  image: "https://cdn.awsli.com.br/2500x2500/568/568258/produto/375755184/relojoaria_impala-seiko-seiko_quartz-seiko_rotocall-smgg19b1-smgg17b1-smgg21p1-2-45hn64xgnq.jpg"
+  price: "350-500 usd"
+
+- name: "Casio A168"
+  description: "This one. Silver case. Very close to Montana and old Elekktronica watches from 80s"
+  image: "https://www.zegarki.pl/images/thumbs/0429304_a168wa-1yes5.jpeg"
+  price: "150 zl"
+
+- name: "Baltany Classic 1926s Tribute Quartz Version"
+  description: "Retro dress watch, original design - good for office"
+  image: "https://img.watchcrunch.com/b3ttuZ_Z2JPPu-FWfpNZLoDA8dXxcCCCf2Tb61YEUC8/w:2560/h:2560/rt:fit/g:ce:0:0/dpr:1/aW1nOi8vMjAyNi8wMy8yOS8wYzllYmM2YS1kZDA4LTQzNjgtODE5Zi0zZmI0ODU2ODA3N2IuanBn.jpg"
+  price: "112 usd"
+
+- name: "Timex T80"
+  description: "I need at least one gold watch! This one touches my heart. Why not!"
+  image: "https://www.watches.com/cdn/shop/files/timex-t80-34mm-gold-ss-tw2w68100vq-202255_1080x.jpg?v=1749278275"
+  price: "360 zl"
+
+- name: "Farr&Swift Aquamarine Retro Digital - Mix Tape Vol. 2"
+  description: "Retro tape! I had a hige collection of these. Good memories. Nice watch!"
+  image: "https://i0.wp.com/www.thetimebum.com/wp-content/uploads/2024/12/IMG_7794.jpeg?w=1800&ssl=1"
+  price: "35 usd"
+
+- name: "Citizen Leather Eco-Drive"
+  description: "Eyeing it for a long time. Shows day of the week and looks nice. Eco-drive. Worth it."
+  image: "https://zegarownia.pl/media/catalog/product/resized/1/1667/fr/z/e/zegarek-meski-citizen-elegance-eco-drive-aw0102-13ae_1.webp"
+  price: "700 zl"
+
+- name: "Casio Royale Casio AE 1200WHD 1AVEF metal"
+  description: "I have already one. Bronze, steampunk style. Put it in a metal case - and it will be perfect retro unusual classic."
+  image: "https://cdn.shopify.com/s/files/1/0278/9723/3501/files/Casio-AE1200-6.jpg?v=1753312408"
+  price: "180 pln"
 
 
-- name: "Citizen BN0241"
-  description: "Next one! Collecting amount. Everything in this watch is insanely good."
-  image: "https://i.ytimg.com/vi/gwNN2pg841I/maxresdefault.jpg"
-  price: "1800 zl"
+- name: "Timex Weekender"
+  description: "Elegant and humble. Just like me"
+  image: "https://cdn.mos.cms.futurecdn.net/XnwszjTqKqdWmPGVsYkfpY-1024-80.jpg.webp"
+  price: "270 pln"
 
 - name: "Orient Bambino FAC00009N0"
   description: "Another old style dressy and classic-looking masterpiece"
   image: "https://i.redd.it/tga2m154hz681.jpg"
   price: "220 usd"
 
-- name: "BERNY Compressor Diver Watch V3-AM339M"
-  description: "Something talks to me in this design. I like it."
-  image: "https://img.watchcrunch.com/0XEUv0_nN1ctI0tUpgpm72wK1-Jsi_npGMjy9ku4D44/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOS8xOC8wZmQyYTE0Mi03MzgyLTRmYTgtOTcyMy1lNTZiMWIxNDUwODcucG5n.png"
-  price: "450 zl"
-
-- name: "Panerai Luminor Submersible"
+- name: "Rolex Submariner 126610"
   description: "If you see me with these, I have either robbed a bank or won a lottery."
-  image: "https://img.watchcrunch.com/qSqiJ4QUjzJUPO-SCz4ZMBjDEKJeOcMh1M-t6Pavs-Y/w:2560/h:2560/rt:fit/g:sm/dpr:1/aW1nOi8vMjAyNC8wOC8zMS9iYzAzMDQ2Zi1jZTFiLTRkM2QtYmFlOC05YTY3ZjMwY2ZkODAuanBn.jpg"
-  price: "50 000 zl"
+  image: "https://windupmerchantwatches.co.uk/wp-content/uploads/2024/12/img_3246-scaled.jpeg"
+  price: "14 000 eur"
+
+
+
