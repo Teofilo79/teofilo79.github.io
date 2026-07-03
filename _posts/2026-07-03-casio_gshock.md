@@ -3,7 +3,7 @@ title: "Casio GST-B1000D-2AER"
 date: 2026-07-03 00:00:00 +0100
 categories: [Life]
 tags: [Watches]
-image: assets/img/images/Gshock_2026.jpg
+
 ---
 
 New Watch! Yes, I like watches and do not hide it. <br><br>This one is special. <br><br>
