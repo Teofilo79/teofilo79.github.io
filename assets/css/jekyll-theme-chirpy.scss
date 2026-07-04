@@ -22,7 +22,7 @@ html[data-mode=light] {
   --sidebar-muted-color: rgb(67, 66, 66);  
   --site-title-color:rgb(67, 66, 66);
   --site-subtitle-color:rgb(67, 66, 66); 
-  --card-bg: rgba(0, 0, 0, 0.05); 
+  --card-bg: rgba(0, 0, 0, 0.03); 
   --text-muted-color: #34343c;
   --heading-color: rgb(67, 66, 66);
 
@@ -38,7 +38,7 @@ html:not([data-mode]) {
   --sidebar-muted-color: rgb(67, 66, 66); 
   --site-title-color:rgb(67, 66, 66);  
   --site-subtitle-color:rgb(67, 66, 66);  
-  --card-bg: rgba(0, 0, 0, 0.05); 
+  --card-bg: rgba(0, 0, 0, 0.03); 
   --text-muted-color: #34343c;  
   --heading-color: rgb(67, 66, 66);
   }
