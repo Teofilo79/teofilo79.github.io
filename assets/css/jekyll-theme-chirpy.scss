@@ -46,10 +46,10 @@ html[data-mode=dark] {
   --card-bg: #3e4b66;
   --heading-color: #bbe3ff;
   --text-muted-color: #c2cbdf;
-  --sidebar-active-color: white;
-  --sidebar-muted-color: white;  
-  --site-title-color:white;  
-  --site-subtitle-color:white;  
+  --sidebar-active-color: rgba(0, 0, 0, 0.05); 
+  --sidebar-muted-color: rgba(0, 0, 0, 0.05);  
+  --site-title-color:rgba(0, 0, 0, 0.05);  
+  --site-subtitle-color:rgba(0, 0, 0, 0.05);  
 
 }
 
@@ -59,7 +59,7 @@ html[data-mode=dark] {
     border-style: solid;
     border-image: url("/assets/img/images/png-transparent-frame-border-silver.png") 18 stretch;
     border-image-outset: 0px;
-    background: var(--card-bg);
+    background: rgba(0, 0, 0, 0.05); 
 }
 
 #avatar {
