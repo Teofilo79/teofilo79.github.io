@@ -53,6 +53,14 @@ html[data-mode=dark] {
 
 }
 
+.post-preview {
+  background:rgba(0, 0, 0, 0.05); 
+}
+
+#sidebar {
+  background:rgba(0, 0, 0, 0.05); 
+}
+
 #post-list .card {
     border-radius:14px;
     border-width: 10px;
