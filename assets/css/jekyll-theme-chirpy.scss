@@ -9,45 +9,45 @@
 
 
 html[data-mode=light] {
-  --main-bg: rgba(0, 0, 0, 0);
-  --sidebar-bg: rgba(0, 0, 0, 0);
-  --topbar-bg: rgba(0, 0, 0, 0);
-  --heading-color: rgb(37, 63, 164);
-  --text-muted-color: rgb(5, 49, 137);
-  --sidebar-active-color: rgb(67, 66, 66);
-  --sidebar-muted-color: rgb(67, 66, 66);  
+  --main-bg:rgba(0, 0, 0, 0);
+  --sidebar-bg:rgba(0, 0, 0, 0);
+  --topbar-bg:rgba(0, 0, 0, 0);
+  --heading-color:rgb(37, 63, 164);
+  --text-muted-color:rgb(5, 49, 137);
+  --sidebar-active-color:rgb(67, 66, 66);
+  --sidebar-muted-color:rgb(67, 66, 66);  
   --site-title-color:rgb(67, 66, 66);
   --site-subtitle-color:rgb(67, 66, 66); 
-  --card-bg: rgba(0, 0, 0, 0.05); 
-  --text-muted-color: #34343c;
-  --heading-color: rgb(67, 66, 66);
+  --card-bg:rgba(0, 0, 0, 0.05); 
+  --text-muted-color:#34343c;
+  --heading-color:rgb(67, 66, 66);
 
 }
 
 html:not([data-mode]) {
-  --main-bg: rgba(0, 0, 0, 0);
-  --sidebar-bg: rgba(0, 0, 0, 0);
-  --topbar-bg: rgba(0, 0, 0, 0);
-  --heading-color: rgb(37, 63, 164);
-  --text-muted-color: rgb(5, 49, 137);
-  --sidebar-active-color: rgb(67, 66, 66);
-  --sidebar-muted-color: rgb(67, 66, 66); 
+  --main-bg:rgba(0, 0, 0, 0);
+  --sidebar-bg:rgba(0, 0, 0, 0);
+  --topbar-bg:rgba(0, 0, 0, 0);
+  --heading-color:rgb(37, 63, 164);
+  --text-muted-color:rgb(5, 49, 137);
+  --sidebar-active-color:rgb(67, 66, 66);
+  --sidebar-muted-color:rgb(67, 66, 66); 
   --site-title-color:rgb(67, 66, 66);  
   --site-subtitle-color:rgb(67, 66, 66);  
-  --card-bg: rgba(0, 0, 0, 0.05); 
-  --text-muted-color: #34343c;  
-  --heading-color: rgb(67, 66, 66);
+  --card-bg:rgba(0, 0, 0, 0.05); 
+  --text-muted-color:#34343c;  
+  --heading-color:rgb(67, 66, 66);
   }
 
 html[data-mode=dark] {
-  --main-bg: #2e384e; 
-  --sidebar-bg: #2e384e;
-  --topbar-bg: #2e384e;
-  --card-bg: #3e4b66;
-  --heading-color: #bbe3ff;
-  --text-muted-color: #c2cbdf;
-  --sidebar-active-color: rgba(0, 0, 0, 0.05); 
-  --sidebar-muted-color: rgba(0, 0, 0, 0.05);  
+  --main-bg:#2e384e; 
+  --sidebar-bg:#2e384e;
+  --topbar-bg:#2e384e;
+  --card-bg:#3e4b66;
+  --heading-color:#bbe3ff;
+  --text-muted-color:#c2cbdf;
+  --sidebar-active-color:rgba(0, 0, 0, 0.05); 
+  --sidebar-muted-color:rgba(0, 0, 0, 0.05);  
   --site-title-color:rgba(0, 0, 0, 0.05);  
   --site-subtitle-color:rgba(0, 0, 0, 0.05);  
 
@@ -59,7 +59,7 @@ html[data-mode=dark] {
     border-style: solid;
     border-image: url("/assets/img/images/png-transparent-frame-border-silver.png") 18 stretch;
     border-image-outset: 0px;
-    background: rgba(0, 0, 0, 0.05); 
+    background:rgba(0, 0, 0, 0.05); 
 }
 
 #avatar {
