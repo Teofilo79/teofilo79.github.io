@@ -2,6 +2,14 @@
 
   # The ones that I have:
 
+- name: "G-Shock GST-B1000D"
+  type: "Everyday beater"
+  description: "Beater? Looks dressy, but rough and full of functionalities. This one gets me closer to getting an ideal watch. WHat else can you wish?"
+  image: "assets/img/images/Gshock_2026.jpg"
+  movement: "Solar-powered quartz"
+  water_resistance: "200 meters"
+  date_acquired: "June 2026" 
+
 - name: "Seiko Arnie SNJ025P1"
   type: "Diver"
   description: "Seiko Arnie! Tough like I like it. Not for a shy person. For strong men. Solar powered, super-protected tuna-style case."

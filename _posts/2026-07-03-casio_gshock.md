@@ -3,11 +3,11 @@ title: "Casio GST-B1000D-2AER"
 date: 2026-07-03 00:00:00 +0100
 categories: [Life]
 tags: [Watches]
-
+image: assets/img/images/Gshock_2026.jpg
 ---
 
 New Watch! Yes, I like watches and do not hide it. <br><br>This one is special. <br><br>
-I had a birthday a month ago. Everyone around me know what I want for birthday. For many last years - a watch. I started searching few months prior, and still hesitant during the day, so proceeded to search the whole June. I thought I found what I really want - beautiful dial with unusual moon phase complication - but still did not feel that connection, although the watch is beautiful and shiny (Citizen Tsuki-Youmi). And I was not buying it just because I did not feel I will choose it over others in the morning, it will just fill the gap in collection.
+I had a birthday a month ago. Anyone around me knows what I want for birthday. For many last years - a watch. I started searching few months prior, and still hesitant during the day, so proceeded to search the whole June. I thought I found what I really want - beautiful dial with unusual moon phase complication - but still did not feel that connection, although the watch is beautiful and shiny (Citizen Tsuki-Youmi). And I was not buying it just because I did not feel I will choose it over others in the morning, it will just fill the gap in collection.
 <br><br>
 And then this happened. Looking at some reviews - I saw this. No, THIS. And immediately felt in love. At first glance. This happens rarely, it is like catching a goldfish. Like something just clicked in the head - this is your watch.
 <br><br>

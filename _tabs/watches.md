@@ -93,22 +93,16 @@ There is a non-official division on watch types:<br>
 <li><b>GADA</b> - Go anywhere, do anything. This category is interesting, as it can include any of the above-mentioned ones. The watch that you pick when you do not have much time to decide - grab and go. They are usually ready for anything.</li>
 </ul>
 </div>
-
+<!-- 
 <H2>Update from 20.12.2025</H2><br>
 One watch sold, one was given to father :) and... I am back! Exiting watches collecting lasted 4 months, and I am again enjoying it. Wishlist updated, looking forward to enlarge the collection. Changing watches almost every day and enjoying it.
-
-<hr>
-
-
 <H2>Update from 25.09.2025</H2><br>
 Most of watches are on sale :) When I see even a small chance of changes - I use it. Is it strange? Yes it is. But who am I to fight with myself.
-
-
 <hr>
 ![Exit](https://static.vecteezy.com/system/resources/previews/002/301/058/non_2x/fire-exit-emergency-green-sign-free-vector.jpg){: .right w="100" .shadow}
 <H2>Update from 16.09.2025</H2><br>
 There is one interesting term in watch collecting - the "Exit Watch". It has a magic inside - makes you resign from collecting and wear only one. This is like dating a lot of girls and finally marrying the one and only - to be your partner forever. For life and after it if this is possible. So, my latest acquisition made me resign from collecting. I look at the watchbox. I like the watches I've collected - but I do not want to wear them. They are like paintings on the wall. This makes me sad. Then I look at my wrist and smile. Happy again. I have decided to wait for one year. In one year I will probably sell what I can, leaving only the items that were presents from family and friends.
-
+ -->
 
 <hr>
 
