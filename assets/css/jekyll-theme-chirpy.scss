@@ -50,7 +50,6 @@ html[data-mode=dark] {
   --sidebar-muted-color:rgba(0, 0, 0, 0.05);  
   --site-title-color:rgba(0, 0, 0, 0.05);  
   --site-subtitle-color:rgba(0, 0, 0, 0.05);  
-
 }
 
 .post-preview {
@@ -58,6 +57,14 @@ html[data-mode=dark] {
 }
 
 #sidebar {
+  background:rgba(0, 0, 0, 0.05); 
+}
+
+#topbar-wrapper {
+  background:rgba(0, 0, 0, 0.05); 
+}
+
+footer {
   background:rgba(0, 0, 0, 0.05); 
 }
 
