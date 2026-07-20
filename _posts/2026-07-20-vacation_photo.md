@@ -19,3 +19,5 @@ We have tried Bulgaria this year and I can confirm it is perfect. Mild climate, 
 <br><br>
 ![Desktop View](/assets/img/images/2026_vacation_pic6.jpg){: .shadow w="800"}
 <br><br>
+![Desktop View](/assets/img/images/2026_vacation_pic7.jpg){: .shadow w="800"}
+<br><br>
