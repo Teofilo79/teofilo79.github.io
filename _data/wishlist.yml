@@ -1,4 +1,10 @@
   # Data for watches wishlist of watches
+
+- name: "TIMEX Marlin Jet Automatic"
+  description: "60-th vibes! Jet-jet-jet. And there is also day-date version."
+  image: "https://timex.co.uk/cdn/shop/files/11373_TX_TC_25_FB_Mobile_TW2V72300.jpg?v=1759910737&width=640"
+  price: "300 usd"  
+
 - name: "Casio AQ-240E-3AER"
   description: "Vintage and elegant at its peak! Love the look of this masterpiece."
   image: "https://newworld.co.za/cdn/shop/files/AQ-240E-3.2.webp?v=1765635980"
